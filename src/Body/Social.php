@@ -14,6 +14,9 @@ class Social extends Element
 
     public const string TAG = 'mj-social';
 
+    /**
+     * @var SocialElement[]
+     */
     private array $elements = [];
 
     /**
@@ -64,7 +67,7 @@ class Social extends Element
 
     public function render(): string
     {
-        $elements = implode('', array_map(fn ($element) => $element->render(), $this->elements));
+        $elements = implode('', array_map(fn(SocialElement $element) => $element->render(), $this->elements));
 
         return sprintf(
             '<mj-social%s>%s</mj-social>',

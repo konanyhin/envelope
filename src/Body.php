@@ -15,7 +15,7 @@ class Body extends ParentElement
     /**
      * List of allowed child element classes for Body.
      *
-     * @var class-string<Element>[]
+     * @var array<string, class-string<Element>>
      */
     protected array $allowedChildClasses = [
         'addSection' => Section::class,

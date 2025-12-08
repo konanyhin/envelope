@@ -52,6 +52,23 @@ class Element extends BaseElement
         $this->validateAttributes($this->allowedAttributes);
     }
 
+    /**
+     * @param array{
+     *     background-color?: string,
+     *     color?: string,
+     *     font-family?: string,
+     *     font-size?: string,
+     *     font-style?: string,
+     *     font-weight?: string,
+     *     letter-spacing?: string,
+     *     line-height?: string,
+     *     padding?: string,
+     *     padding-bottom?: string,
+     *     padding-left?: string,
+     *     padding-right?: string,
+     *     padding-top?: string
+     * } $attributes
+     */
     public function withTitle(string $content, array $attributes = []): self
     {
         $this->title = new Title($content, $attributes);
@@ -59,6 +76,23 @@ class Element extends BaseElement
         return $this;
     }
 
+    /**
+     * @param array{
+     *     background-color?: string,
+     *     color?: string,
+     *     font-family?: string,
+     *     font-size?: string,
+     *     font-style?: string,
+     *     font-weight?: string,
+     *     letter-spacing?: string,
+     *     line-height?: string,
+     *     padding?: string,
+     *     padding-bottom?: string,
+     *     padding-left?: string,
+     *     padding-right?: string,
+     *     padding-top?: string
+     * } $attributes
+     */
     public function withText(string $content, array $attributes = []): self
     {
         $this->text = new Text($content, $attributes);
@@ -68,7 +102,7 @@ class Element extends BaseElement
 
     public function render(): string
     {
-        $childrenContent = implode('', array_map(fn (BaseElement $child): string => $child->render(), array_filter([$this->title, $this->text])));
+        $childrenContent = implode('', array_map(fn(BaseElement $child): string => $child->render(), array_filter([$this->title, $this->text])));
 
         return sprintf(
             '<mj-accordion-element%s>%s</mj-accordion-element>',

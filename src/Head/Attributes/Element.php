@@ -59,7 +59,7 @@ class Element extends AbstractElement
      */
     public function __construct(string $tagName, array $attributes = [])
     {
-        if (!in_array($tagName, $this->validElements)) {
+        if (!in_array($tagName, $this->validElements, true)) {
             throw new InvalidMjmlTagException($tagName);
         }
 

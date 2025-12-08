@@ -14,6 +14,9 @@ class Carousel extends Element
 
     public const string TAG = 'mj-carousel';
 
+    /**
+     * @var Image[]
+     */
     private array $images = [];
 
     /**
@@ -55,7 +58,7 @@ class Carousel extends Element
 
     public function render(): string
     {
-        $images = implode('', array_map(fn ($image) => $image->render(), $this->images));
+        $images = implode('', array_map(fn(Image $image) => $image->render(), $this->images));
 
         return sprintf(
             '<mj-carousel%s>%s</mj-carousel>',

@@ -8,11 +8,14 @@ use Konanyhin\Envelope\Exceptions\InvalidAttributeException;
 
 trait Attributable
 {
+    /**
+     * @var array<string, string>
+     */
     protected array $attributes;
 
     protected function renderAttributes(): string
     {
-        if (empty($this->attributes)) {
+        if ([] === $this->attributes) {
             return '';
         }
 
@@ -21,9 +24,12 @@ trait Attributable
             $attributes[] = sprintf('%s="%s"', $key, $value);
         }
 
-        return ' '.implode(' ', $attributes);
+        return ' ' . implode(' ', $attributes);
     }
 
+    /**
+     * @param array<string> $allowedKeys
+     */
     protected function validateAttributes(array $allowedKeys): void
     {
         $invalidKeys = array_diff(array_keys($this->attributes), $allowedKeys);

@@ -31,34 +31,6 @@ class Column extends ParentElement
     ];
 
     /**
-     * @var array{
-     *     background-color?: string,
-     *     border?: string,
-     *     border-bottom?: string,
-     *     border-left?: string,
-     *     border-radius?: string,
-     *     border-right?: string,
-     *     border-top?: string,
-     *     css-class?: string,
-     *     inner-background-color?: string,
-     *     inner-border?: string,
-     *     inner-border-bottom?: string,
-     *     inner-border-left?: string,
-     *     inner-border-radius?: string,
-     *     inner-border-right?: string,
-     *     inner-border-top?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     vertical-align?: string,
-     *     width?: string
-     * }
-     */
-    protected array $attributes;
-
-    /**
      * @var string[]
      */
     private array $allowedAttributes = [
