@@ -25,21 +25,21 @@ use Konanyhin\Envelope\Exceptions\InvalidStaticMethodException;
 
 /**
  * @method static Accordion accordion(array $attributes = [])
- * @method static Button button(string $text, array $attributes = [])
- * @method static Carousel carousel(array $attributes = [])
- * @method static Column column(array $attributes = [])
- * @method static Divider divider(array $attributes = [])
- * @method static Group group(array $attributes = [])
- * @method static Hero hero(array $attributes = [])
- * @method static Image image(array $attributes = [])
- * @method static Navbar navbar(array $attributes = [])
- * @method static Raw raw(string $content = '')
- * @method static Section section(array $attributes = [])
- * @method static Social social(array $attributes = [])
- * @method static Spacer spacer(array $attributes = [])
- * @method static Table table(string $content, array $attributes = [])
- * @method static Text text(string $text, array $attributes = [])
- * @method static Wrapper wrapper(array $attributes = [])
+ * @method static Button    button(string $text, array $attributes = [])
+ * @method static Carousel  carousel(array $attributes = [])
+ * @method static Column    column(array $attributes = [])
+ * @method static Divider   divider(array $attributes = [])
+ * @method static Group     group(array $attributes = [])
+ * @method static Hero      hero(array $attributes = [])
+ * @method static Image     image(array $attributes = [])
+ * @method static Navbar    navbar(array $attributes = [])
+ * @method static Raw       raw(string $content = '')
+ * @method static Section   section(array $attributes = [])
+ * @method static Social    social(array $attributes = [])
+ * @method static Spacer    spacer(array $attributes = [])
+ * @method static Table     table(string $content, array $attributes = [])
+ * @method static Text      text(string $text, array $attributes = [])
+ * @method static Wrapper   wrapper(array $attributes = [])
  */
 class BodyComponent
 {
@@ -66,9 +66,7 @@ class BodyComponent
     ];
 
     /**
-     * @param string $name
      * @param array<mixed> $arguments
-     * @return ElementInterface
      */
     public static function __callStatic(string $name, array $arguments): ElementInterface
     {

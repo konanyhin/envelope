@@ -16,10 +16,10 @@ use Konanyhin\Envelope\Head\Title;
 /**
  * @method static Attributes attributes()
  * @method static Breakpoint breakpoint(array $attributes = [])
- * @method static Font font(array $attributes = [])
- * @method static Preview preview(string $content)
- * @method static Style style(string $content, array $attributes = [])
- * @method static Title title(string $content)
+ * @method static Font       font(array $attributes = [])
+ * @method static Preview    preview(string $content)
+ * @method static Style      style(string $content, array $attributes = [])
+ * @method static Title      title(string $content)
  */
 class HeadComponent
 {
@@ -36,9 +36,7 @@ class HeadComponent
     ];
 
     /**
-     * @param string $name
      * @param array<mixed> $arguments
-     * @return ElementInterface
      */
     public static function __callStatic(string $name, array $arguments): ElementInterface
     {

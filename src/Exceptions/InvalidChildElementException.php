@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Exceptions;
 
-use InvalidArgumentException;
-
-class InvalidChildElementException extends InvalidArgumentException
+class InvalidChildElementException extends \InvalidArgumentException
 {
     public function __construct(string $childClass, string $parentClass)
     {

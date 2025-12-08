@@ -13,13 +13,6 @@ use Konanyhin\Envelope\Contracts\ElementInterface;
 class Body extends ParentElement
 {
     /**
-     * @var string[]
-     */
-    private array $allowedAttributes = [
-        'background-color', 'css-class', 'width',
-    ];
-
-    /**
      * List of allowed child element classes for Body.
      *
      * @var class-string<ElementInterface>[]
@@ -28,6 +21,13 @@ class Body extends ParentElement
         'addSection' => Section::class,
         'addWrapper' => Wrapper::class,
         'addRaw' => Raw::class,
+    ];
+
+    /**
+     * @var string[]
+     */
+    private array $allowedAttributes = [
+        'background-color', 'css-class', 'width',
     ];
 
     /**

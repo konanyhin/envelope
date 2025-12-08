@@ -65,7 +65,7 @@ abstract class ParentElement implements ElementInterface
      *
      * @return $this
      *
-     * @throws InvalidMethodException if the method does not exist or is not a recognized add method
+     * @throws InvalidMethodException    if the method does not exist or is not a recognized add method
      * @throws \InvalidArgumentException if the child element is not allowed or attributes are invalid
      */
     public function __call(string $name, array $arguments): self

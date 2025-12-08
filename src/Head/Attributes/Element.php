@@ -55,7 +55,6 @@ class Element implements ElementInterface
     ];
 
     /**
-     * @param string                $tagName
      * @param array<string, string> $attributes
      */
     public function __construct(string $tagName, array $attributes = [])
