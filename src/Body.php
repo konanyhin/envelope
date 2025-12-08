@@ -13,6 +13,13 @@ use Konanyhin\Envelope\Contracts\ElementInterface;
 class Body extends ParentElement
 {
     /**
+     * @var string[]
+     */
+    private array $allowedAttributes = [
+        'background-color', 'css-class', 'width',
+    ];
+
+    /**
      * List of allowed child element classes for Body.
      *
      * @var class-string<ElementInterface>[]
@@ -33,6 +40,7 @@ class Body extends ParentElement
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
+        $this->validateAttributes($this->allowedAttributes);
     }
 
     public function render(): string

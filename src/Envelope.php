@@ -15,6 +15,13 @@ class Envelope implements ElementInterface
 {
     use Attributable;
 
+    /**
+     * @var string[]
+     */
+    private array $allowedAttributes = [
+        'owa', 'lang', 'dir',
+    ];
+
     private Body $body;
 
     private Head $head;
@@ -25,6 +32,7 @@ class Envelope implements ElementInterface
     public function __construct(array $attributes = [])
     {
         $this->attributes = $attributes;
+        $this->validateAttributes($this->allowedAttributes);
         $this->head = new Head();
         $this->body = new Body();
     }
