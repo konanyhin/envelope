@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Konanyhin\Envelope\Helpers;
 
 use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Exceptions\InvalidStaticMethodException;
 use Konanyhin\Envelope\Head\Attributes;
 use Konanyhin\Envelope\Head\Breakpoint;
 use Konanyhin\Envelope\Head\Font;
@@ -44,7 +45,7 @@ class HeadComponent
         $name = strtolower($name);
 
         if (!isset(self::$classMap[$name])) {
-            throw new \BadMethodCallException("Method {$name} does not exist.");
+            throw new InvalidStaticMethodException($name);
         }
 
         $class = self::$classMap[$name];

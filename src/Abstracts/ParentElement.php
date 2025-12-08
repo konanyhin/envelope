@@ -16,6 +16,8 @@ use Konanyhin\Envelope\Body\Spacer;
 use Konanyhin\Envelope\Body\Table;
 use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Exceptions\InvalidChildElementException;
+use Konanyhin\Envelope\Exceptions\InvalidMethodException;
 use Konanyhin\Envelope\Traits\Attributable;
 
 abstract class ParentElement implements ElementInterface
@@ -63,7 +65,7 @@ abstract class ParentElement implements ElementInterface
      *
      * @return $this
      *
-     * @throws \BadMethodCallException   if the method does not exist or is not a recognized add method
+     * @throws InvalidMethodException if the method does not exist or is not a recognized add method
      * @throws \InvalidArgumentException if the child element is not allowed or attributes are invalid
      */
     public function __call(string $name, array $arguments): self
@@ -76,7 +78,7 @@ abstract class ParentElement implements ElementInterface
             return $this;
         }
 
-        throw new \BadMethodCallException(sprintf('Method %s::%s does not exist.', static::class, $name));
+        throw new InvalidMethodException(static::class, $name);
     }
 
     /**
@@ -86,7 +88,7 @@ abstract class ParentElement implements ElementInterface
      *
      * @return $this
      *
-     * @throws \InvalidArgumentException if an element is not an allowed child type
+     * @throws InvalidChildElementException if an element is not an allowed child type
      */
     public function add(ElementInterface ...$elements): self
     {
@@ -103,7 +105,7 @@ abstract class ParentElement implements ElementInterface
      *
      * @param ElementInterface $element the child element to validate
      *
-     * @throws \InvalidArgumentException if the element is not an allowed child type
+     * @throws InvalidChildElementException if the element is not an allowed child type
      */
     protected function validateChildElement(ElementInterface $element): void
     {
@@ -117,11 +119,7 @@ abstract class ParentElement implements ElementInterface
         }
 
         if (!$isValid) {
-            throw new \InvalidArgumentException(sprintf(
-                'Element of type %s is not an allowed child for %s.',
-                get_class($element),
-                static::class
-            ));
+            throw new InvalidChildElementException(get_class($element), static::class);
         }
     }
 

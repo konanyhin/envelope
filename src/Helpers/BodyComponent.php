@@ -21,6 +21,7 @@ use Konanyhin\Envelope\Body\Table;
 use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Body\Wrapper;
 use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Exceptions\InvalidStaticMethodException;
 
 /**
  * @method static Accordion accordion(array $attributes = [])
@@ -74,7 +75,7 @@ class BodyComponent
         $name = strtolower($name);
 
         if (!isset(self::$classMap[$name])) {
-            throw new \BadMethodCallException("Method {$name} does not exist.");
+            throw new InvalidStaticMethodException($name);
         }
 
         $class = self::$classMap[$name];

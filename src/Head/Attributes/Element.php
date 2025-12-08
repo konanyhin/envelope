@@ -21,6 +21,7 @@ use Konanyhin\Envelope\Body\Table;
 use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Body\Wrapper;
 use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Exceptions\InvalidMjmlTagException;
 use Konanyhin\Envelope\Traits\Attributable;
 
 class Element implements ElementInterface
@@ -54,12 +55,13 @@ class Element implements ElementInterface
     ];
 
     /**
+     * @param string                $tagName
      * @param array<string, string> $attributes
      */
     public function __construct(string $tagName, array $attributes = [])
     {
         if (!in_array($tagName, $this->validElements)) {
-            throw new \InvalidArgumentException('Invalid MJML element for attributes: '.$tagName);
+            throw new InvalidMjmlTagException($tagName);
         }
 
         $this->tagName = $tagName;
