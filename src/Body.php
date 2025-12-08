@@ -43,6 +43,18 @@ class Body extends ParentElement
         $this->validateAttributes($this->allowedAttributes);
     }
 
+    /**
+     * @param array{
+     *     background-color?: string,
+     *     css-class?: string,
+     *     width?: string
+     * } $attributes
+     */
+    public static function new(array $attributes = []): self
+    {
+        return new self($attributes);
+    }
+
     public function render(): string
     {
         return sprintf(

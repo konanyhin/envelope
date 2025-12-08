@@ -37,6 +37,14 @@ class Envelope implements ElementInterface
         $this->body = new Body();
     }
 
+    /**
+     * @param array{owa?: string, lang?: string, dir?: string} $attributes
+     */
+    public static function new(array $attributes = []): self
+    {
+        return new self($attributes);
+    }
+
     public function getBody(): Body
     {
         return $this->body;

@@ -29,6 +29,11 @@ class Head implements ElementInterface
     /** @var Style[] */
     private array $styleElements = [];
 
+    public static function new(): self
+    {
+        return new self();
+    }
+
     public function addAttributes(Attributes $attributes): self
     {
         $this->attributesElements[] = $attributes;
