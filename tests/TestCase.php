@@ -10,16 +10,16 @@ abstract class TestCase extends BaseTestCase
 {
     public ElementInterface $element;
 
-    public function parentMethodExists(string $class): void
+    public function parentMethodExists(string $namespace): void
     {
-        expect(fn() => $this->element->{'add' . $this->getClassName($class)}())
+        expect(fn() => $this->element->{'add' . $this->getClassName($namespace)}())
             ->not
             ->toThrow(BadMethodCallException::class);
     }
 
-    public function parentMethodNotExist(string $class): void
+    public function parentMethodNotExist(string $namespace): void
     {
-        expect(fn() => $this->element->{'add' . $this->getClassName($class)}())
+        expect(fn() => $this->element->{'add' . $this->getClassName($namespace)}())
             ->toThrow(BadMethodCallException::class);
     }
 
