@@ -11,10 +11,12 @@ return (new Config())
     ->setRiskyAllowed(false)
     ->setRules([
         '@PhpCsFixer' => true,
+        'concat_space' => [
+            'spacing' => 'one'
+        ],
     ])
     ->setFinder(
         (new Finder())
             // 💡 root folder to check
-            ->in(__DIR__.'/src')
-    )
-;
+            ->in(__DIR__ . '/src')
+    );
