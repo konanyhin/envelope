@@ -11,7 +11,7 @@ class Divider implements ElementInterface
 {
     use Attributable;
 
-    public const TAG = 'mj-divider';
+    public const string TAG = 'mj-divider';
 
     /**
      * @var string[]

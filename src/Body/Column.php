@@ -9,7 +9,7 @@ use Konanyhin\Envelope\Contracts\ElementInterface;
 
 class Column extends ParentElement
 {
-    public const TAG = 'mj-column';
+    public const string TAG = 'mj-column';
 
     /**
      * @var string[]

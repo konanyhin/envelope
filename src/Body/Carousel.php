@@ -12,7 +12,7 @@ class Carousel implements ElementInterface
 {
     use Attributable;
 
-    public const TAG = 'mj-carousel';
+    public const string TAG = 'mj-carousel';
 
     private array $images = [];
 

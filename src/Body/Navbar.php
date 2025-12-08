@@ -12,7 +12,7 @@ class Navbar implements ElementInterface
 {
     use Attributable;
 
-    public const TAG = 'mj-navbar';
+    public const string TAG = 'mj-navbar';
 
     private array $links = [];
 

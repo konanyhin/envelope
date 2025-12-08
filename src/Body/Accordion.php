@@ -12,7 +12,7 @@ class Accordion implements ElementInterface
 {
     use Attributable;
 
-    public const TAG = 'mj-accordion';
+    public const string TAG = 'mj-accordion';
 
     /**
      * @var string[]

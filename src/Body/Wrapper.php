@@ -9,7 +9,7 @@ use Konanyhin\Envelope\Contracts\ElementInterface;
 
 class Wrapper extends ParentElement
 {
-    public const TAG = 'mj-wrapper';
+    public const string TAG = 'mj-wrapper';
 
     /**
      * @var string[]

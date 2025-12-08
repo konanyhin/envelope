@@ -9,7 +9,7 @@ use Konanyhin\Envelope\Contracts\ElementInterface;
 
 class Section extends ParentElement
 {
-    public const TAG = 'mj-section';
+    public const string TAG = 'mj-section';
 
     /**
      * @var string[]

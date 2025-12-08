@@ -11,7 +11,7 @@ class Spacer implements ElementInterface
 {
     use Attributable;
 
-    public const TAG = 'mj-spacer';
+    public const string TAG = 'mj-spacer';
 
     /**
      * @var string[]

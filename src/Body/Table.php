@@ -11,7 +11,7 @@ class Table implements ElementInterface
 {
     use Attributable;
 
-    public const TAG = 'mj-table';
+    public const string TAG = 'mj-table';
 
     private string $content;
 

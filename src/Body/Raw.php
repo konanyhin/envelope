@@ -8,7 +8,7 @@ use Konanyhin\Envelope\Contracts\ElementInterface;
 
 class Raw implements ElementInterface
 {
-    public const TAG = 'mj-raw';
+    public const string TAG = 'mj-raw';
 
     private string $content;
 

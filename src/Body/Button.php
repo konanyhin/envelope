@@ -11,7 +11,7 @@ class Button implements ElementInterface
 {
     use Attributable;
 
-    public const TAG = 'mj-button';
+    public const string TAG = 'mj-button';
 
     private string $text;
 

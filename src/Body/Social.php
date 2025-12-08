@@ -12,7 +12,7 @@ class Social implements ElementInterface
 {
     use Attributable;
 
-    public const TAG = 'mj-social';
+    public const string TAG = 'mj-social';
 
     private array $elements = [];
 

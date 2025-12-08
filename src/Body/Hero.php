@@ -9,7 +9,7 @@ use Konanyhin\Envelope\Contracts\ElementInterface;
 
 class Hero extends ParentElement
 {
-    public const TAG = 'mj-hero';
+    public const string TAG = 'mj-hero';
 
     /**
      * @var string[]

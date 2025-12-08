@@ -9,7 +9,7 @@ use Konanyhin\Envelope\Contracts\ElementInterface;
 
 class Group extends ParentElement
 {
-    public const TAG = 'mj-group';
+    public const string TAG = 'mj-group';
 
     /**
      * @var string[]

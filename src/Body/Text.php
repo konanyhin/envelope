@@ -11,7 +11,7 @@ class Text implements ElementInterface
 {
     use Attributable;
 
-    public const TAG = 'mj-text';
+    public const string TAG = 'mj-text';
 
     private string $text;
 

@@ -11,7 +11,7 @@ class Image implements ElementInterface
 {
     use Attributable;
 
-    public const TAG = 'mj-image';
+    public const string TAG = 'mj-image';
 
     /**
      * @var string[]
