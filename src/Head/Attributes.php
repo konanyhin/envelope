@@ -20,7 +20,7 @@ class Attributes implements ElementInterface
      */
     public function add(string $element, array $attributes): self
     {
-        $this->children[] = new Element('mj-' . $element, $attributes);
+        $this->children[] = new Element('mj-'.$element, $attributes);
 
         return $this;
     }
@@ -45,7 +45,7 @@ class Attributes implements ElementInterface
 
     public function render(): string
     {
-        $children = implode('', array_map(fn (\Konanyhin\Envelope\Head\Attributes\Element $child): string => $child->render(), $this->children));
+        $children = implode('', array_map(fn (Element $child): string => $child->render(), $this->children));
 
         return sprintf(
             "<mj-attributes>\n%s</mj-attributes>",

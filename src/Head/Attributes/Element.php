@@ -56,7 +56,7 @@ class Element implements ElementInterface
     public function __construct(string $tagName, array $attributes = [])
     {
         if (!in_array($tagName, $this->validElements)) {
-            throw new \InvalidArgumentException('Invalid MJML element for attributes: ' . $tagName);
+            throw new \InvalidArgumentException('Invalid MJML element for attributes: '.$tagName);
         }
 
         $this->tagName = $tagName;

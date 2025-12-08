@@ -61,7 +61,7 @@ class Navbar implements ElementInterface
 
     public function render(): string
     {
-        $links = implode('', array_map(fn($link) => $link->render(), $this->links));
+        $links = implode('', array_map(fn ($link) => $link->render(), $this->links));
 
         return sprintf(
             '<mj-navbar%s>%s</mj-navbar>',

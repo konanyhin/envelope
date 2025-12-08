@@ -12,19 +12,19 @@ class Group extends ParentElement
     public const string TAG = 'mj-group';
 
     /**
-     * @var string[]
-     */
-    private array $allowedAttributes = [
-        'background-color', 'direction', 'vertical-align', 'width',
-    ];
-
-    /**
      * List of allowed child element classes for Group.
      *
      * @var array<string, class-string<ElementInterface>>
      */
     protected array $allowedChildClasses = [
         'addColumn' => Column::class,
+    ];
+
+    /**
+     * @var string[]
+     */
+    private array $allowedAttributes = [
+        'background-color', 'direction', 'vertical-align', 'width',
     ];
 
     /**

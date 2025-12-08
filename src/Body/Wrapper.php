@@ -12,15 +12,6 @@ class Wrapper extends ParentElement
     public const string TAG = 'mj-wrapper';
 
     /**
-     * @var string[]
-     */
-    private array $allowedAttributes = [
-        'background-color', 'background-position', 'background-repeat', 'background-size', 'background-url',
-        'border', 'border-bottom', 'border-left', 'border-radius', 'border-right', 'border-top', 'css-class',
-        'full-width', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'text-align',
-    ];
-
-    /**
      * List of allowed child element classes for Wrapper.
      *
      * @var array<string, class-string<ElementInterface>>
@@ -28,6 +19,15 @@ class Wrapper extends ParentElement
     protected array $allowedChildClasses = [
         'addRaw' => Raw::class,
         'addSection' => Section::class,
+    ];
+
+    /**
+     * @var string[]
+     */
+    private array $allowedAttributes = [
+        'background-color', 'background-position', 'background-repeat', 'background-size', 'background-url',
+        'border', 'border-bottom', 'border-left', 'border-radius', 'border-right', 'border-top', 'css-class',
+        'full-width', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'text-align',
     ];
 
     /**

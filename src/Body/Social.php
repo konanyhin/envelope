@@ -64,7 +64,7 @@ class Social implements ElementInterface
 
     public function render(): string
     {
-        $elements = implode('', array_map(fn($element) => $element->render(), $this->elements));
+        $elements = implode('', array_map(fn ($element) => $element->render(), $this->elements));
 
         return sprintf(
             '<mj-social%s>%s</mj-social>',

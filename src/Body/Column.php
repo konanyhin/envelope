@@ -12,16 +12,6 @@ class Column extends ParentElement
     public const string TAG = 'mj-column';
 
     /**
-     * @var string[]
-     */
-    private array $allowedAttributes = [
-        'background-color', 'border', 'border-bottom', 'border-left', 'border-radius', 'border-right', 'border-top',
-        'css-class', 'inner-background-color', 'inner-border', 'inner-border-bottom', 'inner-border-left',
-        'inner-border-radius', 'inner-border-right', 'inner-border-top', 'padding', 'padding-bottom', 'padding-left',
-        'padding-right', 'padding-top', 'vertical-align', 'width',
-    ];
-
-    /**
      * List of allowed child element classes for Column.
      *
      * @var array<string, class-string<ElementInterface>>
@@ -67,6 +57,16 @@ class Column extends ParentElement
      * }
      */
     protected array $attributes;
+
+    /**
+     * @var string[]
+     */
+    private array $allowedAttributes = [
+        'background-color', 'border', 'border-bottom', 'border-left', 'border-radius', 'border-right', 'border-top',
+        'css-class', 'inner-background-color', 'inner-border', 'inner-border-bottom', 'inner-border-left',
+        'inner-border-radius', 'inner-border-right', 'inner-border-top', 'padding', 'padding-bottom', 'padding-left',
+        'padding-right', 'padding-top', 'vertical-align', 'width',
+    ];
 
     /**
      * @param array{

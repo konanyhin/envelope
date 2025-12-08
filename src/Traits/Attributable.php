@@ -19,14 +19,14 @@ trait Attributable
             $attributes[] = sprintf('%s="%s"', $key, $value);
         }
 
-        return ' ' . implode(' ', $attributes);
+        return ' '.implode(' ', $attributes);
     }
 
     protected function validateAttributes(array $allowedKeys): void
     {
         $invalidKeys = array_diff(array_keys($this->attributes), $allowedKeys);
-        
-        if ($invalidKeys !== []) {
+
+        if ([] !== $invalidKeys) {
             throw new \InvalidArgumentException(
                 sprintf('Invalid attribute(s) for %s: %s', static::class, implode(', ', $invalidKeys))
             );

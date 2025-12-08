@@ -12,16 +12,6 @@ class Section extends ParentElement
     public const string TAG = 'mj-section';
 
     /**
-     * @var string[]
-     */
-    private array $allowedAttributes = [
-        'background-color', 'background-position', 'background-position-x', 'background-position-y',
-        'background-repeat', 'background-size', 'background-url', 'border', 'border-bottom', 'border-left',
-        'border-radius', 'border-right', 'border-top', 'css-class', 'direction', 'full-width', 'padding',
-        'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'text-align', 'vertical-align',
-    ];
-
-    /**
      * List of allowed child element classes for Section.
      *
      * @var array<string, class-string<ElementInterface>>
@@ -29,6 +19,16 @@ class Section extends ParentElement
     protected array $allowedChildClasses = [
         'addColumn' => Column::class,
         'addGroup' => Group::class,
+    ];
+
+    /**
+     * @var string[]
+     */
+    private array $allowedAttributes = [
+        'background-color', 'background-position', 'background-position-x', 'background-position-y',
+        'background-repeat', 'background-size', 'background-url', 'border', 'border-bottom', 'border-left',
+        'border-radius', 'border-right', 'border-top', 'css-class', 'direction', 'full-width', 'padding',
+        'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'text-align', 'vertical-align',
     ];
 
     /**

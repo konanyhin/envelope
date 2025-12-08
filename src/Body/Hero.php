@@ -12,15 +12,6 @@ class Hero extends ParentElement
     public const string TAG = 'mj-hero';
 
     /**
-     * @var string[]
-     */
-    private array $allowedAttributes = [
-        'background-color', 'background-height', 'background-position', 'background-url', 'background-width',
-        'height', 'mode', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top',
-        'vertical-align', 'width',
-    ];
-
-    /**
      * List of allowed child element classes for Hero.
      *
      * @var array<string, class-string<ElementInterface>>
@@ -30,6 +21,15 @@ class Hero extends ParentElement
         'addImage' => Image::class,
         'addRaw' => Raw::class,
         'addText' => Text::class,
+    ];
+
+    /**
+     * @var string[]
+     */
+    private array $allowedAttributes = [
+        'background-color', 'background-height', 'background-position', 'background-url', 'background-width',
+        'height', 'mode', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top',
+        'vertical-align', 'width',
     ];
 
     /**

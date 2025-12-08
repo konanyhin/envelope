@@ -68,7 +68,7 @@ class Element implements ElementInterface
 
     public function render(): string
     {
-        $childrenContent = implode('', array_map(fn(ElementInterface $child): string => $child->render(), array_filter([$this->title, $this->text])));
+        $childrenContent = implode('', array_map(fn (ElementInterface $child): string => $child->render(), array_filter([$this->title, $this->text])));
 
         return sprintf(
             '<mj-accordion-element%s>%s</mj-accordion-element>',

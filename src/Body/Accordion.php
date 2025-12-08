@@ -63,7 +63,7 @@ class Accordion implements ElementInterface
 
     public function render(): string
     {
-        $children = implode('', array_map(fn(\Konanyhin\Envelope\Body\Accordion\Element $child): string => $child->render(), $this->children));
+        $children = implode('', array_map(fn (Element $child): string => $child->render(), $this->children));
 
         return sprintf(
             '<mj-accordion%s>%s</mj-accordion>',
