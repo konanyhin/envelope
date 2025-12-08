@@ -16,6 +16,7 @@ class Envelope implements ElementInterface
     use Attributable;
 
     private Body $body;
+
     private Head $head;
 
     /**
