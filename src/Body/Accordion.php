@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body;
 
-use Konanyhin\Envelope\Body\Accordion\Element;
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
+use Konanyhin\Envelope\Body\Accordion\Element as AccordionElement;
 use Konanyhin\Envelope\Traits\Attributable;
 
-class Accordion implements ElementInterface
+class Accordion extends Element
 {
     use Attributable;
 
@@ -24,7 +24,7 @@ class Accordion implements ElementInterface
     ];
 
     /**
-     * @var Element[]
+     * @var AccordionElement[]
      */
     private array $children = [];
 
@@ -54,7 +54,7 @@ class Accordion implements ElementInterface
         $this->validateAttributes($this->allowedAttributes);
     }
 
-    public function addElement(Element $element): self
+    public function addElement(AccordionElement $element): self
     {
         $this->children[] = $element;
 
@@ -63,7 +63,7 @@ class Accordion implements ElementInterface
 
     public function render(): string
     {
-        $children = implode('', array_map(fn (Element $child): string => $child->render(), $this->children));
+        $children = implode('', array_map(fn (AccordionElement $child): string => $child->render(), $this->children));
 
         return sprintf(
             '<mj-accordion%s>%s</mj-accordion>',

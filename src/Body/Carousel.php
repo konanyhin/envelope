@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body;
 
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Body\Carousel\Image;
-use Konanyhin\Envelope\Contracts\ElementInterface;
 use Konanyhin\Envelope\Traits\Attributable;
 
-class Carousel implements ElementInterface
+class Carousel extends Element
 {
     use Attributable;
 

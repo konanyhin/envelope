@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body\Accordion\Element;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
 
-class Title implements ElementInterface
+class Title extends Element
 {
     use Attributable;
 

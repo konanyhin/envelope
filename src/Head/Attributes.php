@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Head;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element as AbstractElement;
 use Konanyhin\Envelope\Head\Attributes\Element;
 
-class Attributes implements ElementInterface
+class Attributes extends AbstractElement
 {
     /** @var Element[] */
     private array $children = [];

@@ -15,12 +15,11 @@ use Konanyhin\Envelope\Body\Social;
 use Konanyhin\Envelope\Body\Spacer;
 use Konanyhin\Envelope\Body\Table;
 use Konanyhin\Envelope\Body\Text;
-use Konanyhin\Envelope\Contracts\ElementInterface;
 use Konanyhin\Envelope\Exceptions\InvalidChildElementException;
 use Konanyhin\Envelope\Exceptions\InvalidMethodException;
 use Konanyhin\Envelope\Traits\Attributable;
 
-abstract class ParentElement implements ElementInterface
+abstract class ParentElement extends Element
 {
     use Attributable;
 
@@ -28,7 +27,7 @@ abstract class ParentElement implements ElementInterface
      * List of allowed child element classes for this parent.
      * This should be overridden by concrete classes if they have specific restrictions.
      *
-     * @var array<string, class-string<ElementInterface>>
+     * @var array<string, class-string<Element>>
      */
     protected array $allowedChildClasses = [
         'addAccordion' => Accordion::class,
@@ -45,7 +44,7 @@ abstract class ParentElement implements ElementInterface
     ];
 
     /**
-     * @var ElementInterface[]
+     * @var Element[]
      */
     protected array $children = [];
 
@@ -84,13 +83,13 @@ abstract class ParentElement implements ElementInterface
     /**
      * Add one or more elements to this parent element.
      *
-     * @param ElementInterface ...$elements The elements to add.
+     * @param Element ...$elements The elements to add.
      *
      * @return $this
      *
      * @throws InvalidChildElementException if an element is not an allowed child type
      */
-    public function add(ElementInterface ...$elements): self
+    public function add(Element ...$elements): self
     {
         foreach ($elements as $element) {
             $this->validateChildElement($element);
@@ -103,11 +102,11 @@ abstract class ParentElement implements ElementInterface
     /**
      * Validates if a child element is allowed for this parent.
      *
-     * @param ElementInterface $element the child element to validate
+     * @param Element $element the child element to validate
      *
      * @throws InvalidChildElementException if the element is not an allowed child type
      */
-    protected function validateChildElement(ElementInterface $element): void
+    protected function validateChildElement(Element $element): void
     {
         $isValid = false;
         foreach ($this->allowedChildClasses as $allowedClass) {
@@ -125,6 +124,6 @@ abstract class ParentElement implements ElementInterface
 
     protected function renderChildren(): string
     {
-        return implode('', array_map(fn (ElementInterface $child): string => $child->render(), $this->children));
+        return implode('', array_map(fn (Element $child): string => $child->render(), $this->children));
     }
 }

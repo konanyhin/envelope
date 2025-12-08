@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
 
-class Image implements ElementInterface
+class Image extends Element
 {
     use Attributable;
 

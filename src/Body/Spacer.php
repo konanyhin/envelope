@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
 
-class Spacer implements ElementInterface
+class Spacer extends Element
 {
     use Attributable;
 

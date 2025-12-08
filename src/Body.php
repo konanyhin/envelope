@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope;
 
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Abstracts\ParentElement;
 use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Wrapper;
-use Konanyhin\Envelope\Contracts\ElementInterface;
 
 class Body extends ParentElement
 {
     /**
      * List of allowed child element classes for Body.
      *
-     * @var class-string<ElementInterface>[]
+     * @var class-string<Element>[]
      */
     protected array $allowedChildClasses = [
         'addSection' => Section::class,

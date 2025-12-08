@@ -2,13 +2,13 @@
 
 namespace Tests;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Exceptions\InvalidMethodException;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
-    public ElementInterface $element;
+    public Element $element;
 
     public function parentMethodExists(string $namespace): void
     {

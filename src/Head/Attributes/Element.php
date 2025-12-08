@@ -20,11 +20,11 @@ use Konanyhin\Envelope\Body\Spacer;
 use Konanyhin\Envelope\Body\Table;
 use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Body\Wrapper;
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element as AbstractElement;
 use Konanyhin\Envelope\Exceptions\InvalidMjmlTagException;
 use Konanyhin\Envelope\Traits\Attributable;
 
-class Element implements ElementInterface
+class Element extends AbstractElement
 {
     use Attributable;
 

@@ -20,7 +20,7 @@ use Konanyhin\Envelope\Body\Spacer;
 use Konanyhin\Envelope\Body\Table;
 use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Body\Wrapper;
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Exceptions\InvalidStaticMethodException;
 
 /**
@@ -44,7 +44,7 @@ use Konanyhin\Envelope\Exceptions\InvalidStaticMethodException;
 class BodyComponent
 {
     /**
-     * @var array<string, class-string<ElementInterface>>
+     * @var array<string, class-string<Element>>
      */
     private static array $classMap = [
         'accordion' => Accordion::class,
@@ -68,7 +68,7 @@ class BodyComponent
     /**
      * @param array<mixed> $arguments
      */
-    public static function __callStatic(string $name, array $arguments): ElementInterface
+    public static function __callStatic(string $name, array $arguments): Element
     {
         $name = strtolower($name);
 

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Head;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 
-class Title implements ElementInterface
+class Title extends Element
 {
     private string $content;
 

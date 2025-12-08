@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body;
 
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Abstracts\ParentElement;
-use Konanyhin\Envelope\Contracts\ElementInterface;
 
 class Wrapper extends ParentElement
 {
@@ -14,7 +14,7 @@ class Wrapper extends ParentElement
     /**
      * List of allowed child element classes for Wrapper.
      *
-     * @var array<string, class-string<ElementInterface>>
+     * @var array<string, class-string<Element>>
      */
     protected array $allowedChildClasses = [
         'addRaw' => Raw::class,

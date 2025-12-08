@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body\Social;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element as BaseElement;
 use Konanyhin\Envelope\Traits\Attributable;
 
-class Element implements ElementInterface
+class Element extends BaseElement
 {
     use Attributable;
 

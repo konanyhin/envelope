@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Head;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 
-class Preview implements ElementInterface
+class Preview extends Element
 {
     private string $content;
 

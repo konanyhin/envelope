@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Head\Attributes;
 use Konanyhin\Envelope\Head\Breakpoint;
 use Konanyhin\Envelope\Head\Font;
@@ -12,7 +12,7 @@ use Konanyhin\Envelope\Head\Preview;
 use Konanyhin\Envelope\Head\Style;
 use Konanyhin\Envelope\Head\Title;
 
-class Head implements ElementInterface
+class Head extends Element
 {
     private ?Breakpoint $breakpoint = null;
 
@@ -85,7 +85,7 @@ class Head implements ElementInterface
             $this->styleElements
         );
 
-        $childrenContent = implode('', array_map(fn (ElementInterface $child): string => $child->render(), $allChildren));
+        $childrenContent = implode('', array_map(fn (Element $child): string => $child->render(), $allChildren));
 
         return sprintf(
             '<mj-head>%s</mj-head>',

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body;
 
-use Konanyhin\Envelope\Body\Social\Element;
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
+use Konanyhin\Envelope\Body\Social\Element as SocialElement;
 use Konanyhin\Envelope\Traits\Attributable;
 
-class Social implements ElementInterface
+class Social extends Element
 {
     use Attributable;
 
@@ -55,7 +55,7 @@ class Social implements ElementInterface
         $this->validateAttributes($this->allowedAttributes);
     }
 
-    public function addElement(Element $element): self
+    public function addElement(SocialElement $element): self
     {
         $this->elements[] = $element;
 

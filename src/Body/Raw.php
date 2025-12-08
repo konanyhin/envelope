@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 
-class Raw implements ElementInterface
+class Raw extends Element
 {
     public const string TAG = 'mj-raw';
 

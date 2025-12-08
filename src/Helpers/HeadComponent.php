@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Helpers;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Exceptions\InvalidStaticMethodException;
 use Konanyhin\Envelope\Head\Attributes;
 use Konanyhin\Envelope\Head\Breakpoint;
@@ -24,7 +24,7 @@ use Konanyhin\Envelope\Head\Title;
 class HeadComponent
 {
     /**
-     * @var array<string, class-string<ElementInterface>>
+     * @var array<string, class-string<Element>>
      */
     private static array $classMap = [
         'attributes' => Attributes::class,
@@ -38,7 +38,7 @@ class HeadComponent
     /**
      * @param array<mixed> $arguments
      */
-    public static function __callStatic(string $name, array $arguments): ElementInterface
+    public static function __callStatic(string $name, array $arguments): Element
     {
         $name = strtolower($name);
 

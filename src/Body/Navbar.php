@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body;
 
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Body\Navbar\Link;
-use Konanyhin\Envelope\Contracts\ElementInterface;
 use Konanyhin\Envelope\Traits\Attributable;
 
-class Navbar implements ElementInterface
+class Navbar extends Element
 {
     use Attributable;
 

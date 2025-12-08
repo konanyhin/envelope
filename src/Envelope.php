@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope;
 
-use Konanyhin\Envelope\Contracts\ElementInterface;
+use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
 use Spatie\Mjml\Mjml;
 
 /**
  * @see https://documentation.mjml.io/section/mjml
  */
-class Envelope implements ElementInterface
+class Envelope extends Element
 {
     use Attributable;
 

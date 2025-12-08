@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Body\Accordion;
 
+use Konanyhin\Envelope\Abstracts\Element as BaseElement;
 use Konanyhin\Envelope\Body\Accordion\Element\Text;
 use Konanyhin\Envelope\Body\Accordion\Element\Title;
-use Konanyhin\Envelope\Contracts\ElementInterface;
 use Konanyhin\Envelope\Traits\Attributable;
 
-class Element implements ElementInterface
+class Element extends BaseElement
 {
     use Attributable;
 
@@ -68,7 +68,7 @@ class Element implements ElementInterface
 
     public function render(): string
     {
-        $childrenContent = implode('', array_map(fn (ElementInterface $child): string => $child->render(), array_filter([$this->title, $this->text])));
+        $childrenContent = implode('', array_map(fn (BaseElement $child): string => $child->render(), array_filter([$this->title, $this->text])));
 
         return sprintf(
             '<mj-accordion-element%s>%s</mj-accordion-element>',
