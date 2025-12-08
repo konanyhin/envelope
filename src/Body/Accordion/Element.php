@@ -102,7 +102,7 @@ class Element extends BaseElement
 
     public function render(): string
     {
-        $childrenContent = implode('', array_map(fn(BaseElement $child): string => $child->render(), array_filter([$this->title, $this->text])));
+        $childrenContent = implode('', array_map(fn (BaseElement $child): string => $child->render(), array_filter([$this->title, $this->text])));
 
         return sprintf(
             '<mj-accordion-element%s>%s</mj-accordion-element>',

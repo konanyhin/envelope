@@ -58,7 +58,7 @@ class Carousel extends Element
 
     public function render(): string
     {
-        $images = implode('', array_map(fn(Image $image) => $image->render(), $this->images));
+        $images = implode('', array_map(fn (Image $image) => $image->render(), $this->images));
 
         return sprintf(
             '<mj-carousel%s>%s</mj-carousel>',

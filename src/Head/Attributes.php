@@ -20,7 +20,7 @@ class Attributes extends AbstractElement
      */
     public function add(string $element, array $attributes): self
     {
-        $this->children[] = new Element('mj-'.$element, $attributes);
+        $this->children[] = new Element('mj-' . $element, $attributes);
 
         return $this;
     }

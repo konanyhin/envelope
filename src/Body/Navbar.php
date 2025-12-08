@@ -64,7 +64,7 @@ class Navbar extends Element
 
     public function render(): string
     {
-        $links = implode('', array_map(fn(Link $link) => $link->render(), $this->links));
+        $links = implode('', array_map(fn (Link $link) => $link->render(), $this->links));
 
         return sprintf(
             '<mj-navbar%s>%s</mj-navbar>',
