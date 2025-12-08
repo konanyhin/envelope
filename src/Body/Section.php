@@ -1,0 +1,75 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Konanyhin\Envelope\Body;
+
+use Konanyhin\Envelope\Abstracts\ParentElement;
+use Konanyhin\Envelope\Contracts\ElementInterface;
+
+class Section extends ParentElement
+{
+    public const TAG = 'mj-section';
+
+    /**
+     * @var string[]
+     */
+    private array $allowedAttributes = [
+        'background-color', 'background-position', 'background-position-x', 'background-position-y',
+        'background-repeat', 'background-size', 'background-url', 'border', 'border-bottom', 'border-left',
+        'border-radius', 'border-right', 'border-top', 'css-class', 'direction', 'full-width', 'padding',
+        'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'text-align', 'vertical-align',
+    ];
+
+    /**
+     * List of allowed child element classes for Section.
+     *
+     * @var array<string, class-string<ElementInterface>>
+     */
+    protected array $allowedChildClasses = [
+        'addColumn' => Column::class,
+        'addGroup' => Group::class,
+    ];
+
+    /**
+     * @param array{
+     *     background-color?: string,
+     *     background-position?: string,
+     *     background-position-x?: string,
+     *     background-position-y?: string,
+     *     background-repeat?: string,
+     *     background-size?: string,
+     *     background-url?: string,
+     *     border?: string,
+     *     border-bottom?: string,
+     *     border-left?: string,
+     *     border-radius?: string,
+     *     border-right?: string,
+     *     border-top?: string,
+     *     css-class?: string,
+     *     direction?: string,
+     *     full-width?: string,
+     *     padding?: string,
+     *     padding-bottom?: string,
+     *     padding-left?: string,
+     *     padding-right?: string,
+     *     padding-top?: string,
+     *     text-align?: string,
+     *     vertical-align?: string
+     * } $attributes
+     */
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->validateAttributes($this->allowedAttributes);
+    }
+
+    public function render(): string
+    {
+        return sprintf(
+            '<mj-section%s>%s</mj-section>',
+            $this->renderAttributes(),
+            $this->renderChildren()
+        );
+    }
+}
