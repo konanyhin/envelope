@@ -20,7 +20,7 @@ class Style implements ElementInterface
 
     /**
      * @param array{
-     *     inline: string
+     *     inline?: string
      * } $attributes
      */
     public function __construct(string $content, array $attributes = [])

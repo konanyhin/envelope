@@ -53,6 +53,10 @@ class Element implements ElementInterface
         'mj-class',
     ];
 
+    /**
+     * @param string                $tagName
+     * @param array<string, string> $attributes
+     */
     public function __construct(string $tagName, array $attributes = [])
     {
         if (!in_array($tagName, $this->validElements)) {

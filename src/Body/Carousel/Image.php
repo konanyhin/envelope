@@ -20,13 +20,13 @@ class Image implements ElementInterface
 
     /**
      * @param array{
-     *     alt: string,
-     *     href: string,
-     *     rel: string,
-     *     src: string,
-     *     target: string,
-     *     thumbnails-src: string,
-     *     title: string
+     *     alt?: string,
+     *     href?: string,
+     *     rel?: string,
+     *     src?: string,
+     *     target?: string,
+     *     thumbnails-src?: string,
+     *     title?: string
      * } $attributes
      */
     public function __construct(array $attributes = [])

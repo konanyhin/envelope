@@ -23,16 +23,16 @@ class Divider implements ElementInterface
 
     /**
      * @param array{
-     *     border-color: string,
-     *     border-style: string,
-     *     border-width: string,
-     *     container-background-color: string,
-     *     padding: string,
-     *     padding-bottom: string,
-     *     padding-left: string,
-     *     padding-right: string,
-     *     padding-top: string,
-     *     width: string
+     *     border-color?: string,
+     *     border-style?: string,
+     *     border-width?: string,
+     *     container-background-color?: string,
+     *     padding?: string,
+     *     padding-bottom?: string,
+     *     padding-left?: string,
+     *     padding-right?: string,
+     *     padding-top?: string,
+     *     width?: string
      * } $attributes
      */
     public function __construct(array $attributes = [])

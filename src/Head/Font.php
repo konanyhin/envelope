@@ -18,8 +18,8 @@ class Font implements ElementInterface
 
     /**
      * @param array{
-     *     name: string,
-     *     href: string
+     *     name?: string,
+     *     href?: string
      * } $attributes
      */
     public function __construct(array $attributes = [])

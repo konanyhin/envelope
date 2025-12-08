@@ -18,7 +18,7 @@ class Breakpoint implements ElementInterface
 
     /**
      * @param array{
-     *     width: string
+     *     width?: string
      * } $attributes
      */
     public function __construct(array $attributes = [])

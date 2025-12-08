@@ -23,19 +23,19 @@ class Text implements ElementInterface
 
     /**
      * @param array{
-     *     background-color: string,
-     *     color: string,
-     *     font-family: string,
-     *     font-size: string,
-     *     font-style: string,
-     *     font-weight: string,
-     *     letter-spacing: string,
-     *     line-height: string,
-     *     padding: string,
-     *     padding-bottom: string,
-     *     padding-left: string,
-     *     padding-right: string,
-     *     padding-top: string
+     *     background-color?: string,
+     *     color?: string,
+     *     font-family?: string,
+     *     font-size?: string,
+     *     font-style?: string,
+     *     font-weight?: string,
+     *     letter-spacing?: string,
+     *     line-height?: string,
+     *     padding?: string,
+     *     padding-bottom?: string,
+     *     padding-left?: string,
+     *     padding-right?: string,
+     *     padding-top?: string
      * } $attributes
      */
     public function __construct(string $content, array $attributes = [])

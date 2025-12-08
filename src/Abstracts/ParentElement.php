@@ -47,6 +47,9 @@ abstract class ParentElement implements ElementInterface
      */
     protected array $children = [];
 
+    /**
+     * @param array<string, string> $attributes
+     */
     public function __construct(array $attributes = [])
     {
         $this->attributes = $attributes;

@@ -30,22 +30,22 @@ class Accordion implements ElementInterface
 
     /**
      * @param array{
-     *     border: string,
-     *     container-background-color: string,
-     *     font-family: string,
-     *     icon-align: string,
-     *     icon-height: string,
-     *     icon-position: string,
-     *     icon-unwrapped-alt: string,
-     *     icon-unwrapped-url: string,
-     *     icon-width: string,
-     *     icon-wrapped-alt: string,
-     *     icon-wrapped-url: string,
-     *     padding: string,
-     *     padding-bottom: string,
-     *     padding-left: string,
-     *     padding-right: string,
-     *     padding-top: string
+     *     border?: string,
+     *     container-background-color?: string,
+     *     font-family?: string,
+     *     icon-align?: string,
+     *     icon-height?: string,
+     *     icon-position?: string,
+     *     icon-unwrapped-alt?: string,
+     *     icon-unwrapped-url?: string,
+     *     icon-width?: string,
+     *     icon-wrapped-alt?: string,
+     *     icon-wrapped-url?: string,
+     *     padding?: string,
+     *     padding-bottom?: string,
+     *     padding-left?: string,
+     *     padding-right?: string,
+     *     padding-top?: string
      * } $attributes
      */
     public function __construct(array $attributes = [])

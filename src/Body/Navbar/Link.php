@@ -24,23 +24,23 @@ class Link implements ElementInterface
 
     /**
      * @param array{
-     *     color: string,
-     *     font-family: string,
-     *     font-size: string,
-     *     font-style: string,
-     *     font-weight: string,
-     *     href: string,
-     *     letter-spacing: string,
-     *     line-height: string,
-     *     padding: string,
-     *     padding-bottom: string,
-     *     padding-left: string,
-     *     padding-right: string,
-     *     padding-top: string,
-     *     rel: string,
-     *     target: string,
-     *     text-decoration: string,
-     *     text-transform: string
+     *     color?: string,
+     *     font-family?: string,
+     *     font-size?: string,
+     *     font-style?: string,
+     *     font-weight?: string,
+     *     href?: string,
+     *     letter-spacing?: string,
+     *     line-height?: string,
+     *     padding?: string,
+     *     padding-bottom?: string,
+     *     padding-left?: string,
+     *     padding-right?: string,
+     *     padding-top?: string,
+     *     rel?: string,
+     *     target?: string,
+     *     text-decoration?: string,
+     *     text-transform?: string
      * } $attributes
      */
     public function __construct(string $content, array $attributes = [])

@@ -23,14 +23,14 @@ class Spacer implements ElementInterface
 
     /**
      * @param array{
-     *     container-background-color: string,
-     *     height: string,
-     *     padding: string,
-     *     padding-bottom: string,
-     *     padding-left: string,
-     *     padding-right: string,
-     *     padding-top: string,
-     *     vertical-align: string
+     *     container-background-color?: string,
+     *     height?: string,
+     *     padding?: string,
+     *     padding-bottom?: string,
+     *     padding-left?: string,
+     *     padding-right?: string,
+     *     padding-top?: string,
+     *     vertical-align?: string
      * } $attributes
      */
     public function __construct(array $attributes = [])

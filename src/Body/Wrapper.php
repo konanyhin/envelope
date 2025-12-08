@@ -32,25 +32,25 @@ class Wrapper extends ParentElement
 
     /**
      * @param array{
-     *     background-color: string,
-     *     background-position: string,
-     *     background-repeat: string,
-     *     background-size: string,
-     *     background-url: string,
-     *     border: string,
-     *     border-bottom: string,
-     *     border-left: string,
-     *     border-radius: string,
-     *     border-right: string,
-     *     border-top: string,
-     *     css-class: string,
-     *     full-width: string,
-     *     padding: string,
-     *     padding-bottom: string,
-     *     padding-left: string,
-     *     padding-right: string,
-     *     padding-top: string,
-     *     text-align: string
+     *     background-color?: string,
+     *     background-position?: string,
+     *     background-repeat?: string,
+     *     background-size?: string,
+     *     background-url?: string,
+     *     border?: string,
+     *     border-bottom?: string,
+     *     border-left?: string,
+     *     border-radius?: string,
+     *     border-right?: string,
+     *     border-top?: string,
+     *     css-class?: string,
+     *     full-width?: string,
+     *     padding?: string,
+     *     padding-bottom?: string,
+     *     padding-left?: string,
+     *     padding-right?: string,
+     *     padding-top?: string,
+     *     text-align?: string
      * } $attributes
      */
     public function __construct(array $attributes = [])

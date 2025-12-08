@@ -29,10 +29,10 @@ class Group extends ParentElement
 
     /**
      * @param array{
-     *     background-color: string,
-     *     direction: string,
-     *     vertical-align: string,
-     *     width: string
+     *     background-color?: string,
+     *     direction?: string,
+     *     vertical-align?: string,
+     *     width?: string
      * } $attributes
      */
     public function __construct(array $attributes = [])

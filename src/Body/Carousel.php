@@ -26,18 +26,18 @@ class Carousel implements ElementInterface
 
     /**
      * @param array{
-     *     align: string,
-     *     border-radius: string,
-     *     container-background-color: string,
-     *     icon-width: string,
-     *     left-icon: string,
-     *     right-icon: string,
-     *     tb-border: string,
-     *     tb-border-radius: string,
-     *     tb-hover-border-color: string,
-     *     tb-selected-border-color: string,
-     *     tb-width: string,
-     *     thumbnails: string
+     *     align?: string,
+     *     border-radius?: string,
+     *     container-background-color?: string,
+     *     icon-width?: string,
+     *     left-icon?: string,
+     *     right-icon?: string,
+     *     tb-border?: string,
+     *     tb-border-radius?: string,
+     *     tb-hover-border-color?: string,
+     *     tb-selected-border-color?: string,
+     *     tb-width?: string,
+     *     thumbnails?: string
      * } $attributes
      */
     public function __construct(array $attributes = [])

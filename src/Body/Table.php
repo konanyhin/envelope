@@ -26,21 +26,21 @@ class Table implements ElementInterface
 
     /**
      * @param array{
-     *     align: string,
-     *     cellpadding: string,
-     *     cellspacing: string,
-     *     color: string,
-     *     container-background-color: string,
-     *     font-family: string,
-     *     font-size: string,
-     *     line-height: string,
-     *     padding: string,
-     *     padding-bottom: string,
-     *     padding-left: string,
-     *     padding-right: string,
-     *     padding-top: string,
-     *     table-layout: string,
-     *     width: string
+     *     align?: string,
+     *     cellpadding?: string,
+     *     cellspacing?: string,
+     *     color?: string,
+     *     container-background-color?: string,
+     *     font-family?: string,
+     *     font-size?: string,
+     *     line-height?: string,
+     *     padding?: string,
+     *     padding-bottom?: string,
+     *     padding-left?: string,
+     *     padding-right?: string,
+     *     padding-top?: string,
+     *     table-layout?: string,
+     *     width?: string
      * } $attributes
      */
     public function __construct(string $content, array $attributes = [])
