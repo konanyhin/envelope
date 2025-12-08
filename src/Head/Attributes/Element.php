@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Head\Attributes;
 
+use Konanyhin\Envelope\Abstracts\Element as AbstractElement;
 use Konanyhin\Envelope\Body\Accordion;
 use Konanyhin\Envelope\Body\Button;
 use Konanyhin\Envelope\Body\Carousel;
@@ -20,7 +21,6 @@ use Konanyhin\Envelope\Body\Spacer;
 use Konanyhin\Envelope\Body\Table;
 use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Body\Wrapper;
-use Konanyhin\Envelope\Abstracts\Element as AbstractElement;
 use Konanyhin\Envelope\Exceptions\InvalidMjmlTagException;
 use Konanyhin\Envelope\Traits\Attributable;
 
