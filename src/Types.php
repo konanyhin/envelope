@@ -390,7 +390,7 @@ namespace Konanyhin\Envelope;
  * @phpstan-type StyleAttributes array{
  *     inline?: string
  * }
- *
- * @see https://phpstan.org/writing-php-code/phpdocs-basics#defining-type-aliases
  */
-final class Types {}
+final class Types
+{
+}
