@@ -59,12 +59,12 @@ abstract class ParentElement extends Element
     /**
      * Dynamically handles calls to add{ChildClass} methods for children that take only attributes.
      *
-     * @param string            $name      method name called
+     * @param string $name method name called
      * @param array<int, mixed> $arguments arguments passed to the method
      *
      * @return $this
      *
-     * @throws InvalidMethodException    if the method does not exist or is not a recognized add method
+     * @throws InvalidMethodException if the method does not exist or is not a recognized add method
      * @throws \InvalidArgumentException if the child element is not allowed or attributes are invalid
      */
     public function __call(string $name, array $arguments): self

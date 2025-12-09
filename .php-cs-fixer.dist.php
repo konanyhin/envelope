@@ -11,6 +11,9 @@ return (new Config())
     ->setRiskyAllowed(false)
     ->setRules([
         '@PhpCsFixer' => true,
+        'phpdoc_align' => [
+            'align' => 'left',
+        ],
         'concat_space' => [
             'spacing' => 'one'
         ],

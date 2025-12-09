@@ -391,6 +391,4 @@ namespace Konanyhin\Envelope;
  *     inline?: string
  * }
  */
-final class Types
-{
-}
+final class Types {}

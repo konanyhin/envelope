@@ -6,15 +6,19 @@ namespace Konanyhin\Envelope\Head;
 
 use Konanyhin\Envelope\Abstracts\Element as AbstractElement;
 use Konanyhin\Envelope\Head\Attributes\Element;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type HeadAttributesElementAttributes from Types
+ */
 class Attributes extends AbstractElement
 {
     /** @var Element[] */
     private array $children = [];
 
     /**
-     * @param string $element    The MJML element name (e.g., 'text', 'button').
-     * @param array  $attributes the attributes to apply to the element
+     * @param string $element The MJML element name (e.g., 'text', 'button').
+     * @param HeadAttributesElementAttributes $attributes the attributes to apply to the element
      *
      * @return $this
      */
@@ -25,6 +29,9 @@ class Attributes extends AbstractElement
         return $this;
     }
 
+    /**
+     * @param HeadAttributesElementAttributes $attributes
+     */
     public function addAll(array $attributes): self
     {
         $this->children[] = new Element('mj-all', $attributes);
@@ -33,7 +40,7 @@ class Attributes extends AbstractElement
     }
 
     /**
-     * @param array<string, mixed> $attributes
+     * @param HeadAttributesElementAttributes $attributes
      */
     public function addClass(string $className, array $attributes): self
     {
