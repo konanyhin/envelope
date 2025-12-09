@@ -22,24 +22,41 @@ use Konanyhin\Envelope\Body\Table;
 use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Body\Wrapper;
 use Konanyhin\Envelope\Exceptions\InvalidStaticMethodException;
+use Konanyhin\Envelope\Types;
 
 /**
- * @method static Accordion accordion(array $attributes = [])
- * @method static Button button(string $text, array $attributes = [])
- * @method static Carousel carousel(array $attributes = [])
- * @method static Column column(array $attributes = [])
- * @method static Divider divider(array $attributes = [])
- * @method static Group group(array $attributes = [])
- * @method static Hero hero(array $attributes = [])
- * @method static Image image(array $attributes = [])
- * @method static Navbar navbar(array $attributes = [])
+ * @phpstan-import-type AccordionMainAttributes from Types
+ * @phpstan-import-type ButtonAttributes from Types
+ * @phpstan-import-type CarouselAttributes from Types
+ * @phpstan-import-type ColumnAttributes from Types
+ * @phpstan-import-type DividerAttributes from Types
+ * @phpstan-import-type GroupAttributes from Types
+ * @phpstan-import-type HeroAttributes from Types
+ * @phpstan-import-type ImageAttributes from Types
+ * @phpstan-import-type NavbarAttributes from Types
+ * @phpstan-import-type SectionAttributes from Types
+ * @phpstan-import-type SocialAttributes from Types
+ * @phpstan-import-type SpacerAttributes from Types
+ * @phpstan-import-type TableAttributes from Types
+ * @phpstan-import-type TextAttributes from Types
+ * @phpstan-import-type WrapperAttributes from Types
+ *
+ * @method static Accordion accordion(AccordionMainAttributes $attributes = [])
+ * @method static Button button(string $text, ButtonAttributes $attributes = [])
+ * @method static Carousel carousel(CarouselAttributes $attributes = [])
+ * @method static Column column(ColumnAttributes $attributes = [])
+ * @method static Divider divider(DividerAttributes $attributes = [])
+ * @method static Group group(GroupAttributes $attributes = [])
+ * @method static Hero hero(HeroAttributes $attributes = [])
+ * @method static Image image(ImageAttributes $attributes = [])
+ * @method static Navbar navbar(NavbarAttributes $attributes = [])
  * @method static Raw raw(string $content = '')
- * @method static Section section(array $attributes = [])
- * @method static Social social(array $attributes = [])
- * @method static Spacer spacer(array $attributes = [])
- * @method static Table table(string $content, array $attributes = [])
- * @method static Text text(string $text, array $attributes = [])
- * @method static Wrapper wrapper(array $attributes = [])
+ * @method static Section section(SectionAttributes $attributes = [])
+ * @method static Social social(SocialAttributes $attributes = [])
+ * @method static Spacer spacer(SpacerAttributes $attributes = [])
+ * @method static Table table(string $content, TableAttributes $attributes = [])
+ * @method static Text text(string $text, TextAttributes $attributes = [])
+ * @method static Wrapper wrapper(WrapperAttributes $attributes = [])
  */
 class BodyComponent
 {

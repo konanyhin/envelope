@@ -12,13 +12,18 @@ use Konanyhin\Envelope\Head\Font;
 use Konanyhin\Envelope\Head\Preview;
 use Konanyhin\Envelope\Head\Style;
 use Konanyhin\Envelope\Head\Title;
+use Konanyhin\Envelope\Types;
 
 /**
+ * @phpstan-import-type BreakpointAttributes from Types
+ * @phpstan-import-type FontAttributes from Types
+ * @phpstan-import-type StyleAttributes from Types
+ *
  * @method static Attributes attributes()
- * @method static Breakpoint breakpoint(array $attributes = [])
- * @method static Font font(array $attributes = [])
+ * @method static Breakpoint breakpoint(BreakpointAttributes $attributes = [])
+ * @method static Font font(FontAttributes $attributes = [])
  * @method static Preview preview(string $content)
- * @method static Style style(string $content, array $attributes = [])
+ * @method static Style style(string $content, StyleAttributes $attributes = [])
  * @method static Title title(string $content)
  */
 class HeadComponent
