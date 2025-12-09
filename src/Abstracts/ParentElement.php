@@ -4,20 +4,8 @@ declare(strict_types=1);
 
 namespace Konanyhin\Envelope\Abstracts;
 
-use Konanyhin\Envelope\Body\Accordion;
-use Konanyhin\Envelope\Body\Button;
-use Konanyhin\Envelope\Body\Carousel;
-use Konanyhin\Envelope\Body\Divider;
-use Konanyhin\Envelope\Body\Image;
-use Konanyhin\Envelope\Body\Navbar;
-use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Slot;
-use Konanyhin\Envelope\Body\Social;
-use Konanyhin\Envelope\Body\Spacer;
-use Konanyhin\Envelope\Body\Table;
-use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Exceptions\ChildNotFoundException;
-// Import the new exception
 use Konanyhin\Envelope\Exceptions\InvalidChildElementException;
 use Konanyhin\Envelope\Exceptions\InvalidMethodException;
 use Konanyhin\Envelope\Exceptions\SlotNotFoundException;
@@ -33,19 +21,7 @@ abstract class ParentElement extends Element
      *
      * @var array<string, class-string<Element>>
      */
-    protected array $allowedChildClasses = [
-        'addAccordion' => Accordion::class,
-        'addButton' => Button::class,
-        'addCarousel' => Carousel::class,
-        'addDivider' => Divider::class,
-        'addImage' => Image::class,
-        'addNavbar' => Navbar::class,
-        'addRaw' => Raw::class,
-        'addSocial' => Social::class,
-        'addSpacer' => Spacer::class,
-        'addTable' => Table::class,
-        'addText' => Text::class,
-    ];
+    protected array $allowedChildClasses;
 
     /**
      * @var Element[]
