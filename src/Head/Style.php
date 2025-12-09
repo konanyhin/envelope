@@ -23,7 +23,6 @@ class Style extends Element
     private array $allowedAttributes = ['inline'];
 
     /**
-     * @param string $content
      * @param StyleAttributes $attributes
      */
     public function __construct(string $content, array $attributes = [])

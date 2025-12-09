@@ -28,7 +28,6 @@ class Element extends BaseElement
     ];
 
     /**
-     * @param string $content
      * @param SocialElementAttributes $attributes
      */
     public function __construct(string $content = '', array $attributes = [])

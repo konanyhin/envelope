@@ -29,7 +29,6 @@ class Text extends Element
     ];
 
     /**
-     * @param string $text
      * @param TextAttributes $attributes
      */
     public function __construct(string $text, array $attributes = [])

@@ -42,7 +42,6 @@ class Body extends ParentElement
         $this->validateAttributes($this->allowedAttributes);
     }
 
-
     /**
      * @param BodyAttributes $attributes
      */

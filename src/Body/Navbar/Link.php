@@ -27,7 +27,6 @@ class Link extends Element
     ];
 
     /**
-     * @param string $content
      * @param NavbarLinkAttributes $attributes
      */
     public function __construct(string $content, array $attributes = [])

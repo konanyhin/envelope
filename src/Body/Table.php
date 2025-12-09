@@ -29,7 +29,6 @@ class Table extends Element
     ];
 
     /**
-     * @param string $content
      * @param TableAttributes $attributes
      */
     public function __construct(string $content, array $attributes = [])

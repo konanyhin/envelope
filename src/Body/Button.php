@@ -31,7 +31,6 @@ class Button extends Element
     ];
 
     /**
-     * @param string $text
      * @param ButtonAttributes $attributes
      */
     public function __construct(string $text, array $attributes = [])

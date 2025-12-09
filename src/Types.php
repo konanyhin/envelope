@@ -8,9 +8,6 @@ namespace Konanyhin\Envelope;
  * This file is used to define global type aliases for PHPStan.
  *
  * @phpstan-type EnvelopeAttributes array{owa?: string, lang?: string, dir?: string}
- *
- *
- * Body Components
  * @phpstan-type AccordionElementAttributes array{
  *     background-color?: string,
  *     border?: string,
@@ -382,9 +379,6 @@ namespace Konanyhin\Envelope;
  *     padding-top?: string,
  *     text-align?: string
  * }
- *
- *
- * Head Components
  * @phpstan-type BreakpointAttributes array{
  *     width?: string
  * }
@@ -399,6 +393,4 @@ namespace Konanyhin\Envelope;
  *
  * @see https://phpstan.org/writing-php-code/phpdocs-basics#defining-type-aliases
  */
-final class Types
-{
-}
+final class Types {}

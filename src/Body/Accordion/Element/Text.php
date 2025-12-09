@@ -26,7 +26,6 @@ class Text extends Element
     ];
 
     /**
-     * @param string $content
      * @param AccordionElementChildAttributes $attributes
      */
     public function __construct(string $content, array $attributes = [])
