@@ -4,6 +4,7 @@ use Konanyhin\Envelope\Body\Column;
 use Konanyhin\Envelope\Body\Group;
 use Konanyhin\Envelope\Body\Hero;
 use Konanyhin\Envelope\Body\Section;
+use Konanyhin\Envelope\Body\Slot;
 use Konanyhin\Envelope\Body\Wrapper;
 
 /**
@@ -25,7 +26,7 @@ beforeEach(function () {
     $this->element = new Column();
 });
 
-it('has component :dataset', fn($class) => $this->parentMethodExists($class))->with(
+it('has component :dataset', fn ($class) => $this->parentMethodExists($class))->with(
     getBodyComponents([
         Column::class,
         Group::class,
@@ -35,7 +36,7 @@ it('has component :dataset', fn($class) => $this->parentMethodExists($class))->w
     ])
 );
 
-it('does not have component :dataset', fn($class) => $this->parentMethodNotExist($class))->with([
+it('does not have component :dataset', fn ($class) => $this->parentMethodNotExist($class))->with([
     'Column' => Column::class,
     'Group' => Group::class,
     'Hero' => Hero::class,

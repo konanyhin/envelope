@@ -22,6 +22,7 @@ class Group extends ParentElement
      */
     protected array $allowedChildClasses = [
         'addColumn' => Column::class,
+        'addSlot' => Slot::class,
     ];
 
     /**

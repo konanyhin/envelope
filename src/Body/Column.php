@@ -32,6 +32,7 @@ class Column extends ParentElement
         'addSpacer' => Spacer::class,
         'addTable' => Table::class,
         'addText' => Text::class,
+        'addSlot' => Slot::class,
     ];
 
     /**

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Konanyhin\Envelope;
 
 use Konanyhin\Envelope\Abstracts\Element;
+use Konanyhin\Envelope\Exceptions\SlotNotFoundException;
+// Import the new exception
 use Konanyhin\Envelope\Traits\Attributable;
 use Spatie\Mjml\Mjml;
 
@@ -69,6 +71,21 @@ class Envelope extends Element
         $this->head = $head;
 
         return $this;
+    }
+
+    /**
+     * Replaces a Slot element with a new element within the Envelope's body structure.
+     *
+     * @param string $slot the name of the slot to find
+     * @param Element $element the element to replace the slot with
+     *
+     * @return Element Returns new element
+     *
+     * @throws SlotNotFoundException if the slot with the given name is not found
+     */
+    public function replace(string $slot, Element $element): Element
+    {
+        return $this->body->replace($slot, $element);
     }
 
     public function toHtml(): string

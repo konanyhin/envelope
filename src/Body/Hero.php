@@ -25,6 +25,7 @@ class Hero extends ParentElement
         'addImage' => Image::class,
         'addRaw' => Raw::class,
         'addText' => Text::class,
+        'addSlot' => Slot::class,
     ];
 
     /**

@@ -23,6 +23,7 @@ class Wrapper extends ParentElement
     protected array $allowedChildClasses = [
         'addRaw' => Raw::class,
         'addSection' => Section::class,
+        'addSlot' => Slot::class,
     ];
 
     /**

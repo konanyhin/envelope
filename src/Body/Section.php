@@ -23,6 +23,7 @@ class Section extends ParentElement
     protected array $allowedChildClasses = [
         'addColumn' => Column::class,
         'addGroup' => Group::class,
+        'addSlot' => Slot::class,
     ];
 
     /**

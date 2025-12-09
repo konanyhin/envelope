@@ -11,12 +11,16 @@ use Konanyhin\Envelope\Body\Divider;
 use Konanyhin\Envelope\Body\Image;
 use Konanyhin\Envelope\Body\Navbar;
 use Konanyhin\Envelope\Body\Raw;
+use Konanyhin\Envelope\Body\Slot;
 use Konanyhin\Envelope\Body\Social;
 use Konanyhin\Envelope\Body\Spacer;
 use Konanyhin\Envelope\Body\Table;
 use Konanyhin\Envelope\Body\Text;
+use Konanyhin\Envelope\Exceptions\ChildNotFoundException;
+// Import the new exception
 use Konanyhin\Envelope\Exceptions\InvalidChildElementException;
 use Konanyhin\Envelope\Exceptions\InvalidMethodException;
+use Konanyhin\Envelope\Exceptions\SlotNotFoundException;
 use Konanyhin\Envelope\Traits\Attributable;
 
 abstract class ParentElement extends Element
@@ -100,6 +104,35 @@ abstract class ParentElement extends Element
     }
 
     /**
+     * Recursively searches for a Slot element by name and replaces it.
+     *
+     * @param string $slot the name of the slot to find
+     * @param Element $element the element to replace the slot with
+     *
+     * @return Element Returns replacement element
+     *
+     * @throws SlotNotFoundException if the slot with the given name is not found
+     */
+    public function replace(string $slot, Element $element): Element
+    {
+        foreach ($this->children as $child) {
+            if ($child instanceof Slot && $child->getName() === $slot) {
+                return $this->replaceChild($child, $element);
+            }
+
+            if ($child instanceof ParentElement) {
+                try {
+                    return $child->replace($slot, $element);
+                } catch (SlotNotFoundException $e) {
+                    // Slot not found in this child branch, continue searching in other children
+                }
+            }
+        }
+
+        throw new SlotNotFoundException($slot);
+    }
+
+    /**
      * Validates if a child element is allowed for this parent.
      *
      * @param Element $element the child element to validate
@@ -120,6 +153,30 @@ abstract class ParentElement extends Element
         if (!$isValid) {
             throw new InvalidChildElementException(get_class($element), static::class);
         }
+    }
+
+    /**
+     * Replaces a child element with a new element.
+     *
+     * @param Element $oldElement the child element to replace
+     * @param Element $newElement the child element to replaced with
+     *
+     * @return Element the new element that replaced the old one
+     *
+     * @throws InvalidChildElementException if the new element is not an allowed child type for this parent
+     * @throws ChildNotFoundException if the old element is not found among the children
+     */
+    protected function replaceChild(Element $oldElement, Element $newElement): Element
+    {
+        $this->validateChildElement($newElement);
+
+        foreach ($this->children as $key => $child) {
+            if ($child === $oldElement) {
+                return $this->children[$key] = $newElement;
+            }
+        }
+
+        throw new ChildNotFoundException(get_class($oldElement), static::class);
     }
 
     protected function renderChildren(): string

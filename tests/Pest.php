@@ -11,6 +11,7 @@ use Konanyhin\Envelope\Body\Image;
 use Konanyhin\Envelope\Body\Navbar;
 use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Section;
+use Konanyhin\Envelope\Body\Slot;
 use Konanyhin\Envelope\Body\Social;
 use Konanyhin\Envelope\Body\Spacer;
 use Konanyhin\Envelope\Body\Table;
@@ -34,10 +35,11 @@ function getBodyComponents(array $except = []): array
         'Navbar' => Navbar::class,
         'Raw' => Raw::class,
         'Section' => Section::class,
+        'Slot' => Slot::class,
         'Social' => Social::class,
         'Spacer' => Spacer::class,
         'Table' => Table::class,
         'Text' => Text::class,
         'Wrapper' => Wrapper::class,
-    ], fn(string $class) => !in_array($class, $except));
+    ], fn (string $class) => !in_array($class, $except));
 }

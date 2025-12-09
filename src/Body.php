@@ -8,6 +8,7 @@ use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Abstracts\ParentElement;
 use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Section;
+use Konanyhin\Envelope\Body\Slot;
 use Konanyhin\Envelope\Body\Wrapper;
 
 /**
@@ -24,6 +25,7 @@ class Body extends ParentElement
         'addSection' => Section::class,
         'addWrapper' => Wrapper::class,
         'addRaw' => Raw::class,
+        'addSlot' => Slot::class,
     ];
 
     /**
