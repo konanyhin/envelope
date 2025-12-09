@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Abstracts\ParentElement;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type HeroAttributes from Types
+ */
 class Hero extends ParentElement
 {
     public const string TAG = 'mj-hero';
@@ -33,22 +37,7 @@ class Hero extends ParentElement
     ];
 
     /**
-     * @param array{
-     *     background-color?: string,
-     *     background-height?: string,
-     *     background-position?: string,
-     *     background-url?: string,
-     *     background-width?: string,
-     *     height?: string,
-     *     mode?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     vertical-align?: string,
-     *     width?: string
-     * } $attributes
+     * @param HeroAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {

@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body\Carousel;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type CarouselImageAttributes from Types
+ */
 class Image extends Element
 {
     use Attributable;
@@ -19,15 +23,7 @@ class Image extends Element
     ];
 
     /**
-     * @param array{
-     *     alt?: string,
-     *     href?: string,
-     *     rel?: string,
-     *     src?: string,
-     *     target?: string,
-     *     thumbnails-src?: string,
-     *     title?: string
-     * } $attributes
+     * @param CarouselImageAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {

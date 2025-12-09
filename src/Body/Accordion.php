@@ -7,7 +7,11 @@ namespace Konanyhin\Envelope\Body;
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Body\Accordion\Element as AccordionElement;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type AccordionMainAttributes from Types
+ */
 class Accordion extends Element
 {
     use Attributable;
@@ -29,24 +33,7 @@ class Accordion extends Element
     private array $children = [];
 
     /**
-     * @param array{
-     *     border?: string,
-     *     container-background-color?: string,
-     *     font-family?: string,
-     *     icon-align?: string,
-     *     icon-height?: string,
-     *     icon-position?: string,
-     *     icon-unwrapped-alt?: string,
-     *     icon-unwrapped-url?: string,
-     *     icon-width?: string,
-     *     icon-wrapped-alt?: string,
-     *     icon-wrapped-url?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string
-     * } $attributes
+     * @param AccordionMainAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {

@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body\Navbar;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type NavbarLinkAttributes from Types
+ */
 class Link extends Element
 {
     use Attributable;
@@ -23,25 +27,8 @@ class Link extends Element
     ];
 
     /**
-     * @param array{
-     *     color?: string,
-     *     font-family?: string,
-     *     font-size?: string,
-     *     font-style?: string,
-     *     font-weight?: string,
-     *     href?: string,
-     *     letter-spacing?: string,
-     *     line-height?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     rel?: string,
-     *     target?: string,
-     *     text-decoration?: string,
-     *     text-transform?: string
-     * } $attributes
+     * @param string $content
+     * @param NavbarLinkAttributes $attributes
      */
     public function __construct(string $content, array $attributes = [])
     {

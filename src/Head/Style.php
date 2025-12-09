@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Head;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type StyleAttributes from Types
+ */
 class Style extends Element
 {
     use Attributable;
@@ -19,9 +23,8 @@ class Style extends Element
     private array $allowedAttributes = ['inline'];
 
     /**
-     * @param array{
-     *     inline?: string
-     * } $attributes
+     * @param string $content
+     * @param StyleAttributes $attributes
      */
     public function __construct(string $content, array $attributes = [])
     {

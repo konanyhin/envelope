@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type TableAttributes from Types
+ */
 class Table extends Element
 {
     use Attributable;
@@ -25,23 +29,8 @@ class Table extends Element
     ];
 
     /**
-     * @param array{
-     *     align?: string,
-     *     cellpadding?: string,
-     *     cellspacing?: string,
-     *     color?: string,
-     *     container-background-color?: string,
-     *     font-family?: string,
-     *     font-size?: string,
-     *     line-height?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     table-layout?: string,
-     *     width?: string
-     * } $attributes
+     * @param string $content
+     * @param TableAttributes $attributes
      */
     public function __construct(string $content, array $attributes = [])
     {

@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type TextAttributes from Types
+ */
 class Text extends Element
 {
     use Attributable;
@@ -25,25 +29,8 @@ class Text extends Element
     ];
 
     /**
-     * @param array{
-     *     align?: string,
-     *     color?: string,
-     *     container-background-color?: string,
-     *     font-family?: string,
-     *     font-size?: string,
-     *     font-style?: string,
-     *     font-weight?: string,
-     *     height?: string,
-     *     letter-spacing?: string,
-     *     line-height?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     text-decoration?: string,
-     *     text-transform?: string
-     * } $attributes
+     * @param string $text
+     * @param TextAttributes $attributes
      */
     public function __construct(string $text, array $attributes = [])
     {

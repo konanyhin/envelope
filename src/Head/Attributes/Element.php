@@ -23,7 +23,11 @@ use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Body\Wrapper;
 use Konanyhin\Envelope\Exceptions\InvalidMjmlTagException;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type HeadAttributesElementAttributes from Types
+ */
 class Element extends AbstractElement
 {
     use Attributable;
@@ -55,7 +59,7 @@ class Element extends AbstractElement
     ];
 
     /**
-     * @param array<string, string> $attributes
+     * @param HeadAttributesElementAttributes $attributes
      */
     public function __construct(string $tagName, array $attributes = [])
     {

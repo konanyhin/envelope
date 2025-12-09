@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Abstracts\ParentElement;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type GroupAttributes from Types
+ */
 class Group extends ParentElement
 {
     public const string TAG = 'mj-group';
@@ -28,12 +32,7 @@ class Group extends ParentElement
     ];
 
     /**
-     * @param array{
-     *     background-color?: string,
-     *     direction?: string,
-     *     vertical-align?: string,
-     *     width?: string
-     * } $attributes
+     * @param GroupAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {

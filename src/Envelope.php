@@ -9,6 +9,8 @@ use Konanyhin\Envelope\Traits\Attributable;
 use Spatie\Mjml\Mjml;
 
 /**
+ * @phpstan-import-type EnvelopeAttributes from Types
+ *
  * @see https://documentation.mjml.io/section/mjml
  */
 class Envelope extends Element
@@ -27,7 +29,7 @@ class Envelope extends Element
     private Head $head;
 
     /**
-     * @param array{owa?: string, lang?: string, dir?: string} $attributes
+     * @param EnvelopeAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -38,7 +40,7 @@ class Envelope extends Element
     }
 
     /**
-     * @param array{owa?: string, lang?: string, dir?: string} $attributes
+     * @param EnvelopeAttributes $attributes
      */
     public static function new(array $attributes = []): self
     {

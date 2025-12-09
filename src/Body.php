@@ -10,6 +10,9 @@ use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Wrapper;
 
+/**
+ * @phpstan-import-type BodyAttributes from Types
+ */
 class Body extends ParentElement
 {
     /**
@@ -31,11 +34,7 @@ class Body extends ParentElement
     ];
 
     /**
-     * @param array{
-     *     background-color?: string,
-     *     css-class?: string,
-     *     width?: string
-     * } $attributes
+     * @param BodyAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -43,12 +42,9 @@ class Body extends ParentElement
         $this->validateAttributes($this->allowedAttributes);
     }
 
+
     /**
-     * @param array{
-     *     background-color?: string,
-     *     css-class?: string,
-     *     width?: string
-     * } $attributes
+     * @param BodyAttributes $attributes
      */
     public static function new(array $attributes = []): self
     {

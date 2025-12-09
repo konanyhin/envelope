@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Abstracts\ParentElement;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type ColumnAttributes from Types
+ */
 class Column extends ParentElement
 {
     public const string TAG = 'mj-column';
@@ -41,30 +45,7 @@ class Column extends ParentElement
     ];
 
     /**
-     * @param array{
-     *     background-color?: string,
-     *     border?: string,
-     *     border-bottom?: string,
-     *     border-left?: string,
-     *     border-radius?: string,
-     *     border-right?: string,
-     *     border-top?: string,
-     *     css-class?: string,
-     *     inner-background-color?: string,
-     *     inner-border?: string,
-     *     inner-border-bottom?: string,
-     *     inner-border-left?: string,
-     *     inner-border-radius?: string,
-     *     inner-border-right?: string,
-     *     inner-border-top?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     vertical-align?: string,
-     *     width?: string
-     * } $attributes
+     * @param ColumnAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {

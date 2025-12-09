@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type DividerAttributes from Types
+ */
 class Divider extends Element
 {
     use Attributable;
@@ -22,18 +26,7 @@ class Divider extends Element
     ];
 
     /**
-     * @param array{
-     *     border-color?: string,
-     *     border-style?: string,
-     *     border-width?: string,
-     *     container-background-color?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     width?: string
-     * } $attributes
+     * @param DividerAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {

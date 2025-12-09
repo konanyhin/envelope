@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type ImageAttributes from Types
+ */
 class Image extends Element
 {
     use Attributable;
@@ -23,33 +27,7 @@ class Image extends Element
     ];
 
     /**
-     * @param array{
-     *     align?: string,
-     *     alt?: string,
-     *     border?: string,
-     *     border-bottom?: string,
-     *     border-left?: string,
-     *     border-radius?: string,
-     *     border-right?: string,
-     *     border-top?: string,
-     *     container-background-color?: string,
-     *     fluid-on-mobile?: string,
-     *     height?: string,
-     *     href?: string,
-     *     name?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     rel?: string,
-     *     src?: string,
-     *     srcset?: string,
-     *     target?: string,
-     *     title?: string,
-     *     usemap?: string,
-     *     width?: string
-     * } $attributes
+     * @param ImageAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {

@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Head;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type BreakpointAttributes from Types
+ */
 class Breakpoint extends Element
 {
     use Attributable;
@@ -17,9 +21,7 @@ class Breakpoint extends Element
     private array $allowedAttributes = ['width'];
 
     /**
-     * @param array{
-     *     width?: string
-     * } $attributes
+     * @param BreakpointAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {

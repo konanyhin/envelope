@@ -7,7 +7,11 @@ namespace Konanyhin\Envelope\Body;
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Body\Social\Element as SocialElement;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type SocialAttributes from Types
+ */
 class Social extends Element
 {
     use Attributable;
@@ -29,28 +33,7 @@ class Social extends Element
     ];
 
     /**
-     * @param array{
-     *     align?: string,
-     *     border-radius?: string,
-     *     color?: string,
-     *     container-background-color?: string,
-     *     font-family?: string,
-     *     font-size?: string,
-     *     font-style?: string,
-     *     font-weight?: string,
-     *     icon-height?: string,
-     *     icon-size?: string,
-     *     inner-padding?: string,
-     *     line-height?: string,
-     *     mode?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     table-layout?: string,
-     *     text-decoration?: string
-     * } $attributes
+     * @param SocialAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {

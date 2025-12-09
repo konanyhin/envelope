@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type SpacerAttributes from Types
+ */
 class Spacer extends Element
 {
     use Attributable;
@@ -22,16 +26,7 @@ class Spacer extends Element
     ];
 
     /**
-     * @param array{
-     *     container-background-color?: string,
-     *     height?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     vertical-align?: string
-     * } $attributes
+     * @param SpacerAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {

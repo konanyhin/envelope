@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body\Social;
 
 use Konanyhin\Envelope\Abstracts\Element as BaseElement;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type SocialElementAttributes from Types
+ */
 class Element extends BaseElement
 {
     use Attributable;
@@ -24,32 +28,8 @@ class Element extends BaseElement
     ];
 
     /**
-     * @param array{
-     *     align?: string,
-     *     background-color?: string,
-     *     border-radius?: string,
-     *     color?: string,
-     *     font-family?: string,
-     *     font-size?: string,
-     *     font-style?: string,
-     *     font-weight?: string,
-     *     href?: string,
-     *     icon-height?: string,
-     *     icon-size?: string,
-     *     line-height?: string,
-     *     name?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     rel?: string,
-     *     src?: string,
-     *     target?: string,
-     *     text-decoration?: string,
-     *     title?: string,
-     *     vertical-align?: string
-     * } $attributes
+     * @param string $content
+     * @param SocialElementAttributes $attributes
      */
     public function __construct(string $content = '', array $attributes = [])
     {

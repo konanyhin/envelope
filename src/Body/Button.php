@@ -6,7 +6,11 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type ButtonAttributes from Types
+ */
 class Button extends Element
 {
     use Attributable;
@@ -27,39 +31,8 @@ class Button extends Element
     ];
 
     /**
-     * @param array{
-     *     align?: string,
-     *     background-color?: string,
-     *     border?: string,
-     *     border-bottom?: string,
-     *     border-left?: string,
-     *     border-radius?: string,
-     *     border-right?: string,
-     *     border-top?: string,
-     *     color?: string,
-     *     container-background-color?: string,
-     *     font-family?: string,
-     *     font-size?: string,
-     *     font-style?: string,
-     *     font-weight?: string,
-     *     height?: string,
-     *     href?: string,
-     *     inner-padding?: string,
-     *     letter-spacing?: string,
-     *     line-height?: string,
-     *     padding?: string,
-     *     padding-bottom?: string,
-     *     padding-left?: string,
-     *     padding-right?: string,
-     *     padding-top?: string,
-     *     rel?: string,
-     *     target?: string,
-     *     text-align?: string,
-     *     text-decoration?: string,
-     *     text-transform?: string,
-     *     vertical-align?: string,
-     *     width?: string
-     * } $attributes
+     * @param string $text
+     * @param ButtonAttributes $attributes
      */
     public function __construct(string $text, array $attributes = [])
     {

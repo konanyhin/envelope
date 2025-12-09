@@ -7,7 +7,11 @@ namespace Konanyhin\Envelope\Body;
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Body\Carousel\Image;
 use Konanyhin\Envelope\Traits\Attributable;
+use Konanyhin\Envelope\Types;
 
+/**
+ * @phpstan-import-type CarouselAttributes from Types
+ */
 class Carousel extends Element
 {
     use Attributable;
@@ -28,20 +32,7 @@ class Carousel extends Element
     ];
 
     /**
-     * @param array{
-     *     align?: string,
-     *     border-radius?: string,
-     *     container-background-color?: string,
-     *     icon-width?: string,
-     *     left-icon?: string,
-     *     right-icon?: string,
-     *     tb-border?: string,
-     *     tb-border-radius?: string,
-     *     tb-hover-border-color?: string,
-     *     tb-selected-border-color?: string,
-     *     tb-width?: string,
-     *     thumbnails?: string
-     * } $attributes
+     * @param CarouselAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {
