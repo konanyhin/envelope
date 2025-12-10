@@ -5,23 +5,29 @@ declare(strict_types=1);
 namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
+use Konanyhin\Envelope\Abstracts\ParentElement;
 use Konanyhin\Envelope\Body\Carousel\Image;
 use Konanyhin\Envelope\Traits\Attributable;
 use Konanyhin\Envelope\Types;
 
 /**
  * @phpstan-import-type CarouselAttributes from Types
+ * @phpstan-import-type CarouselImageAttributes from Types
+ *
+ * @method self addCarouselImage(CarouselImageAttributes $attributes = [])
  */
-class Carousel extends Element
+class Carousel extends ParentElement
 {
     use Attributable;
 
     public const string TAG = 'mj-carousel';
 
     /**
-     * @var Image[]
+     * @var array<string, class-string<Element>>
      */
-    private array $images = [];
+    protected array $allowedChildClasses = [
+        'addCarouselImage' => Image::class,
+    ];
 
     /**
      * @var string[]
@@ -36,21 +42,12 @@ class Carousel extends Element
      */
     public function __construct(array $attributes = [])
     {
-        $this->attributes = $attributes;
+        parent::__construct($attributes);
         $this->validateAttributes($this->allowedAttributes);
-    }
-
-    public function addImage(Image $image): self
-    {
-        $this->images[] = $image;
-
-        return $this;
     }
 
     public function render(): string
     {
-        $images = implode('', array_map(fn (Image $image): string => $image->render(), $this->images));
-
-        return $this->renderTag($images);
+        return $this->renderTag($this->renderChildren());
     }
 }

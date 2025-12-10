@@ -5,23 +5,29 @@ declare(strict_types=1);
 namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
+use Konanyhin\Envelope\Abstracts\ParentElement;
 use Konanyhin\Envelope\Body\Social\Element as SocialElement;
 use Konanyhin\Envelope\Traits\Attributable;
 use Konanyhin\Envelope\Types;
 
 /**
  * @phpstan-import-type SocialAttributes from Types
+ * @phpstan-import-type SocialElementAttributes from Types
+ *
+ * @method self addSocialElement(string $content = '', SocialElementAttributes $attributes = [])
  */
-class Social extends Element
+class Social extends ParentElement
 {
     use Attributable;
 
     public const string TAG = 'mj-social';
 
     /**
-     * @var SocialElement[]
+     * @var array<string, class-string<Element>>
      */
-    private array $elements = [];
+    protected array $allowedChildClasses = [
+        'addSocialElement' => SocialElement::class,
+    ];
 
     /**
      * @var string[]
@@ -37,21 +43,12 @@ class Social extends Element
      */
     public function __construct(array $attributes = [])
     {
-        $this->attributes = $attributes;
+        parent::__construct($attributes);
         $this->validateAttributes($this->allowedAttributes);
-    }
-
-    public function addElement(SocialElement $element): self
-    {
-        $this->elements[] = $element;
-
-        return $this;
     }
 
     public function render(): string
     {
-        $elements = implode('', array_map(fn (SocialElement $element): string => $element->render(), $this->elements));
-
-        return $this->renderTag($elements);
+        return $this->renderTag($this->renderChildren());
     }
 }

@@ -5,18 +5,29 @@ declare(strict_types=1);
 namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
+use Konanyhin\Envelope\Abstracts\ParentElement;
 use Konanyhin\Envelope\Body\Accordion\Element as AccordionElement;
 use Konanyhin\Envelope\Traits\Attributable;
 use Konanyhin\Envelope\Types;
 
 /**
  * @phpstan-import-type AccordionMainAttributes from Types
+ * @phpstan-import-type AccordionElementAttributes from Types
+ *
+ * @method self addAccordionElement(AccordionElementAttributes $attributes = [])
  */
-class Accordion extends Element
+class Accordion extends ParentElement
 {
     use Attributable;
 
     public const string TAG = 'mj-accordion';
+
+    /**
+     * @var array<string, class-string<Element>>
+     */
+    protected array $allowedChildClasses = [
+        'addAccordionElement' => AccordionElement::class,
+    ];
 
     /**
      * @var string[]
@@ -28,30 +39,16 @@ class Accordion extends Element
     ];
 
     /**
-     * @var AccordionElement[]
-     */
-    private array $children = [];
-
-    /**
      * @param AccordionMainAttributes $attributes
      */
     public function __construct(array $attributes = [])
     {
-        $this->attributes = $attributes;
+        parent::__construct($attributes);
         $this->validateAttributes($this->allowedAttributes);
-    }
-
-    public function addElement(AccordionElement $element): self
-    {
-        $this->children[] = $element;
-
-        return $this;
     }
 
     public function render(): string
     {
-        $children = implode('', array_map(fn (AccordionElement $child): string => $child->render(), $this->children));
-
-        return $this->renderTag($children);
+        return $this->renderTag($this->renderChildren());
     }
 }
