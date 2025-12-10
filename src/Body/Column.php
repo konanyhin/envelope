@@ -10,6 +10,29 @@ use Konanyhin\Envelope\Types;
 
 /**
  * @phpstan-import-type ColumnAttributes from Types
+ * @phpstan-import-type AccordionMainAttributes from Types
+ * @phpstan-import-type ButtonAttributes from Types
+ * @phpstan-import-type CarouselAttributes from Types
+ * @phpstan-import-type DividerAttributes from Types
+ * @phpstan-import-type ImageAttributes from Types
+ * @phpstan-import-type NavbarAttributes from Types
+ * @phpstan-import-type SocialAttributes from Types
+ * @phpstan-import-type SpacerAttributes from Types
+ * @phpstan-import-type TableAttributes from Types
+ * @phpstan-import-type TextAttributes from Types
+ *
+ * @method self addAccordion(AccordionMainAttributes $attributes = [])
+ * @method self addButton(string $text, ButtonAttributes $attributes = [])
+ * @method self addCarousel(CarouselAttributes $attributes = [])
+ * @method self addDivider(DividerAttributes $attributes = [])
+ * @method self addImage(ImageAttributes $attributes = [])
+ * @method self addNavbar(NavbarAttributes $attributes = [])
+ * @method self addRaw(string $content = '')
+ * @method self addSocial(SocialAttributes $attributes = [])
+ * @method self addSpacer(SpacerAttributes $attributes = [])
+ * @method self addTable(string $content, TableAttributes $attributes = [])
+ * @method self addText(string $text, TextAttributes $attributes = [])
+ * @method self addSlot(string $name)
  */
 class Column extends ParentElement
 {

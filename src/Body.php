@@ -10,9 +10,17 @@ use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Slot;
 use Konanyhin\Envelope\Body\Wrapper;
+use Konanyhin\Envelope\Types;
 
 /**
  * @phpstan-import-type BodyAttributes from Types
+ * @phpstan-import-type SectionAttributes from Types
+ * @phpstan-import-type WrapperAttributes from Types
+ *
+ * @method self addSection(SectionAttributes $attributes = [])
+ * @method self addWrapper(WrapperAttributes $attributes = [])
+ * @method self addRaw(string $content = '')
+ * @method self addSlot(string $name)
  */
 class Body extends ParentElement
 {

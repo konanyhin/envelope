@@ -10,6 +10,15 @@ use Konanyhin\Envelope\Types;
 
 /**
  * @phpstan-import-type HeroAttributes from Types
+ * @phpstan-import-type ButtonAttributes from Types
+ * @phpstan-import-type ImageAttributes from Types
+ * @phpstan-import-type TextAttributes from Types
+ *
+ * @method self addButton(string $text, ButtonAttributes $attributes = [])
+ * @method self addImage(ImageAttributes $attributes = [])
+ * @method self addRaw(string $content = '')
+ * @method self addText(string $text, TextAttributes $attributes = [])
+ * @method self addSlot(string $name)
  */
 class Hero extends ParentElement
 {

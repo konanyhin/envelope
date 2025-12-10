@@ -10,6 +10,12 @@ use Konanyhin\Envelope\Types;
 
 /**
  * @phpstan-import-type SectionAttributes from Types
+ * @phpstan-import-type ColumnAttributes from Types
+ * @phpstan-import-type GroupAttributes from Types
+ *
+ * @method self addColumn(ColumnAttributes $attributes = [])
+ * @method self addGroup(GroupAttributes $attributes = [])
+ * @method self addSlot(string $name)
  */
 class Section extends ParentElement
 {

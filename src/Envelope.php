@@ -6,7 +6,6 @@ namespace Konanyhin\Envelope;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Exceptions\SlotNotFoundException;
-// Import the new exception
 use Konanyhin\Envelope\Traits\Attributable;
 use Spatie\Mjml\Mjml;
 
