@@ -21,18 +21,18 @@ use Konanyhin\Envelope\Types;
  * @phpstan-import-type TableAttributes from Types
  * @phpstan-import-type TextAttributes from Types
  *
- * @method self addAccordion(AccordionMainAttributes $attributes = [])
- * @method self addButton(string $text, ButtonAttributes $attributes = [])
- * @method self addCarousel(CarouselAttributes $attributes = [])
- * @method self addDivider(DividerAttributes $attributes = [])
- * @method self addImage(ImageAttributes $attributes = [])
- * @method self addNavbar(NavbarAttributes $attributes = [])
- * @method self addRaw(string $content = '')
- * @method self addSocial(SocialAttributes $attributes = [])
- * @method self addSpacer(SpacerAttributes $attributes = [])
- * @method self addTable(string $content, TableAttributes $attributes = [])
- * @method self addText(string $text, TextAttributes $attributes = [])
- * @method self addSlot(string $name)
+ * @method Accordion addAccordion(AccordionMainAttributes $attributes = [])
+ * @method Button addButton(string $text, ButtonAttributes $attributes = [])
+ * @method Carousel addCarousel(CarouselAttributes $attributes = [])
+ * @method Divider addDivider(DividerAttributes $attributes = [])
+ * @method Image addImage(ImageAttributes $attributes = [])
+ * @method Navbar addNavbar(NavbarAttributes $attributes = [])
+ * @method Raw addRaw(string $content = '')
+ * @method Social addSocial(SocialAttributes $attributes = [])
+ * @method Spacer addSpacer(SpacerAttributes $attributes = [])
+ * @method Table addTable(string $content, TableAttributes $attributes = [])
+ * @method Text addText(string $text, TextAttributes $attributes = [])
+ * @method Slot addSlot(string $name)
  */
 class Column extends ParentElement
 {

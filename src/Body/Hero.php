@@ -14,11 +14,11 @@ use Konanyhin\Envelope\Types;
  * @phpstan-import-type ImageAttributes from Types
  * @phpstan-import-type TextAttributes from Types
  *
- * @method self addButton(string $text, ButtonAttributes $attributes = [])
- * @method self addImage(ImageAttributes $attributes = [])
- * @method self addRaw(string $content = '')
- * @method self addText(string $text, TextAttributes $attributes = [])
- * @method self addSlot(string $name)
+ * @method Button addButton(string $text, ButtonAttributes $attributes = [])
+ * @method Image addImage(ImageAttributes $attributes = [])
+ * @method Raw addRaw(string $content = '')
+ * @method Text addText(string $text, TextAttributes $attributes = [])
+ * @method Slot addSlot(string $name)
  */
 class Hero extends ParentElement
 {

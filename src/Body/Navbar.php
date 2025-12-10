@@ -14,7 +14,7 @@ use Konanyhin\Envelope\Types;
  * @phpstan-import-type NavbarAttributes from Types
  * @phpstan-import-type NavbarLinkAttributes from Types
  *
- * @method self addNavbarLink(string $content, NavbarLinkAttributes $attributes = [])
+ * @method Link addNavbarLink(string $content, NavbarLinkAttributes $attributes = [])
  */
 class Navbar extends ParentElement
 {

@@ -14,7 +14,7 @@ use Konanyhin\Envelope\Types;
  * @phpstan-import-type CarouselAttributes from Types
  * @phpstan-import-type CarouselImageAttributes from Types
  *
- * @method self addCarouselImage(CarouselImageAttributes $attributes = [])
+ * @method Image addCarouselImage(CarouselImageAttributes $attributes = [])
  */
 class Carousel extends ParentElement
 {

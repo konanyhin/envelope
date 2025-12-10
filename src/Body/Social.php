@@ -14,7 +14,7 @@ use Konanyhin\Envelope\Types;
  * @phpstan-import-type SocialAttributes from Types
  * @phpstan-import-type SocialElementAttributes from Types
  *
- * @method self addSocialElement(string $content = '', SocialElementAttributes $attributes = [])
+ * @method SocialElement addSocialElement(string $content = '', SocialElementAttributes $attributes = [])
  */
 class Social extends ParentElement
 {

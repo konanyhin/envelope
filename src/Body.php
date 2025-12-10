@@ -16,10 +16,10 @@ use Konanyhin\Envelope\Body\Wrapper;
  * @phpstan-import-type SectionAttributes from Types
  * @phpstan-import-type WrapperAttributes from Types
  *
- * @method self addSection(SectionAttributes $attributes = [])
- * @method self addWrapper(WrapperAttributes $attributes = [])
- * @method self addRaw(string $content = '')
- * @method self addSlot(string $name)
+ * @method Section addSection(SectionAttributes $attributes = [])
+ * @method Wrapper addWrapper(WrapperAttributes $attributes = [])
+ * @method Raw addRaw(string $content = '')
+ * @method Slot addSlot(string $name)
  */
 class Body extends ParentElement
 {

@@ -13,9 +13,9 @@ use Konanyhin\Envelope\Types;
  * @phpstan-import-type ColumnAttributes from Types
  * @phpstan-import-type GroupAttributes from Types
  *
- * @method self addColumn(ColumnAttributes $attributes = [])
- * @method self addGroup(GroupAttributes $attributes = [])
- * @method self addSlot(string $name)
+ * @method Column addColumn(ColumnAttributes $attributes = [])
+ * @method Group addGroup(GroupAttributes $attributes = [])
+ * @method Slot addSlot(string $name)
  */
 class Section extends ParentElement
 {

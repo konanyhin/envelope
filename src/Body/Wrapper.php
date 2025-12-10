@@ -12,9 +12,9 @@ use Konanyhin\Envelope\Types;
  * @phpstan-import-type WrapperAttributes from Types
  * @phpstan-import-type SectionAttributes from Types
  *
- * @method self addRaw(string $content = '')
- * @method self addSection(SectionAttributes $attributes = [])
- * @method self addSlot(string $name)
+ * @method Raw addRaw(string $content = '')
+ * @method Section addSection(SectionAttributes $attributes = [])
+ * @method Slot addSlot(string $name)
  */
 class Wrapper extends ParentElement
 {

@@ -14,7 +14,7 @@ use Konanyhin\Envelope\Types;
  * @phpstan-import-type AccordionMainAttributes from Types
  * @phpstan-import-type AccordionElementAttributes from Types
  *
- * @method self addAccordionElement(AccordionElementAttributes $attributes = [])
+ * @method AccordionElement addAccordionElement(AccordionElementAttributes $attributes = [])
  */
 class Accordion extends ParentElement
 {

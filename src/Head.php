@@ -18,12 +18,12 @@ use Konanyhin\Envelope\Head\Title;
  * @phpstan-import-type FontAttributes from Types
  * @phpstan-import-type StyleAttributes from Types
  *
- * @method self addAttributes()
- * @method self addBreakpoint(BreakpointAttributes $attributes = [])
- * @method self addFont(FontAttributes $attributes = [])
- * @method self addPreview(string $content)
- * @method self addStyle(string $content, StyleAttributes $attributes = [])
- * @method self addTitle(string $content)
+ * @method Attributes addAttributes()
+ * @method Breakpoint addBreakpoint(BreakpointAttributes $attributes = [])
+ * @method Font addFont(FontAttributes $attributes = [])
+ * @method Preview addPreview(string $content)
+ * @method Style addStyle(string $content, StyleAttributes $attributes = [])
+ * @method Title addTitle(string $content)
  */
 class Head extends ParentElement
 {

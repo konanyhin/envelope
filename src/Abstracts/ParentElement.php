@@ -42,19 +42,20 @@ abstract class ParentElement extends Element
      * @param string $name method name called
      * @param array<int, mixed> $arguments arguments passed to the method
      *
-     * @return $this
+     * @return Element the newly created child element
      *
      * @throws InvalidMethodException if the method does not exist or is not a recognized add method
      * @throws \InvalidArgumentException if the child element is not allowed or attributes are invalid
      */
-    public function __call(string $name, array $arguments): self
+    public function __call(string $name, array $arguments): Element
     {
         if (str_starts_with($name, 'add') && strlen($name) > 3 && isset($this->allowedChildClasses[$name])) {
             $childClass = $this->allowedChildClasses[$name];
 
-            $this->add(new $childClass(...$arguments));
+            $child = new $childClass(...$arguments);
+            $this->add($child);
 
-            return $this;
+            return $child;
         }
 
         throw new InvalidMethodException(static::class, $name);
