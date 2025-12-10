@@ -79,10 +79,6 @@ class Column extends ParentElement
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-column%s>%s</mj-column>',
-            $this->renderAttributes(),
-            $this->renderChildren()
-        );
+        return $this->renderTag($this->renderChildren());
     }
 }

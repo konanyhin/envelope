@@ -51,10 +51,6 @@ class Wrapper extends ParentElement
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-wrapper%s>%s</mj-wrapper>',
-            $this->renderAttributes(),
-            $this->renderChildren()
-        );
+        return $this->renderTag($this->renderChildren());
     }
 }

@@ -53,10 +53,6 @@ class Section extends ParentElement
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-section%s>%s</mj-section>',
-            $this->renderAttributes(),
-            $this->renderChildren()
-        );
+        return $this->renderTag($this->renderChildren());
     }
 }

@@ -8,6 +8,8 @@ use Konanyhin\Envelope\Abstracts\Element;
 
 class Title extends Element
 {
+    public const string TAG = 'mj-title';
+
     private string $content;
 
     public function __construct(string $content)
@@ -17,6 +19,6 @@ class Title extends Element
 
     public function render(): string
     {
-        return sprintf('<mj-title>%s</mj-title>', $this->content);
+        return $this->renderTag($this->content);
     }
 }

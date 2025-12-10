@@ -15,6 +15,8 @@ class Breakpoint extends Element
 {
     use Attributable;
 
+    public const string TAG = 'mj-breakpoint';
+
     /**
      * @var string[]
      */
@@ -31,6 +33,6 @@ class Breakpoint extends Element
 
     public function render(): string
     {
-        return sprintf('<mj-breakpoint%s />', $this->renderAttributes());
+        return $this->renderTag();
     }
 }

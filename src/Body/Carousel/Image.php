@@ -15,6 +15,8 @@ class Image extends Element
 {
     use Attributable;
 
+    public const string TAG = 'mj-carousel-image';
+
     /**
      * @var string[]
      */
@@ -33,6 +35,6 @@ class Image extends Element
 
     public function render(): string
     {
-        return sprintf('<mj-carousel-image%s />', $this->renderAttributes());
+        return $this->renderTag();
     }
 }

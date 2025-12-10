@@ -15,6 +15,8 @@ class Link extends Element
 {
     use Attributable;
 
+    public const string TAG = 'mj-navbar-link';
+
     private string $content;
 
     /**
@@ -38,10 +40,6 @@ class Link extends Element
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-navbar-link%s>%s</mj-navbar-link>',
-            $this->renderAttributes(),
-            $this->content
-        );
+        return $this->renderTag($this->content);
     }
 }

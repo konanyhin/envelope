@@ -42,10 +42,6 @@ class Button extends Element
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-button%s>%s</mj-button>',
-            $this->renderAttributes(),
-            $this->text
-        );
+        return $this->renderTag($this->text);
     }
 }

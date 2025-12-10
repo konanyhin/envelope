@@ -40,10 +40,6 @@ class Table extends Element
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-table%s>%s</mj-table>',
-            $this->renderAttributes(),
-            $this->content
-        );
+        return $this->renderTag($this->content);
     }
 }

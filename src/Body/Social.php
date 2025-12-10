@@ -52,10 +52,6 @@ class Social extends Element
     {
         $elements = implode('', array_map(fn (SocialElement $element): string => $element->render(), $this->elements));
 
-        return sprintf(
-            '<mj-social%s>%s</mj-social>',
-            $this->renderAttributes(),
-            $elements
-        );
+        return $this->renderTag($elements);
     }
 }

@@ -15,6 +15,8 @@ class Element extends BaseElement
 {
     use Attributable;
 
+    public const string TAG = 'mj-social-element';
+
     private string $content;
 
     /**
@@ -39,10 +41,6 @@ class Element extends BaseElement
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-social-element%s>%s</mj-social-element>',
-            $this->renderAttributes(),
-            $this->content
-        );
+        return $this->renderTag($this->content);
     }
 }

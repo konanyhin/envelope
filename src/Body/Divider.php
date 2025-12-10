@@ -36,6 +36,6 @@ class Divider extends Element
 
     public function render(): string
     {
-        return sprintf('<mj-divider%s />', $this->renderAttributes());
+        return $this->renderTag();
     }
 }

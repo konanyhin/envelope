@@ -51,10 +51,6 @@ class Carousel extends Element
     {
         $images = implode('', array_map(fn (Image $image): string => $image->render(), $this->images));
 
-        return sprintf(
-            '<mj-carousel%s>%s</mj-carousel>',
-            $this->renderAttributes(),
-            $images
-        );
+        return $this->renderTag($images);
     }
 }

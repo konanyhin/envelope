@@ -57,10 +57,6 @@ class Hero extends ParentElement
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-hero%s>%s</mj-hero>',
-            $this->renderAttributes(),
-            $this->renderChildren()
-        );
+        return $this->renderTag($this->renderChildren());
     }
 }

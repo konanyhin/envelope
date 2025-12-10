@@ -47,10 +47,6 @@ class Group extends ParentElement
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-group%s>%s</mj-group>',
-            $this->renderAttributes(),
-            $this->renderChildren()
-        );
+        return $this->renderTag($this->renderChildren());
     }
 }

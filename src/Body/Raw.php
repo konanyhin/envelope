@@ -19,6 +19,6 @@ class Raw extends Element
 
     public function render(): string
     {
-        return sprintf('<mj-raw>%s</mj-raw>', $this->content);
+        return $this->renderTag($this->content);
     }
 }

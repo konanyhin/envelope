@@ -40,10 +40,6 @@ class Text extends Element
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-text%s>%s</mj-text>',
-            $this->renderAttributes(),
-            $this->text
-        );
+        return $this->renderTag($this->text);
     }
 }

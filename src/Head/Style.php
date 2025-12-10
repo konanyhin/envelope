@@ -15,6 +15,8 @@ class Style extends Element
 {
     use Attributable;
 
+    public const string TAG = 'mj-style';
+
     private string $content;
 
     /**
@@ -34,10 +36,6 @@ class Style extends Element
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-style%s>%s</mj-style>',
-            $this->renderAttributes(),
-            $this->content
-        );
+        return $this->renderTag($this->content);
     }
 }

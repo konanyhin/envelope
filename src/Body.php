@@ -10,7 +10,6 @@ use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Slot;
 use Konanyhin\Envelope\Body\Wrapper;
-use Konanyhin\Envelope\Types;
 
 /**
  * @phpstan-import-type BodyAttributes from Types
@@ -24,6 +23,8 @@ use Konanyhin\Envelope\Types;
  */
 class Body extends ParentElement
 {
+    public const string TAG = 'mj-body';
+
     /**
      * List of allowed child element classes for Body.
      *
@@ -62,10 +63,6 @@ class Body extends ParentElement
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-body%s>%s</mj-body>',
-            $this->renderAttributes(),
-            $this->renderChildren()
-        );
+        return $this->renderTag($this->renderChildren());
     }
 }

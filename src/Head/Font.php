@@ -15,6 +15,8 @@ class Font extends Element
 {
     use Attributable;
 
+    public const string TAG = 'mj-font';
+
     /**
      * @var string[]
      */
@@ -31,6 +33,6 @@ class Font extends Element
 
     public function render(): string
     {
-        return sprintf('<mj-font%s />', $this->renderAttributes());
+        return $this->renderTag();
     }
 }

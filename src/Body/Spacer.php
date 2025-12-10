@@ -36,6 +36,6 @@ class Spacer extends Element
 
     public function render(): string
     {
-        return sprintf('<mj-spacer%s />', $this->renderAttributes());
+        return $this->renderTag();
     }
 }

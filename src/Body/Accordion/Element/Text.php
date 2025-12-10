@@ -15,6 +15,8 @@ class Text extends Element
 {
     use Attributable;
 
+    public const string TAG = 'mj-accordion-text';
+
     private string $content;
 
     /**
@@ -37,10 +39,6 @@ class Text extends Element
 
     public function render(): string
     {
-        return sprintf(
-            '<mj-accordion-text%s>%s</mj-accordion-text>',
-            $this->renderAttributes(),
-            $this->content
-        );
+        return $this->renderTag($this->content);
     }
 }

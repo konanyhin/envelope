@@ -52,10 +52,6 @@ class Accordion extends Element
     {
         $children = implode('', array_map(fn (AccordionElement $child): string => $child->render(), $this->children));
 
-        return sprintf(
-            '<mj-accordion%s>%s</mj-accordion>',
-            $this->renderAttributes(),
-            $children
-        );
+        return $this->renderTag($children);
     }
 }

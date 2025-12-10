@@ -13,6 +13,8 @@ use Konanyhin\Envelope\Types;
  */
 class Attributes extends AbstractElement
 {
+    public const string TAG = 'mj-attributes';
+
     /** @var Element[] */
     private array $children = [];
 
@@ -54,9 +56,6 @@ class Attributes extends AbstractElement
     {
         $children = implode('', array_map(fn (Element $child): string => $child->render(), $this->children));
 
-        return sprintf(
-            "<mj-attributes>\n%s</mj-attributes>",
-            $children
-        );
+        return $this->renderTag($children);
     }
 }

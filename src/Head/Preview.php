@@ -8,6 +8,8 @@ use Konanyhin\Envelope\Abstracts\Element;
 
 class Preview extends Element
 {
+    public const string TAG = 'mj-preview';
+
     private string $content;
 
     public function __construct(string $content)
@@ -17,6 +19,6 @@ class Preview extends Element
 
     public function render(): string
     {
-        return sprintf('<mj-preview>%s</mj-preview>', $this->content);
+        return $this->renderTag($this->content);
     }
 }

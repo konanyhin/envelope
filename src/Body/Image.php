@@ -37,6 +37,6 @@ class Image extends Element
 
     public function render(): string
     {
-        return sprintf('<mj-image%s />', $this->renderAttributes());
+        return $this->renderTag();
     }
 }

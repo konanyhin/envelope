@@ -18,6 +18,8 @@ class Element extends BaseElement
 {
     use Attributable;
 
+    public const string TAG = 'mj-accordion-element';
+
     private ?Title $title = null;
 
     private ?Text $text = null;
@@ -64,10 +66,6 @@ class Element extends BaseElement
     {
         $childrenContent = implode('', array_map(fn (BaseElement $child): string => $child->render(), array_filter([$this->title, $this->text])));
 
-        return sprintf(
-            '<mj-accordion-element%s>%s</mj-accordion-element>',
-            $this->renderAttributes(),
-            $childrenContent
-        );
+        return $this->renderTag($childrenContent);
     }
 }
