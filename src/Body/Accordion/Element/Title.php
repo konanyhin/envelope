@@ -17,8 +17,6 @@ class Title extends Element
 
     public const string TAG = 'mj-accordion-title';
 
-    private string $content;
-
     /**
      * @var string[]
      */
@@ -30,9 +28,8 @@ class Title extends Element
     /**
      * @param AccordionElementChildAttributes $attributes
      */
-    public function __construct(string $content, array $attributes = [])
+    public function __construct(private string $content, array $attributes = [])
     {
-        $this->content = $content;
         $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);
     }

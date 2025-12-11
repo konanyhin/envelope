@@ -8,12 +8,7 @@ use Konanyhin\Envelope\Abstracts\Element;
 
 class Slot extends Element
 {
-    private string $name;
-
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
+    public function __construct(private readonly string $name) {}
 
     public function getName(): string
     {

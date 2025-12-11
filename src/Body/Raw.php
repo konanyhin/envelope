@@ -10,12 +10,7 @@ class Raw extends Element
 {
     public const string TAG = 'mj-raw';
 
-    private string $content;
-
-    public function __construct(string $content = '')
-    {
-        $this->content = $content;
-    }
+    public function __construct(private readonly string $content = '') {}
 
     public function render(): string
     {

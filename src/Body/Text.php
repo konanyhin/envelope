@@ -17,8 +17,6 @@ class Text extends Element
 
     public const string TAG = 'mj-text';
 
-    private string $text;
-
     /**
      * @var string[]
      */
@@ -31,9 +29,8 @@ class Text extends Element
     /**
      * @param TextAttributes $attributes
      */
-    public function __construct(string $text, array $attributes = [])
+    public function __construct(private string $text, array $attributes = [])
     {
-        $this->text = $text;
         $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);
     }

@@ -17,8 +17,6 @@ class Link extends Element
 
     public const string TAG = 'mj-navbar-link';
 
-    private string $content;
-
     /**
      * @var string[]
      */
@@ -31,9 +29,8 @@ class Link extends Element
     /**
      * @param NavbarLinkAttributes $attributes
      */
-    public function __construct(string $content, array $attributes = [])
+    public function __construct(private string $content, array $attributes = [])
     {
-        $this->content = $content;
         $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);
     }

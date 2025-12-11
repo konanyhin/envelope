@@ -17,8 +17,6 @@ class Element extends BaseElement
 
     public const string TAG = 'mj-social-element';
 
-    private string $content;
-
     /**
      * @var string[]
      */
@@ -32,9 +30,8 @@ class Element extends BaseElement
     /**
      * @param SocialElementAttributes $attributes
      */
-    public function __construct(string $content = '', array $attributes = [])
+    public function __construct(private string $content = '', array $attributes = [])
     {
-        $this->content = $content;
         $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);
     }

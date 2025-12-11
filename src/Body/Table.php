@@ -17,8 +17,6 @@ class Table extends Element
 
     public const string TAG = 'mj-table';
 
-    private string $content;
-
     /**
      * @var string[]
      */
@@ -31,9 +29,8 @@ class Table extends Element
     /**
      * @param TableAttributes $attributes
      */
-    public function __construct(string $content, array $attributes = [])
+    public function __construct(private string $content, array $attributes = [])
     {
-        $this->content = $content;
         $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);
     }

@@ -100,7 +100,7 @@ abstract class ParentElement extends Element
             if ($child instanceof ParentElement) {
                 try {
                     return $child->replace($slot, $element);
-                } catch (SlotNotFoundException $e) {
+                } catch (SlotNotFoundException) {
                     // Slot not found in this child branch, continue searching in other children
                 }
             }
@@ -128,7 +128,7 @@ abstract class ParentElement extends Element
         }
 
         if (!$isValid) {
-            throw new InvalidChildElementException(get_class($element), static::class);
+            throw new InvalidChildElementException($element::class, static::class);
         }
     }
 
@@ -153,7 +153,7 @@ abstract class ParentElement extends Element
             }
         }
 
-        throw new ChildNotFoundException(get_class($oldElement), static::class);
+        throw new ChildNotFoundException($oldElement::class, static::class);
     }
 
     protected function renderChildren(): string
