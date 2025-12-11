@@ -31,9 +31,8 @@ final class Element extends BaseElement
      * @var string[]
      */
     private array $allowedAttributes = [
-        'background-color', 'border', 'font-family', 'icon-align', 'icon-height', 'icon-position',
+        'background-color', 'border', 'css-class', 'font-family', 'icon-align', 'icon-height', 'icon-position',
         'icon-unwrapped-alt', 'icon-unwrapped-url', 'icon-width', 'icon-wrapped-alt', 'icon-wrapped-url',
-        'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top',
     ];
 
     /**

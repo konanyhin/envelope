@@ -24,7 +24,7 @@ final class Link extends Element
      * @var string[]
      */
     private array $allowedAttributes = [
-        'color', 'font-family', 'font-size', 'font-style', 'font-weight', 'href', 'letter-spacing', 'line-height',
+        'color', 'css-class', 'font-family', 'font-size', 'font-style', 'font-weight', 'href', 'letter-spacing', 'line-height',
         'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'rel', 'target',
         'text-decoration', 'text-transform',
     ];

@@ -25,10 +25,10 @@ final class Button extends Element
      */
     private array $allowedAttributes = [
         'align', 'background-color', 'border', 'border-bottom', 'border-left', 'border-radius', 'border-right',
-        'border-top', 'color', 'container-background-color', 'font-family', 'font-size', 'font-style',
+        'border-top', 'color', 'container-background-color', 'css-class', 'font-family', 'font-size', 'font-style',
         'font-weight', 'height', 'href', 'inner-padding', 'letter-spacing', 'line-height', 'padding',
         'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'rel', 'target', 'text-align',
-        'text-decoration', 'text-transform', 'vertical-align', 'width',
+        'text-decoration', 'text-transform', 'title', 'vertical-align', 'width',
     ];
 
     /**

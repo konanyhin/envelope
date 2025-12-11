@@ -24,9 +24,9 @@ final class Text extends Element
      * @var string[]
      */
     private array $allowedAttributes = [
-        'align', 'color', 'container-background-color', 'font-family', 'font-size', 'font-style', 'font-weight',
-        'height', 'letter-spacing', 'line-height', 'padding', 'padding-bottom', 'padding-left', 'padding-right',
-        'padding-top', 'text-decoration', 'text-transform',
+        'color', 'font-family', 'font-size', 'font-style', 'font-weight', 'line-height', 'letter-spacing',
+        'height', 'text-decoration', 'text-transform', 'align', 'container-background-color', 'padding',
+        'padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'css-class',
     ];
 
     /**

@@ -24,9 +24,9 @@ final class Image extends Element
      * @var string[]
      */
     private array $allowedAttributes = [
-        'align', 'alt', 'border', 'border-bottom', 'border-left', 'border-radius', 'border-right', 'border-top',
-        'container-background-color', 'fluid-on-mobile', 'height', 'href', 'name', 'padding', 'padding-bottom',
-        'padding-left', 'padding-right', 'padding-top', 'rel', 'src', 'srcset', 'target', 'title', 'usemap', 'width',
+        'align', 'alt', 'border', 'border-bottom', 'border-left', 'border-right', 'border-top', 'border-radius',
+        'container-background-color', 'css-class', 'fluid-on-mobile', 'height', 'href', 'name', 'padding', 'padding-bottom',
+        'padding-left', 'padding-right', 'padding-top', 'rel', 'sizes', 'src', 'srcset', 'target', 'title', 'usemap', 'width',
     ];
 
     /**

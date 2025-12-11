@@ -24,7 +24,7 @@ final class Text extends Element
      * @var string[]
      */
     private array $allowedAttributes = [
-        'background-color', 'color', 'font-family', 'font-size', 'font-style', 'font-weight',
+        'background-color', 'color', 'css-class', 'font-family', 'font-size', 'font-weight',
         'letter-spacing', 'line-height', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top',
     ];
 

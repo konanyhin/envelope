@@ -36,7 +36,7 @@ final class Navbar extends ParentElement
      * @var string[]
      */
     private array $allowedAttributes = [
-        'align', 'base-url', 'hamburger', 'ico-align', 'ico-close', 'ico-color', 'ico-font-family', 'ico-font-size',
+        'align', 'base-url', 'css-class', 'hamburger', 'ico-align', 'ico-close', 'ico-color', 'ico-font-family', 'ico-font-size',
         'ico-line-height', 'ico-open', 'ico-padding', 'ico-padding-bottom', 'ico-padding-left', 'ico-padding-right',
         'ico-padding-top', 'ico-text-decoration', 'ico-text-transform',
     ];

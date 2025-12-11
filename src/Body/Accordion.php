@@ -36,7 +36,7 @@ final class Accordion extends ParentElement
      * @var string[]
      */
     private array $allowedAttributes = [
-        'border', 'container-background-color', 'font-family', 'icon-align', 'icon-height',
+        'border', 'container-background-color', 'css-class', 'font-family', 'icon-align', 'icon-height',
         'icon-position', 'icon-unwrapped-alt', 'icon-unwrapped-url', 'icon-width', 'icon-wrapped-alt',
         'icon-wrapped-url', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top',
     ];

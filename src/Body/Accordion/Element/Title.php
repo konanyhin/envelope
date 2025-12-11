@@ -24,8 +24,8 @@ final class Title extends Element
      * @var string[]
      */
     private array $allowedAttributes = [
-        'background-color', 'color', 'font-family', 'font-size', 'font-style', 'font-weight',
-        'letter-spacing', 'line-height', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top',
+        'background-color', 'color', 'css-class', 'font-family', 'font-size', 'font-weight',
+        'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top',
     ];
 
     /**

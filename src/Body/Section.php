@@ -42,7 +42,7 @@ final class Section extends ParentElement
         'background-color', 'background-position', 'background-position-x', 'background-position-y',
         'background-repeat', 'background-size', 'background-url', 'border', 'border-bottom', 'border-left',
         'border-radius', 'border-right', 'border-top', 'css-class', 'direction', 'full-width', 'padding',
-        'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'text-align', 'vertical-align',
+        'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'text-align',
     ];
 
     /**

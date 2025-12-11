@@ -36,7 +36,7 @@ final class Carousel extends ParentElement
      * @var string[]
      */
     private array $allowedAttributes = [
-        'align', 'border-radius', 'container-background-color', 'icon-width', 'left-icon', 'right-icon',
+        'align', 'border-radius', 'container-background-color', 'css-class', 'icon-width', 'left-icon', 'right-icon',
         'tb-border', 'tb-border-radius', 'tb-hover-border-color', 'tb-selected-border-color', 'tb-width', 'thumbnails',
     ];
 

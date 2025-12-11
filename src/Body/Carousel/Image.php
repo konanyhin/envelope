@@ -24,7 +24,7 @@ final class Image extends Element
      * @var string[]
      */
     private array $allowedAttributes = [
-        'alt', 'href', 'rel', 'src', 'target', 'thumbnails-src', 'title',
+        'alt', 'css-class', 'href', 'rel', 'src', 'target', 'thumbnails-src', 'title',
     ];
 
     /**

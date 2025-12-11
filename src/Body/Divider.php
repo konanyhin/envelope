@@ -24,7 +24,7 @@ final class Divider extends Element
      * @var string[]
      */
     private array $allowedAttributes = [
-        'border-color', 'border-style', 'border-width', 'container-background-color', 'padding', 'padding-bottom',
+        'align', 'border-color', 'border-style', 'border-width', 'container-background-color', 'css-class', 'padding', 'padding-bottom',
         'padding-left', 'padding-right', 'padding-top', 'width',
     ];
 

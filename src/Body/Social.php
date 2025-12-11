@@ -36,9 +36,9 @@ final class Social extends ParentElement
      * @var string[]
      */
     private array $allowedAttributes = [
-        'align', 'border-radius', 'color', 'container-background-color', 'font-family', 'font-size', 'font-style',
+        'align', 'border-radius', 'color', 'css-class', 'container-background-color', 'font-family', 'font-size', 'font-style',
         'font-weight', 'icon-height', 'icon-size', 'inner-padding', 'line-height', 'mode', 'padding',
-        'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'table-layout', 'text-decoration',
+        'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'icon-padding', 'text-padding', 'text-decoration',
     ];
 
     /**

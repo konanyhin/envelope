@@ -24,10 +24,10 @@ final class Element extends BaseElement
      * @var string[]
      */
     private array $allowedAttributes = [
-        'align', 'background-color', 'border-radius', 'color', 'font-family', 'font-size', 'font-style',
+        'align', 'alt', 'background-color', 'border-radius', 'color', 'css-class', 'font-family', 'font-size', 'font-style',
         'font-weight', 'href', 'icon-height', 'icon-size', 'line-height', 'name', 'padding', 'padding-bottom',
-        'padding-left', 'padding-right', 'padding-top', 'rel', 'src', 'target', 'text-decoration', 'title',
-        'vertical-align',
+        'padding-left', 'padding-right', 'padding-top', 'icon-padding', 'icon-position', 'text-padding', 'sizes',
+        'src', 'srcset', 'rel', 'target', 'title', 'text-decoration', 'vertical-align',
     ];
 
     /**

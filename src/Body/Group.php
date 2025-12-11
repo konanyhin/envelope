@@ -36,7 +36,7 @@ final class Group extends ParentElement
      * @var string[]
      */
     private array $allowedAttributes = [
-        'background-color', 'direction', 'vertical-align', 'width',
+        'width', 'vertical-align', 'background-color', 'direction', 'css-class',
     ];
 
     /**

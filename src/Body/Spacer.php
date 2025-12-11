@@ -24,8 +24,8 @@ final class Spacer extends Element
      * @var string[]
      */
     private array $allowedAttributes = [
-        'container-background-color', 'height', 'padding', 'padding-bottom', 'padding-left', 'padding-right',
-        'padding-top', 'vertical-align',
+        'container-background-color', 'css-class', 'height', 'padding', 'padding-bottom', 'padding-left', 'padding-right',
+        'padding-top',
     ];
 
     /**

@@ -24,9 +24,8 @@ final class Table extends Element
      * @var string[]
      */
     private array $allowedAttributes = [
-        'align', 'cellpadding', 'cellspacing', 'color', 'container-background-color', 'font-family', 'font-size',
-        'line-height', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'table-layout',
-        'width',
+        'align', 'border', 'cellpadding', 'cellspacing', 'color', 'container-background-color', 'css-class', 'font-family', 'font-size',
+        'line-height', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top', 'role', 'table-layout', 'width',
     ];
 
     /**

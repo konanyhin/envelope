@@ -45,8 +45,8 @@ final class Hero extends ParentElement
      */
     private array $allowedAttributes = [
         'background-color', 'background-height', 'background-position', 'background-url', 'background-width',
-        'height', 'mode', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top',
-        'vertical-align', 'width',
+        'border-radius', 'height', 'mode', 'padding', 'padding-bottom', 'padding-left', 'padding-right', 'padding-top',
+        'vertical-align',
     ];
 
     /**

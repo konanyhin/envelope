@@ -65,10 +65,10 @@ final class Column extends ParentElement
      * @var string[]
      */
     private array $allowedAttributes = [
-        'background-color', 'border', 'border-bottom', 'border-left', 'border-radius', 'border-right', 'border-top',
-        'css-class', 'inner-background-color', 'inner-border', 'inner-border-bottom', 'inner-border-left',
-        'inner-border-radius', 'inner-border-right', 'inner-border-top', 'padding', 'padding-bottom', 'padding-left',
-        'padding-right', 'padding-top', 'vertical-align', 'width',
+        'background-color', 'inner-background-color', 'border', 'border-bottom', 'border-left', 'border-right', 'border-top',
+        'border-radius', 'inner-border', 'inner-border-bottom', 'inner-border-left', 'inner-border-right', 'inner-border-top',
+        'inner-border-radius', 'width', 'vertical-align', 'padding', 'padding-top', 'padding-bottom', 'padding-left',
+        'padding-right', 'css-class',
     ];
 
     /**
