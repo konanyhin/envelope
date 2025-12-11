@@ -26,9 +26,9 @@ abstract class Element implements \Stringable
         $attributes = $this->renderAttributes();
 
         if (null === $content) {
-            return sprintf('<%s%s />', $tag, $attributes);
+            return sprintf('<%1$s%2$%s />', $tag, $attributes);
         }
 
-        return sprintf('<%s%s>%s</%s>', $tag, $attributes, $content, $tag);
+        return sprintf('<%1$s%2$s>%3$s</%1$s>', $tag, $attributes, $content);
     }
 }
