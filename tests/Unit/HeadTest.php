@@ -23,6 +23,10 @@ use Konanyhin\Envelope\Head\Title;
  * - mj-title
  */
 
+it('creates head from static factory method', function () {
+    expect(Head::new())->toBeInstanceOf(Head::class);
+});
+
 beforeEach(function () {
     $this->element = new Head();
 });
