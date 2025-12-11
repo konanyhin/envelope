@@ -17,6 +17,7 @@ return (new Config())
         'concat_space' => [
             'spacing' => 'one'
         ],
+        'multiline_whitespace_before_semicolons' => false,
     ])
     ->setFinder(
         (new Finder())
