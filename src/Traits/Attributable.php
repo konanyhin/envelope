@@ -13,6 +13,9 @@ trait Attributable
      */
     protected array $attributes;
 
+    /**
+     * @param array<string, string> $attributes
+     */
     public function setAttributes(array $attributes): self
     {
         $this->attributes = $attributes;
@@ -20,24 +23,22 @@ trait Attributable
         return $this;
     }
 
+    /**
+     * @param array<string, string> $attributes
+     */
     public function addAttributes(array $attributes): self
     {
-        $this->validateAttributes($attributes);
-
         $this->attributes = array_merge($this->attributes, $attributes);
 
         return $this;
     }
 
+    /**
+     * @param array<string> $attributes
+     */
     public function removeAttributes(array $attributes = []): self
     {
-        if ([] === $attributes) {
-            $this->attributes = [];
-        } else {
-            $this->validateAttributes($attributes);
-
-            $this->attributes = array_diff_key($this->attributes, array_fill_keys($attributes, ''));
-        }
+        $this->attributes = [] === $attributes ? [] : array_diff_key($this->attributes, array_fill_keys($attributes, ''));
 
         return $this;
     }
