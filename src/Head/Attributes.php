@@ -26,7 +26,7 @@ class Attributes extends AbstractElement
      */
     public function add(string $element, array $attributes): self
     {
-        $this->children[] = new Element('mj-' . $element, $attributes);
+        $this->children[] = new Element($element, $attributes);
 
         return $this;
     }
@@ -46,8 +46,8 @@ class Attributes extends AbstractElement
      */
     public function addClass(string $className, array $attributes): self
     {
-        $attributes['name'] = $className;
-        $this->children[] = new Element('mj-class', $attributes);
+        $allAttributes = array_merge(['name' => $className], $attributes);
+        $this->children[] = new Element('mj-class', $allAttributes);
 
         return $this;
     }
