@@ -12,9 +12,9 @@ Envelope is a PHP library for building MJML emails with a clean, object-oriented
 
 ## Requirements
 
-| Syntax   | Description |
+| Name     | Description |
 |:---------|:------------|
-| **PHP**  | \>= 8.1     |
+| **PHP**  | \>= 8.3     |
 | **mjml** | npm / yarn  |
 
 ## 📦 Installation
