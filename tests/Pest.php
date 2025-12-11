@@ -39,7 +39,7 @@ function getHeadComponents(array $except = []): array
         'Preview' => Preview::class,
         'Style' => Style::class,
         'Title' => Title::class,
-    ], fn (string $class) => !in_array($class, $except));
+    ], fn (string $class): bool => !in_array($class, $except));
 }
 
 function getBodyComponents(array $except = []): array
@@ -66,5 +66,5 @@ function getBodyComponents(array $except = []): array
         'Table' => Table::class,
         'Text' => Text::class,
         'Wrapper' => Wrapper::class,
-    ], fn (string $class) => !in_array($class, $except));
+    ], fn (string $class): bool => !in_array($class, $except));
 }

@@ -7,10 +7,11 @@ use Rector\Config\RectorConfig;
 return RectorConfig::configure()
     ->withPaths([
         __DIR__ . '/src',
+        __DIR__ . '/tests',
     ])
-     ->withPhpSets(
-         php74: true,
-     )
+    ->withPhpSets(
+        php74: true,
+    )
     ->withPreparedSets(
         deadCode: true,
         codeQuality: true,

@@ -19,7 +19,7 @@ function createElementClass(): object
     };
 }
 
-it('renders tag correctly', function () {
+it('renders tag correctly', function (): void {
     $element = createElementClass();
     $result = '<mj-tag>test</mj-tag>';
 
@@ -28,7 +28,7 @@ it('renders tag correctly', function () {
     ;
 });
 
-it('renders tag correctly with empty content', function () {
+it('renders tag correctly with empty content', function (): void {
     $element = createElementClass();
 
     expect($element->renderEmpty())->toBeString()->toBe('<mj-tag />');

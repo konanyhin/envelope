@@ -7,7 +7,7 @@ use Konanyhin\Envelope\Body\Accordion;
  * - mj-accordion-element
  */
 
-beforeEach(function () {
+beforeEach(function (): void {
     $this->element = new Accordion();
 });
 
@@ -23,6 +23,6 @@ it('does not have component :dataset', fn ($class) => $this->parentMethodNotExis
 
 it('renders correctly', fn () => $this->rendersCorrectly());
 
-afterEach(function () {
+afterEach(function (): void {
     unset($this->element);
 });

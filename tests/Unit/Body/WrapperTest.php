@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Body\Wrapper;
  * - mj-section
  */
 
-beforeEach(function () {
+beforeEach(function (): void {
     $this->element = new Wrapper();
 });
 
@@ -31,6 +31,6 @@ it('does not have component :dataset', fn ($class) => $this->parentMethodNotExis
 
 it('renders correctly', fn () => $this->rendersCorrectly());
 
-afterEach(function () {
+afterEach(function (): void {
     unset($this->element);
 });

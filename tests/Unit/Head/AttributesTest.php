@@ -3,13 +3,13 @@
 use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Head\Attributes;
 
-beforeEach(function () {
+beforeEach(function (): void {
     $this->element = new Attributes();
 });
 
 it('renders correctly', fn () => $this->rendersCorrectly());
 
-it('adds child component successfully', function () {
+it('adds child component successfully', function (): void {
     $this->element->add(Text::TAG, ['color' => 'red']);
     $this->element->addClass('class', ['color' => 'blue']);
     $this->element->addAll(['color' => 'green']);
@@ -25,12 +25,12 @@ it('adds child component successfully', function () {
     ;
 });
 
-it('renders correctly with children', function () {
+it('renders correctly with children', function (): void {
     $this->element->add(Text::TAG, ['color' => 'red']);
 
     expect(str_replace(["\n", "\r"], '', $this->element->render()))->toBe('<mj-attributes><mj-text color="red" /></mj-attributes>');
 });
 
-afterEach(function () {
+afterEach(function (): void {
     unset($this->element);
 });

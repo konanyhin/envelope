@@ -9,7 +9,7 @@ use Konanyhin\Envelope\Body\Slot;
  * - mj-column
  */
 
-beforeEach(function () {
+beforeEach(function (): void {
     $this->element = new Group();
 });
 
@@ -27,6 +27,6 @@ it('does not have component :dataset', fn ($class) => $this->parentMethodNotExis
 
 it('renders correctly', fn () => $this->rendersCorrectly());
 
-afterEach(function () {
+afterEach(function (): void {
     unset($this->element);
 });

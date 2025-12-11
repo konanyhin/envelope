@@ -3,11 +3,11 @@
 use Konanyhin\Envelope\Exceptions\InvalidMjmlTagException;
 use Konanyhin\Envelope\Head\Attributes\Element;
 
-it('throws exception on invalid tag', function () {
+it('throws exception on invalid tag', function (): void {
     new Element('mj-test');
 })->throws(InvalidMjmlTagException::class);
 
-it('renders correctly', function () {
+it('renders correctly', function (): void {
     $element = new Element('mj-text', ['color' => 'red']);
 
     expect(trim($element->render()))->toBe('<mj-text color="red" />');

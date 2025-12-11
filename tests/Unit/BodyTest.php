@@ -13,11 +13,11 @@ use Konanyhin\Envelope\Body\Wrapper;
  * - mj-wrapper
  */
 
-it('creates body from static factory method', function () {
+it('creates body from static factory method', function (): void {
     expect(Body::new())->toBeInstanceOf(Body::class);
 });
 
-beforeEach(function () {
+beforeEach(function (): void {
     $this->element = new Body();
 });
 
@@ -39,6 +39,6 @@ it('does not have component :dataset', fn ($class) => $this->parentMethodNotExis
 
 it('renders correctly', fn () => $this->rendersCorrectly());
 
-afterEach(function () {
+afterEach(function (): void {
     unset($this->element);
 });

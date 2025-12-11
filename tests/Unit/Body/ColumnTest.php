@@ -29,7 +29,7 @@ use Konanyhin\Envelope\Body\Text;
  * - mj-text
  */
 
-beforeEach(function () {
+beforeEach(function (): void {
     $this->element = new Column();
 });
 
@@ -67,6 +67,6 @@ it('does not have component :dataset', fn ($class) => $this->parentMethodNotExis
 
 it('renders correctly', fn () => $this->rendersCorrectly());
 
-afterEach(function () {
+afterEach(function (): void {
     unset($this->element);
 });

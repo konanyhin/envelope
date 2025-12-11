@@ -18,11 +18,11 @@ use Konanyhin\Envelope\Head\Title;
  * - mj-title
  */
 
-it('creates head from static factory method', function () {
+it('creates head from static factory method', function (): void {
     expect(Head::new())->toBeInstanceOf(Head::class);
 });
 
-beforeEach(function () {
+beforeEach(function (): void {
     $this->element = new Head();
 });
 
@@ -48,6 +48,6 @@ it('does not have component :dataset', fn ($class) => $this->parentMethodNotExis
 
 it('renders correctly', fn () => $this->rendersCorrectly());
 
-afterEach(function () {
+afterEach(function (): void {
     unset($this->element);
 });

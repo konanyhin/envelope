@@ -17,12 +17,18 @@ function createParentClass(array $attributes = []): object
     return new class($attributes) extends ParentElement {
         public const string TAG = 'mj-tag';
 
+        /**
+         * @var array<string, class-string<Group>|class-string<Slot>|class-string<Text>>
+         */
         protected array $allowedChildClasses = [
             'addSlot' => Slot::class,
             'addText' => Text::class,
             'addGroup' => Group::class,
         ];
 
+        /**
+         * @var string[]
+         */
         private array $allowedAttributes = [
             'background-color', 'border', 'width',
         ];
@@ -38,28 +44,28 @@ function createParentClass(array $attributes = []): object
             return $this->renderTag($this->renderChildren());
         }
 
-        public function exposeReplaceChild(Element $old, Element $new)
+        public function exposeReplaceChild(Element $old, Element $new): Element
         {
             return $this->replaceChild($old, $new);
         }
     };
 }
 
-it('throws exception for invalid attributes', function () {
+it('throws exception for invalid attributes', function (): void {
     createParentClass(['invalid_key' => 'value']);
 })->throws(InvalidAttributeException::class);
 
-it('validates allowed attributes successfully', function () {
+it('validates allowed attributes successfully', function (): void {
     createParentClass(['background-color' => 'white']);
 })->throwsNoExceptions();
 
-it('throws exception for invalid child method', function () {
+it('throws exception for invalid child method', function (): void {
     $instance = createParentClass();
 
     $instance->addColumn();
 })->throws(InvalidMethodException::class);
 
-it('runs child method successfully', function () {
+it('runs child method successfully', function (): void {
     $instance = createParentClass();
     $instance->addSlot('test');
 
@@ -70,7 +76,7 @@ it('runs child method successfully', function () {
     ;
 });
 
-it('replaces slot successfully', function () {
+it('replaces slot successfully', function (): void {
     $instance = createParentClass();
     $instance->addSlot('test');
 
@@ -81,14 +87,14 @@ it('replaces slot successfully', function () {
     ;
 });
 
-it('throws exception for wrong slot name', function () {
+it('throws exception for wrong slot name', function (): void {
     $instance = createParentClass();
     $instance->addSlot('test');
 
     $instance->replace('invalid', new Text('test'));
 })->throws(SlotNotFoundException::class);
 
-it('throws exception for wrong slot name with children search', function () {
+it('throws exception for wrong slot name with children search', function (): void {
     $instance = createParentClass();
     $instance->addSlot('test_1');
     $instance->addGroup()->addSlot('test_2');
@@ -96,26 +102,26 @@ it('throws exception for wrong slot name with children search', function () {
     $instance->replace('invalid', new Text('test'));
 })->throws(SlotNotFoundException::class);
 
-it('throws exception for wrong child', function () {
+it('throws exception for wrong child', function (): void {
     $instance = createParentClass();
 
     $instance->exposeReplaceChild(new Slot('test'), new Text('test'));
 })->throws(ChildNotFoundException::class);
 
-it('throws exception for wrong child element while replacing slot', function () {
+it('throws exception for wrong child element while replacing slot', function (): void {
     $instance = createParentClass();
     $instance->addSlot('test');
 
     $instance->replace('test', new Button('test'));
 })->throws(InvalidChildElementException::class);
 
-it('renders element with given attributes successfully', function () {
+it('renders element with given attributes successfully', function (): void {
     $instance = createParentClass(['background-color' => 'white']);
 
     expect($instance->render())->toBe('<mj-tag background-color="white"></mj-tag>');
 });
 
-it('renders element with given attributes and children successfully', function () {
+it('renders element with given attributes and children successfully', function (): void {
     $instance = createParentClass(['background-color' => 'white']);
     $instance->addText('test');
 
