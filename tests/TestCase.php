@@ -25,12 +25,17 @@ abstract class TestCase extends BaseTestCase
 
     public function rendersCorrectly(?string $content = ''): void
     {
-        expect($this->element->render())->toBeString(sprintf('<%1$s>%2$s</%1$s>', get_class($this->element)::TAG, $content));
+        expect($this->element->render())->toBeString()->toBe(sprintf('<%1$s>%2$s</%1$s>', get_class($this->element)::TAG, $content));
     }
 
     public function rendersCorrectlyAsShortTag(): void
     {
-        expect($this->element->render())->toBeString(sprintf('<%s />', get_class($this->element)::TAG));
+        expect($this->element->render())->toBeString()->toBe(sprintf('<%s />', get_class($this->element)::TAG));
+    }
+
+    public function getChildren()
+    {
+        return new \ReflectionClass($this->element)->getProperty('children')->getValue($this->element);
     }
 
     protected function getClassName(string $namespace): string

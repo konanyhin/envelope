@@ -4,6 +4,5 @@ use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Slot;
 
 it('renders correctly', function () {
-    $html = '<p>test</p>';
-    expect(new Raw($html)->render())->toBeString($html);
+    expect(new Raw('<p>test</p>')->render())->toBeString()->toBe('<mj-raw><p>test</p></mj-raw>');
 });
