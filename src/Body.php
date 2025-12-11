@@ -6,6 +6,7 @@ namespace Konanyhin\Envelope;
 
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Abstracts\ParentElement;
+use Konanyhin\Envelope\Body\Hero;
 use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Slot;
@@ -15,11 +16,13 @@ use Konanyhin\Envelope\Body\Wrapper;
  * @phpstan-import-type BodyAttributes from Types
  * @phpstan-import-type SectionAttributes from Types
  * @phpstan-import-type WrapperAttributes from Types
+ * @phpstan-import-type HeroAttributes from Types
  *
  * @method Section addSection(SectionAttributes $attributes = [])
  * @method Wrapper addWrapper(WrapperAttributes $attributes = [])
  * @method Raw addRaw(string $content = '')
  * @method Slot addSlot(string $name)
+ * @method Hero addHero(HeroAttributes $attributes = [])
  */
 final class Body extends ParentElement
 {
@@ -38,6 +41,7 @@ final class Body extends ParentElement
         'addWrapper' => Wrapper::class,
         'addRaw' => Raw::class,
         'addSlot' => Slot::class,
+        'addHero' => Hero::class,
     ];
 
     /**

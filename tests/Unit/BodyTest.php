@@ -1,6 +1,7 @@
 <?php
 
 use Konanyhin\Envelope\Body;
+use Konanyhin\Envelope\Body\Hero;
 use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Slot;
@@ -22,6 +23,7 @@ beforeEach(function (): void {
 });
 
 it('has component :dataset', fn ($class) => $this->parentMethodExists($class))->with([
+    'Hero' => Hero::class,
     'Raw' => Raw::class,
     'Section' => Section::class,
     'Slot' => Slot::class,
@@ -30,6 +32,7 @@ it('has component :dataset', fn ($class) => $this->parentMethodExists($class))->
 
 it('does not have component :dataset', fn ($class) => $this->parentMethodNotExist($class))->with(
     getBodyComponents([
+        Hero::class,
         Raw::class,
         Section::class,
         Slot::class,
