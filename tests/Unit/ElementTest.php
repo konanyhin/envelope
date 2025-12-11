@@ -9,7 +9,7 @@ function createElementClass(): object
 
         public function render(): string
         {
-            return sprintf('<%1$s>%2$s</%s1>', self::TAG, 'test');
+            return sprintf('<%1$s>%2$s</%1$s>', self::TAG, 'test');
         }
 
         public function renderEmpty(): string
@@ -23,12 +23,12 @@ it('renders tag correctly', function () {
     $element = createElementClass();
     $result = '<mj-tag>test</mj-tag>';
 
-    expect($element->render())->toBeString($result)
-        ->and((string)$element)->toBeString($result);
+    expect($element->render())->toBeString()->toBe($result)
+        ->and((string)$element)->toBeString()->toBe($result);
 });
 
 it('renders tag correctly with empty content', function () {
     $element = createElementClass();
 
-    expect($element->renderEmpty())->toBeString('<mj-tag />');
+    expect($element->renderEmpty())->toBeString()->toBe('<mj-tag />');
 });
