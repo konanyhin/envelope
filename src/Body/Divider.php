@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type DividerAttributes from Types
  */
-class Divider extends Element
+final class Divider extends Element
 {
     use Attributable;
 

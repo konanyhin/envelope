@@ -25,7 +25,7 @@ use Konanyhin\Envelope\Head\Title;
  * @method Style addStyle(string $content, StyleAttributes $attributes = [])
  * @method Title addTitle(string $content)
  */
-class Head extends ParentElement
+final class Head extends ParentElement
 {
     public const string TAG = 'mj-head';
 

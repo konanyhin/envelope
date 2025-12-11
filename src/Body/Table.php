@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type TableAttributes from Types
  */
-class Table extends Element
+final class Table extends Element
 {
     use Attributable;
 

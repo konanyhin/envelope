@@ -6,7 +6,7 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 
-class Raw extends Element
+final class Raw extends Element
 {
     public const string TAG = 'mj-raw';
 

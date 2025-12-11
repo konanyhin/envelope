@@ -16,7 +16,7 @@ use Konanyhin\Envelope\Types;
  *
  * @method SocialElement addSocialElement(string $content = '', SocialElementAttributes $attributes = [])
  */
-class Social extends ParentElement
+final class Social extends ParentElement
 {
     use Attributable;
 

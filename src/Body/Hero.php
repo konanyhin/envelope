@@ -20,7 +20,7 @@ use Konanyhin\Envelope\Types;
  * @method Text addText(string $text, TextAttributes $attributes = [])
  * @method Slot addSlot(string $name)
  */
-class Hero extends ParentElement
+final class Hero extends ParentElement
 {
     public const string TAG = 'mj-hero';
 

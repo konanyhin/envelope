@@ -17,7 +17,7 @@ use Konanyhin\Envelope\Types;
  * @method Group addGroup(GroupAttributes $attributes = [])
  * @method Slot addSlot(string $name)
  */
-class Section extends ParentElement
+final class Section extends ParentElement
 {
     public const string TAG = 'mj-section';
 

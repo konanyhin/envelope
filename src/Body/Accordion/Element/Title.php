@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type AccordionElementChildAttributes from Types
  */
-class Title extends Element
+final class Title extends Element
 {
     use Attributable;
 

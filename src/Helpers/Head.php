@@ -29,7 +29,7 @@ use Konanyhin\Envelope\Types;
  * @method static Style style(string $content, StyleAttributes $attributes = [])
  * @method static Title title(string $content)
  */
-class Head
+final class Head
 {
     /**
      * @var array<string, class-string<Element>>

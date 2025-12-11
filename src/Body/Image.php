@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type ImageAttributes from Types
  */
-class Image extends Element
+final class Image extends Element
 {
     use Attributable;
 

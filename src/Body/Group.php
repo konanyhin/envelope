@@ -15,7 +15,7 @@ use Konanyhin\Envelope\Types;
  * @method Column addColumn(ColumnAttributes $attributes = [])
  * @method Slot addSlot(string $name)
  */
-class Group extends ParentElement
+final class Group extends ParentElement
 {
     public const string TAG = 'mj-group';
 

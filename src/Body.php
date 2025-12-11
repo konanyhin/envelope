@@ -21,7 +21,7 @@ use Konanyhin\Envelope\Body\Wrapper;
  * @method Raw addRaw(string $content = '')
  * @method Slot addSlot(string $name)
  */
-class Body extends ParentElement
+final class Body extends ParentElement
 {
     public const string TAG = 'mj-body';
 

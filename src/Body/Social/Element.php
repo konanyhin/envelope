@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type SocialElementAttributes from Types
  */
-class Element extends BaseElement
+final class Element extends BaseElement
 {
     use Attributable;
 

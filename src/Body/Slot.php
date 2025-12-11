@@ -6,7 +6,7 @@ namespace Konanyhin\Envelope\Body;
 
 use Konanyhin\Envelope\Abstracts\Element;
 
-class Slot extends Element
+final class Slot extends Element
 {
     public function __construct(private readonly string $name) {}
 

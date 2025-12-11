@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type StyleAttributes from Types
  */
-class Style extends Element
+final class Style extends Element
 {
     use Attributable;
 

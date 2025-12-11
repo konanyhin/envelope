@@ -28,7 +28,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type HeadAttributesElementAttributes from Types
  */
-class Element extends AbstractElement
+final class Element extends AbstractElement
 {
     use Attributable;
 

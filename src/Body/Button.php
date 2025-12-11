@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type ButtonAttributes from Types
  */
-class Button extends Element
+final class Button extends Element
 {
     use Attributable;
 

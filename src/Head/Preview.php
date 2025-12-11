@@ -6,7 +6,7 @@ namespace Konanyhin\Envelope\Head;
 
 use Konanyhin\Envelope\Abstracts\Element;
 
-class Preview extends Element
+final class Preview extends Element
 {
     public const string TAG = 'mj-preview';
 

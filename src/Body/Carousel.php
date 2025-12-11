@@ -16,7 +16,7 @@ use Konanyhin\Envelope\Types;
  *
  * @method Image addCarouselImage(CarouselImageAttributes $attributes = [])
  */
-class Carousel extends ParentElement
+final class Carousel extends ParentElement
 {
     use Attributable;
 

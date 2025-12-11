@@ -16,7 +16,7 @@ use Konanyhin\Envelope\Types;
  *
  * @method AccordionElement addAccordionElement(AccordionElementAttributes $attributes = [])
  */
-class Accordion extends ParentElement
+final class Accordion extends ParentElement
 {
     use Attributable;
 

@@ -17,7 +17,7 @@ use Spatie\Mjml\MjmlResult;
  *
  * @see https://documentation.mjml.io/section/mjml
  */
-class Envelope extends Element
+final class Envelope extends Element
 {
     use Attributable;
 

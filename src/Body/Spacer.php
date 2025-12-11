@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type SpacerAttributes from Types
  */
-class Spacer extends Element
+final class Spacer extends Element
 {
     use Attributable;
 

@@ -6,7 +6,7 @@ namespace Konanyhin\Envelope\Head;
 
 use Konanyhin\Envelope\Abstracts\Element;
 
-class Title extends Element
+final class Title extends Element
 {
     public const string TAG = 'mj-title';
 

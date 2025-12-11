@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type NavbarLinkAttributes from Types
  */
-class Link extends Element
+final class Link extends Element
 {
     use Attributable;
 

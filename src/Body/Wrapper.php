@@ -16,7 +16,7 @@ use Konanyhin\Envelope\Types;
  * @method Section addSection(SectionAttributes $attributes = [])
  * @method Slot addSlot(string $name)
  */
-class Wrapper extends ParentElement
+final class Wrapper extends ParentElement
 {
     public const string TAG = 'mj-wrapper';
 

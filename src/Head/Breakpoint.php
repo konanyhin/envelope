@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type BreakpointAttributes from Types
  */
-class Breakpoint extends Element
+final class Breakpoint extends Element
 {
     use Attributable;
 

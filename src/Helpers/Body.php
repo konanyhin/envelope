@@ -72,7 +72,7 @@ use Konanyhin\Envelope\Types;
  * @method static Text text(string $text, TextAttributes $attributes = [])
  * @method static Wrapper wrapper(WrapperAttributes $attributes = [])
  */
-class Body
+final class Body
 {
     /**
      * @var array<string, class-string<Element>>

@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type HeadAttributesElementAttributes from Types
  */
-class Attributes extends AbstractElement
+final class Attributes extends AbstractElement
 {
     public const string TAG = 'mj-attributes';
 

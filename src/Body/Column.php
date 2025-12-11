@@ -34,7 +34,7 @@ use Konanyhin\Envelope\Types;
  * @method Text addText(string $text, TextAttributes $attributes = [])
  * @method Slot addSlot(string $name)
  */
-class Column extends ParentElement
+final class Column extends ParentElement
 {
     public const string TAG = 'mj-column';
 

@@ -16,7 +16,7 @@ use Konanyhin\Envelope\Types;
  *
  * @method Link addNavbarLink(string $content, NavbarLinkAttributes $attributes = [])
  */
-class Navbar extends ParentElement
+final class Navbar extends ParentElement
 {
     use Attributable;
 

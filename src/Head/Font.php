@@ -11,7 +11,7 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type FontAttributes from Types
  */
-class Font extends Element
+final class Font extends Element
 {
     use Attributable;
 
