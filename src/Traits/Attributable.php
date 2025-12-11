@@ -13,6 +13,35 @@ trait Attributable
      */
     protected array $attributes;
 
+    public function setAttributes(array $attributes): self
+    {
+        $this->attributes = $attributes;
+
+        return $this;
+    }
+
+    public function addAttributes(array $attributes): self
+    {
+        $this->validateAttributes($attributes);
+
+        $this->attributes = array_merge($this->attributes, $attributes);
+
+        return $this;
+    }
+
+    public function removeAttributes(array $attributes = []): self
+    {
+        if ([] === $attributes) {
+            $this->attributes = [];
+        } else {
+            $this->validateAttributes($attributes);
+
+            $this->attributes = array_diff_key($this->attributes, array_fill_keys($attributes, ''));
+        }
+
+        return $this;
+    }
+
     protected function renderAttributes(): string
     {
         if ([] === $this->attributes) {

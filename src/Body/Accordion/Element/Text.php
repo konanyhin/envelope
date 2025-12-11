@@ -33,7 +33,7 @@ class Text extends Element
     public function __construct(string $content, array $attributes = [])
     {
         $this->content = $content;
-        $this->attributes = $attributes;
+        $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);
     }
 

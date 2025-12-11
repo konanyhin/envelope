@@ -68,7 +68,7 @@ class Element extends AbstractElement
         }
 
         $this->tagName = $tagName;
-        $this->attributes = $attributes;
+        $this->setAttributes($attributes);
     }
 
     public function render(): string

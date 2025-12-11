@@ -36,7 +36,7 @@ class Button extends Element
     public function __construct(string $text, array $attributes = [])
     {
         $this->text = $text;
-        $this->attributes = $attributes;
+        $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);
     }
 

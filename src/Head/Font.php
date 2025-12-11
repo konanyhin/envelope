@@ -27,7 +27,7 @@ class Font extends Element
      */
     public function __construct(array $attributes = [])
     {
-        $this->attributes = $attributes;
+        $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);
     }
 

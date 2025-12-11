@@ -34,7 +34,7 @@ class Envelope extends Element
      */
     public function __construct(array $attributes = [])
     {
-        $this->attributes = $attributes;
+        $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);
         $this->head = new Head();
         $this->body = new Body();
