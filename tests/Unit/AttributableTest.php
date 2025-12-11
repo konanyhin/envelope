@@ -1,0 +1,48 @@
+<?php
+
+use Konanyhin\Envelope\Exceptions\InvalidAttributeException;
+use Konanyhin\Envelope\Traits\Attributable;
+
+function createAttributableClass(array $attributes): object
+{
+    return new class($attributes) {
+        use Attributable;
+
+        public function __construct(array $attributes)
+        {
+            $this->attributes = $attributes;
+        }
+
+        public function render(): string
+        {
+            return $this->renderAttributes();
+        }
+
+        public function validate(array $allowedKeys): void
+        {
+            $this->validateAttributes($allowedKeys);
+        }
+    };
+}
+
+it('renders attributes correctly', function () {
+    $instance = createAttributableClass(['key1' => 'value1', 'key2' => 'value2']);
+    expect($instance->render())->toBe(' key1="value1" key2="value2"');
+});
+
+it('renders empty attributes as empty string', function () {
+    $instance = createAttributableClass([]);
+    expect($instance->render())->toBe('');
+});
+
+it('validates allowed attributes successfully', function () {
+    $instance = createAttributableClass(['key1' => 'value1']);
+
+    $instance->validate(['key1', 'key2']);
+})->throwsNoExceptions();
+
+it('throws exception for invalid attributes', function () {
+    $instance = createAttributableClass(['invalid_key' => 'value']);
+
+    $instance->validate(['key1', 'key2']);
+})->throws(InvalidAttributeException::class);

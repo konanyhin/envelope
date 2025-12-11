@@ -12,19 +12,35 @@ abstract class TestCase extends BaseTestCase
 
     public function parentMethodExists(string $namespace): void
     {
-        expect(fn() => $this->element->{'add' . $this->getClassName($namespace)}())
+        expect(fn () => $this->element->{'add' . $this->getClassName($namespace)}())
             ->not
             ->toThrow(InvalidMethodException::class);
     }
 
     public function parentMethodNotExist(string $namespace): void
     {
-        expect(fn() => $this->element->{'add' . $this->getClassName($namespace)}())
+        expect(fn () => $this->element->{'add' . $this->getClassName($namespace)}())
             ->toThrow(InvalidMethodException::class);
+    }
+
+    public function rendersCorrectly(?string $content = ''): void
+    {
+        expect($this->element->render())->toBeString(sprintf('<%1$s>%2$s</%1$s>', get_class($this->element)::TAG, $content));
+    }
+
+    public function rendersCorrectlyAsShortTag(): void
+    {
+        expect($this->element->render())->toBeString(sprintf('<%s />', get_class($this->element)::TAG));
     }
 
     protected function getClassName(string $namespace): string
     {
-        return substr(strrchr($namespace, "\\"), 1);
+        $path = explode("\\", $namespace);
+
+        if (count($path) > 2 && in_array($path[count($path) - 2], ['Head', 'Body'])) {
+            return $path[count($path) - 1];
+        }
+
+        return sprintf('%s%s', $path[count($path) - 2], $path[count($path) - 1]);
     }
 }

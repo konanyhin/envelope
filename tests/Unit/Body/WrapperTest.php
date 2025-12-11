@@ -1,41 +1,35 @@
 <?php
 
-use Konanyhin\Envelope\Body\Button;
-use Konanyhin\Envelope\Body\Hero;
-use Konanyhin\Envelope\Body\Image;
 use Konanyhin\Envelope\Body\Raw;
+use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Slot;
-use Konanyhin\Envelope\Body\Text;
+use Konanyhin\Envelope\Body\Wrapper;
 
 /**
- * mj-hero can contain:
- * - mj-button
- * - mj-image
+ * mj-wrapper can contain:
  * - mj-raw
- * - mj-text
+ * - mj-section
  */
 
 beforeEach(function () {
-    $this->element = new Hero();
+    $this->element = new Wrapper();
 });
 
 it('has component :dataset', fn ($class) => $this->parentMethodExists($class))->with([
-    'Button' => Button::class,
-    'Image' => Image::class,
     'Raw' => Raw::class,
+    'Section' => Section::class,
     'Slot' => Slot::class,
-    'Text' => Text::class,
 ]);
 
 it('does not have component :dataset', fn ($class) => $this->parentMethodNotExist($class))->with(
     getBodyComponents([
-        Button::class,
-        Image::class,
         Raw::class,
+        Section::class,
         Slot::class,
-        Text::class,
     ])
 );
+
+it('renders correctly', fn () => $this->rendersCorrectly());
 
 afterEach(function () {
     unset($this->element);

@@ -1,39 +1,39 @@
 <?php
 
-use Konanyhin\Envelope\Body;
+use Konanyhin\Envelope\Body\Button;
+use Konanyhin\Envelope\Body\Hero;
+use Konanyhin\Envelope\Body\Image;
 use Konanyhin\Envelope\Body\Raw;
-use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Slot;
-use Konanyhin\Envelope\Body\Wrapper;
+use Konanyhin\Envelope\Body\Text;
 
 /**
- * mj-body can contain:
+ * mj-hero can contain:
+ * - mj-button
+ * - mj-image
  * - mj-raw
- * - mj-section
- * - mj-wrapper
+ * - mj-text
  */
 
-it('creates body from static factory method', function () {
-    expect(Body::new())->toBeInstanceOf(Body::class);
-});
-
 beforeEach(function () {
-    $this->element = new Body();
+    $this->element = new Hero();
 });
 
 it('has component :dataset', fn ($class) => $this->parentMethodExists($class))->with([
+    'Button' => Button::class,
+    'Image' => Image::class,
     'Raw' => Raw::class,
-    'Section' => Section::class,
     'Slot' => Slot::class,
-    'Wrapper' => Wrapper::class
+    'Text' => Text::class,
 ]);
 
 it('does not have component :dataset', fn ($class) => $this->parentMethodNotExist($class))->with(
     getBodyComponents([
+        Button::class,
+        Image::class,
         Raw::class,
-        Section::class,
         Slot::class,
-        Wrapper::class
+        Text::class,
     ])
 );
 

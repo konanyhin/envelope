@@ -29,6 +29,8 @@ it('does not have component :dataset', fn ($class) => $this->parentMethodNotExis
     ])
 );
 
+it('renders correctly', fn () => $this->rendersCorrectly());
+
 afterEach(function () {
     unset($this->element);
 });
