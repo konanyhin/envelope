@@ -16,30 +16,33 @@ abstract class TestCase extends BaseTestCase
     {
         expect(fn () => $this->element->{'add' . $this->getClassName($namespace)}())
             ->not
-            ->toThrow(InvalidMethodException::class)
-        ;
+            ->toThrow(InvalidMethodException::class);
     }
 
     public function parentMethodNotExist(string $namespace): void
     {
         expect(fn () => $this->element->{'add' . $this->getClassName($namespace)}())
-            ->toThrow(InvalidMethodException::class)
-        ;
+            ->toThrow(InvalidMethodException::class);
     }
 
     public function rendersCorrectly(?string $content = ''): void
     {
-        expect($this->element->render())->toBeString()->toBe(sprintf('<%1$s>%2$s</%1$s>', get_class($this->element)::TAG, $content));
+        expect($this->element->render())->toBeString()->toBe(sprintf('<%1$s>%2$s</%1$s>', $this->element::class::TAG, $content));
     }
 
     public function rendersCorrectlyAsShortTag(): void
     {
-        expect($this->element->render())->toBeString()->toBe(sprintf('<%s />', get_class($this->element)::TAG));
+        expect($this->element->render())->toBeString()->toBe(sprintf('<%s />', $this->element::class::TAG));
     }
 
-    public function getChildren()
+    /**
+     * @throws \ReflectionException
+     */
+    public function getProperty(string $property, ?object $instance = null)
     {
-        return new \ReflectionClass($this->element)->getProperty('children')->getValue($this->element);
+        $instance ??= $this->element;
+
+        return (new \ReflectionClass($instance))->getProperty($property)->getValue($instance);
     }
 
     protected function getClassName(string $namespace): string

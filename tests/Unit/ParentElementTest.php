@@ -69,11 +69,10 @@ it('runs child method successfully', function (): void {
     $instance = createParentClass();
     $instance->addSlot('test');
 
-    $children = new ReflectionClass($instance)->getProperty('children')->getValue($instance);
+    $children = $this->getProperty('children', $instance);
 
     expect($children[0])->toBeInstanceOf(Slot::class)
-        ->and($children[0]->getName())->toBe('test')
-    ;
+        ->and($children[0]->getName())->toBe('test');
 });
 
 it('replaces slot successfully', function (): void {
@@ -83,8 +82,7 @@ it('replaces slot successfully', function (): void {
     $element = $instance->replace('test', new Text('test'));
 
     expect($element)->toBeInstanceOf(Text::class)
-        ->and($element->render())->toBe('<mj-text>test</mj-text>')
-    ;
+        ->and($element->render())->toBe('<mj-text>test</mj-text>');
 });
 
 it('throws exception for wrong slot name', function (): void {
