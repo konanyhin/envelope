@@ -7,8 +7,6 @@ namespace Konanyhin\Envelope\Helpers;
 use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Body\Accordion;
 use Konanyhin\Envelope\Body\Accordion\Element as AccordionElement;
-use Konanyhin\Envelope\Body\Accordion\Element\Text as AccordionText;
-use Konanyhin\Envelope\Body\Accordion\Element\Title as AccordionTitle;
 use Konanyhin\Envelope\Body\Button;
 use Konanyhin\Envelope\Body\Carousel;
 use Konanyhin\Envelope\Body\Carousel\Image as CarouselImage;
@@ -34,7 +32,6 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type AccordionMainAttributes from Types
  * @phpstan-import-type AccordionElementAttributes from Types
- * @phpstan-import-type AccordionElementChildAttributes from Types
  * @phpstan-import-type ButtonAttributes from Types
  * @phpstan-import-type CarouselAttributes from Types
  * @phpstan-import-type CarouselImageAttributes from Types
@@ -55,8 +52,6 @@ use Konanyhin\Envelope\Types;
  *
  * @method static Accordion accordion(AccordionMainAttributes $attributes = [])
  * @method static AccordionElement accordionElement(AccordionElementAttributes $attributes = [])
- * @method static AccordionText accordionText(string $content, AccordionElementChildAttributes $attributes = [])
- * @method static AccordionTitle accordionTitle(string $content, AccordionElementChildAttributes $attributes = [])
  * @method static Button button(string $text, ButtonAttributes $attributes = [])
  * @method static Carousel carousel(CarouselAttributes $attributes = [])
  * @method static CarouselImage carouselImage(CarouselImageAttributes $attributes = [])
@@ -77,7 +72,7 @@ use Konanyhin\Envelope\Types;
  * @method static Text text(string $text, TextAttributes $attributes = [])
  * @method static Wrapper wrapper(WrapperAttributes $attributes = [])
  */
-class BodyComponent
+class Body
 {
     /**
      * @var array<string, class-string<Element>>
@@ -85,8 +80,6 @@ class BodyComponent
     private static array $classMap = [
         'accordion' => Accordion::class,
         'accordionElement' => AccordionElement::class,
-        'accordionText' => AccordionText::class,
-        'accordionTitle' => AccordionTitle::class,
         'button' => Button::class,
         'carousel' => Carousel::class,
         'carouselImage' => CarouselImage::class,
