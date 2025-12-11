@@ -15,7 +15,10 @@ final class Link extends Element
 {
     use Attributable;
 
-    public const string TAG = 'mj-navbar-link';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-navbar-link';
 
     /**
      * @var string[]

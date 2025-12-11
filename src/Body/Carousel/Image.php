@@ -15,7 +15,10 @@ final class Image extends Element
 {
     use Attributable;
 
-    public const string TAG = 'mj-carousel-image';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-carousel-image';
 
     /**
      * @var string[]

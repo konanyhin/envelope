@@ -15,7 +15,10 @@ final class Button extends Element
 {
     use Attributable;
 
-    public const string TAG = 'mj-button';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-button';
 
     /**
      * @var string[]

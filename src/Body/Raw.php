@@ -8,7 +8,10 @@ use Konanyhin\Envelope\Abstracts\Element;
 
 final class Raw extends Element
 {
-    public const string TAG = 'mj-raw';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-raw';
 
     public function __construct(private readonly string $content = '') {}
 

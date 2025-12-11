@@ -17,7 +17,10 @@ use Konanyhin\Envelope\Types;
  */
 final class Group extends ParentElement
 {
-    public const string TAG = 'mj-group';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-group';
 
     /**
      * List of allowed child element classes for Group.

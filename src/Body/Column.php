@@ -36,7 +36,10 @@ use Konanyhin\Envelope\Types;
  */
 final class Column extends ParentElement
 {
-    public const string TAG = 'mj-column';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-column';
 
     /**
      * List of allowed child element classes for Column.

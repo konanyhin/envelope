@@ -6,7 +6,10 @@ namespace Konanyhin\Envelope\Abstracts;
 
 abstract class Element implements \Stringable
 {
-    public const string TAG = '';
+    /**
+     * @var string
+     */
+    public const TAG = '';
 
     public function __toString(): string
     {

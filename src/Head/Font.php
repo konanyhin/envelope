@@ -15,7 +15,10 @@ final class Font extends Element
 {
     use Attributable;
 
-    public const string TAG = 'mj-font';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-font';
 
     /**
      * @var string[]

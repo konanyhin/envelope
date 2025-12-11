@@ -22,7 +22,10 @@ use Konanyhin\Envelope\Types;
  */
 final class Hero extends ParentElement
 {
-    public const string TAG = 'mj-hero';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-hero';
 
     /**
      * List of allowed child element classes for Hero.

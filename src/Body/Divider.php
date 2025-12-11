@@ -15,7 +15,10 @@ final class Divider extends Element
 {
     use Attributable;
 
-    public const string TAG = 'mj-divider';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-divider';
 
     /**
      * @var string[]

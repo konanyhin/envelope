@@ -15,7 +15,10 @@ final class Spacer extends Element
 {
     use Attributable;
 
-    public const string TAG = 'mj-spacer';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-spacer';
 
     /**
      * @var string[]

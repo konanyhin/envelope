@@ -13,7 +13,10 @@ use Konanyhin\Envelope\Types;
  */
 final class Attributes extends AbstractElement
 {
-    public const string TAG = 'mj-attributes';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-attributes';
 
     /** @var Element[] */
     private array $children = [];

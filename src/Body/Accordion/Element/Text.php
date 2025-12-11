@@ -15,7 +15,10 @@ final class Text extends Element
 {
     use Attributable;
 
-    public const string TAG = 'mj-accordion-text';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-accordion-text';
 
     /**
      * @var string[]

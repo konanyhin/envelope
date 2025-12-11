@@ -18,7 +18,10 @@ use Konanyhin\Envelope\Types;
  */
 final class Wrapper extends ParentElement
 {
-    public const string TAG = 'mj-wrapper';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-wrapper';
 
     /**
      * List of allowed child element classes for Wrapper.

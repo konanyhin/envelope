@@ -27,7 +27,10 @@ use Konanyhin\Envelope\Head\Title;
  */
 final class Head extends ParentElement
 {
-    public const string TAG = 'mj-head';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-head';
 
     /**
      * @var array<string, class-string<Element>>

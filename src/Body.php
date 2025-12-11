@@ -23,7 +23,10 @@ use Konanyhin\Envelope\Body\Wrapper;
  */
 final class Body extends ParentElement
 {
-    public const string TAG = 'mj-body';
+    /**
+     * @var string
+     */
+    public const TAG = 'mj-body';
 
     /**
      * List of allowed child element classes for Body.
