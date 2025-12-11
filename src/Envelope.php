@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Konanyhin\Envelope;
 
 use Konanyhin\Envelope\Abstracts\Element;
+use Konanyhin\Envelope\Exceptions\InvalidMjmlOptionException;
 use Konanyhin\Envelope\Exceptions\SlotNotFoundException;
 use Konanyhin\Envelope\Traits\Attributable;
+use Spatie\Mjml\Exceptions\CouldNotConvertMjml;
 use Spatie\Mjml\Mjml;
+use Spatie\Mjml\MjmlResult;
 
 /**
  * @phpstan-import-type EnvelopeAttributes from Types
@@ -24,6 +27,11 @@ class Envelope extends Element
     private array $allowedAttributes = [
         'owa', 'lang', 'dir',
     ];
+
+    /**
+     * @var array<string, mixed>
+     */
+    private array $mjmlOptions = [];
 
     private Body $body;
 
@@ -48,16 +56,23 @@ class Envelope extends Element
         return new self($attributes);
     }
 
+    public function body(Element ...$elements): self
+    {
+        $this->body->add(...$elements);
+
+        return $this;
+    }
+
+    public function head(Element ...$elements): self
+    {
+        $this->head->add(...$elements);
+
+        return $this;
+    }
+
     public function getBody(): Body
     {
         return $this->body;
-    }
-
-    public function setBody(Body $body): self
-    {
-        $this->body = $body;
-
-        return $this;
     }
 
     public function getHead(): Head
@@ -65,9 +80,32 @@ class Envelope extends Element
         return $this->head;
     }
 
-    public function setHead(Head $head): self
+    /**
+     * @param array<string, mixed> $options
+     */
+    public function setMjmlOptions(array $options): self
     {
-        $this->head = $head;
+        $allowedKeys = [
+            'fonts',
+            'keepComments',
+            'beautify',
+            'minify',
+            'validationLevel',
+            'filePath',
+            'preprocessors',
+            'juicePreserveTags',
+            'minifyOptions',
+            'mjmlConfigPath',
+            'useMjmlConfigOptions',
+        ];
+
+        foreach (array_keys($options) as $key) {
+            if (!in_array($key, $allowedKeys, true)) {
+                throw new InvalidMjmlOptionException($key);
+            }
+        }
+
+        $this->mjmlOptions = $options;
 
         return $this;
     }
@@ -87,9 +125,24 @@ class Envelope extends Element
         return $this->body->replace($slot, $element);
     }
 
+    /**
+     * @throws CouldNotConvertMjml
+     *
+     * @see https://github.com/mjmlio/mjml?tab=readme-ov-file#inside-nodejs
+     */
     public function toHtml(): string
     {
-        return Mjml::new()->toHtml($this->render());
+        return $this->convert()->html();
+    }
+
+    /**
+     * @throws CouldNotConvertMjml
+     *
+     * @see https://github.com/mjmlio/mjml?tab=readme-ov-file#inside-nodejs
+     */
+    public function convert(): MjmlResult
+    {
+        return Mjml::new()->convert($this->render(), $this->mjmlOptions);
     }
 
     public function render(): string
