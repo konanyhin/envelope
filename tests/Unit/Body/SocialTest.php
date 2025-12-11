@@ -2,7 +2,7 @@
 
 use Konanyhin\Envelope\Body\Social;
 
-/**
+/*
  * mj-social can contain:
  * - mj-social-element
  */

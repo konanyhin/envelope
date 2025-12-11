@@ -17,14 +17,14 @@ function createParentClass(array $attributes = []): object
     return new class($attributes) extends ParentElement {
         public const string TAG = 'mj-tag';
 
-        private array $allowedAttributes = [
-            'background-color', 'border', 'width',
-        ];
-
         protected array $allowedChildClasses = [
             'addSlot' => Slot::class,
             'addText' => Text::class,
             'addGroup' => Group::class,
+        ];
+
+        private array $allowedAttributes = [
+            'background-color', 'border', 'width',
         ];
 
         public function __construct(array $attributes)
@@ -66,7 +66,8 @@ it('runs child method successfully', function () {
     $children = new ReflectionClass($instance)->getProperty('children')->getValue($instance);
 
     expect($children[0])->toBeInstanceOf(Slot::class)
-        ->and($children[0]->getName())->toBe('test');
+        ->and($children[0]->getName())->toBe('test')
+    ;
 });
 
 it('replaces slot successfully', function () {
@@ -76,7 +77,8 @@ it('replaces slot successfully', function () {
     $element = $instance->replace('test', new Text('test'));
 
     expect($element)->toBeInstanceOf(Text::class)
-        ->and($element->render())->toBe('<mj-text>test</mj-text>');
+        ->and($element->render())->toBe('<mj-text>test</mj-text>')
+    ;
 });
 
 it('throws exception for wrong slot name', function () {

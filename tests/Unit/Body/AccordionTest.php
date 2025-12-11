@@ -2,7 +2,7 @@
 
 use Konanyhin\Envelope\Body\Accordion;
 
-/**
+/*
  * mj-accordion can contain:
  * - mj-accordion-element
  */

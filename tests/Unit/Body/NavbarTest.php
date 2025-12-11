@@ -2,7 +2,7 @@
 
 use Konanyhin\Envelope\Body\Navbar;
 
-/**
+/*
  * mj-navbar can contain:
  * - mj-navbar-link
  */

@@ -20,6 +20,8 @@ return (new Config())
     ])
     ->setFinder(
         (new Finder())
-            // 💡 root folder to check
-            ->in(__DIR__ . '/src')
+            ->in([
+                __DIR__ . '/src',
+                __DIR__ . '/tests'
+            ])
     );

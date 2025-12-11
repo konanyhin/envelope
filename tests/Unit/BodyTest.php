@@ -6,7 +6,7 @@ use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Slot;
 use Konanyhin\Envelope\Body\Wrapper;
 
-/**
+/*
  * mj-body can contain:
  * - mj-raw
  * - mj-section
@@ -25,7 +25,7 @@ it('has component :dataset', fn ($class) => $this->parentMethodExists($class))->
     'Raw' => Raw::class,
     'Section' => Section::class,
     'Slot' => Slot::class,
-    'Wrapper' => Wrapper::class
+    'Wrapper' => Wrapper::class,
 ]);
 
 it('does not have component :dataset', fn ($class) => $this->parentMethodNotExist($class))->with(
@@ -33,7 +33,7 @@ it('does not have component :dataset', fn ($class) => $this->parentMethodNotExis
         Raw::class,
         Section::class,
         Slot::class,
-        Wrapper::class
+        Wrapper::class,
     ])
 );
 

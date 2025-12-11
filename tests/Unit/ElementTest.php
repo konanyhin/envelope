@@ -24,7 +24,8 @@ it('renders tag correctly', function () {
     $result = '<mj-tag>test</mj-tag>';
 
     expect($element->render())->toBeString()->toBe($result)
-        ->and((string)$element)->toBeString()->toBe($result);
+        ->and((string) $element)->toBeString()->toBe($result)
+    ;
 });
 
 it('renders tag correctly with empty content', function () {

@@ -5,7 +5,7 @@ use Konanyhin\Envelope\Body\Group;
 use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Slot;
 
-/**
+/*
  * mj-section can contain only:
  * - mj-column
  * - mj-group (which itself contains mj-columns)
@@ -25,7 +25,7 @@ it('does not have component :dataset', fn ($class) => $this->parentMethodNotExis
     getBodyComponents([
         Column::class,
         Group::class,
-        Slot::class
+        Slot::class,
     ])
 );
 

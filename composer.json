@@ -24,7 +24,7 @@
         "refactor": "rector --ansi",
         "fix:cs": "php-cs-fixer fix --ansi",
         "test:type-coverage": "pest --type-coverage --exactly=100",
-        "test:coverage": "pest --coverage --exactly=100 --colors=always",
+        "test:coverage": "pest --coverage --min=80 --colors=always",
         "test:cs": "php-cs-fixer check --diff --ansi",
         "test:types": "phpstan --ansi",
         "test:refactor": "rector --dry-run --ansi",

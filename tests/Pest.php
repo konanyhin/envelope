@@ -23,9 +23,11 @@ use Konanyhin\Envelope\Head\Font;
 use Konanyhin\Envelope\Head\Preview;
 use Konanyhin\Envelope\Head\Style;
 use Konanyhin\Envelope\Head\Title;
+use Tests\TestCase;
 
-pest()->extend(Tests\TestCase::class)
-    ->in('Unit');
+pest()->extend(TestCase::class)
+    ->in('Unit')
+;
 
 function getHeadComponents(array $except = []): array
 {

@@ -2,7 +2,7 @@
 
 use Konanyhin\Envelope\Body\Carousel;
 
-/**
+/*
  * mj-carousel can contain:
  * - mj-carousel-image
  */

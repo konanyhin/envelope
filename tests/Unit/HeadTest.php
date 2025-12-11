@@ -1,10 +1,5 @@
 <?php
 
-use Konanyhin\Envelope\Body;
-use Konanyhin\Envelope\Body\Raw;
-use Konanyhin\Envelope\Body\Section;
-use Konanyhin\Envelope\Body\Slot;
-use Konanyhin\Envelope\Body\Wrapper;
 use Konanyhin\Envelope\Head;
 use Konanyhin\Envelope\Head\Attributes;
 use Konanyhin\Envelope\Head\Breakpoint;
@@ -13,7 +8,7 @@ use Konanyhin\Envelope\Head\Preview;
 use Konanyhin\Envelope\Head\Style;
 use Konanyhin\Envelope\Head\Title;
 
-/**
+/*
  * mj-head can contain:
  * - mj-attributes
  * - mj-breakpoint

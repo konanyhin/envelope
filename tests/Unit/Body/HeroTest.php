@@ -7,7 +7,7 @@ use Konanyhin\Envelope\Body\Raw;
 use Konanyhin\Envelope\Body\Slot;
 use Konanyhin\Envelope\Body\Text;
 
-/**
+/*
  * mj-hero can contain:
  * - mj-button
  * - mj-image

@@ -14,13 +14,15 @@ abstract class TestCase extends BaseTestCase
     {
         expect(fn () => $this->element->{'add' . $this->getClassName($namespace)}())
             ->not
-            ->toThrow(InvalidMethodException::class);
+            ->toThrow(InvalidMethodException::class)
+        ;
     }
 
     public function parentMethodNotExist(string $namespace): void
     {
         expect(fn () => $this->element->{'add' . $this->getClassName($namespace)}())
-            ->toThrow(InvalidMethodException::class);
+            ->toThrow(InvalidMethodException::class)
+        ;
     }
 
     public function rendersCorrectly(?string $content = ''): void
@@ -40,7 +42,7 @@ abstract class TestCase extends BaseTestCase
 
     protected function getClassName(string $namespace): string
     {
-        $path = explode("\\", $namespace);
+        $path = explode('\\', $namespace);
 
         if (count($path) > 2 && in_array($path[count($path) - 2], ['Head', 'Body'])) {
             return $path[count($path) - 1];

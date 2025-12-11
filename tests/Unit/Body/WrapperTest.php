@@ -5,7 +5,7 @@ use Konanyhin\Envelope\Body\Section;
 use Konanyhin\Envelope\Body\Slot;
 use Konanyhin\Envelope\Body\Wrapper;
 
-/**
+/*
  * mj-wrapper can contain:
  * - mj-raw
  * - mj-section

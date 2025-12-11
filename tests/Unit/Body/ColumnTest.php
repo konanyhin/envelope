@@ -14,7 +14,7 @@ use Konanyhin\Envelope\Body\Spacer;
 use Konanyhin\Envelope\Body\Table;
 use Konanyhin\Envelope\Body\Text;
 
-/**
+/*
  * mj-column can contain:
  * - mj-accordion
  * - mj-button

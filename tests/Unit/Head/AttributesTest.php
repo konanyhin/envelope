@@ -21,7 +21,8 @@ it('adds child component successfully', function () {
         ->and($children[1])->toBeInstanceOf(Attributes\Element::class)
         ->and(trim($children[1]->render()))->toBe('<mj-class name="class" color="blue" />')
         ->and($children[2])->toBeInstanceOf(Attributes\Element::class)
-        ->and(trim($children[2]->render()))->toBe('<mj-all color="green" />');
+        ->and(trim($children[2]->render()))->toBe('<mj-all color="green" />')
+    ;
 });
 
 it('renders correctly with children', function () {
@@ -33,4 +34,3 @@ it('renders correctly with children', function () {
 afterEach(function () {
     unset($this->element);
 });
-
