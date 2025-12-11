@@ -48,7 +48,7 @@ it('removes attributes successfully', function (): void {
 
     $attributes = $this->getProperty('attributes', $instance);
 
-    expect($attributes['key1'])->toBeEmpty()
+    expect(isset($attributes['key1']))->toBeFalse()
         ->and($attributes['key2'])->toBe('value2')
         ->and($attributes['key3'])->toBe('value3');
 
