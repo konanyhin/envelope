@@ -11,9 +11,6 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type GroupAttributes from Types
  * @phpstan-import-type ColumnAttributes from Types
- *
- * @method Column addColumn(ColumnAttributes $attributes = [])
- * @method Slot addSlot(string $name)
  */
 final class Group extends ParentElement
 {
@@ -25,11 +22,11 @@ final class Group extends ParentElement
     /**
      * List of allowed child element classes for Group.
      *
-     * @var array<string, class-string<Element>>
+     * @var array<int, class-string<Element>>
      */
     protected array $allowedChildClasses = [
-        'addColumn' => Column::class,
-        'addSlot' => Slot::class,
+        Column::class,
+        Slot::class,
     ];
 
     /**

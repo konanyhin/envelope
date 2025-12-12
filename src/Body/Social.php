@@ -13,8 +13,6 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type SocialAttributes from Types
  * @phpstan-import-type SocialElementAttributes from Types
- *
- * @method SocialElement addSocialElement(string $content = '', SocialElementAttributes $attributes = [])
  */
 final class Social extends ParentElement
 {
@@ -26,10 +24,10 @@ final class Social extends ParentElement
     public const TAG = 'mj-social';
 
     /**
-     * @var array<string, class-string<Element>>
+     * @var array<int, class-string<Element>>
      */
     protected array $allowedChildClasses = [
-        'addSocialElement' => SocialElement::class,
+        SocialElement::class,
     ];
 
     /**

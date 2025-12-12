@@ -17,13 +17,6 @@ use Konanyhin\Envelope\Head\Title;
  * @phpstan-import-type BreakpointAttributes from Types
  * @phpstan-import-type FontAttributes from Types
  * @phpstan-import-type StyleAttributes from Types
- *
- * @method Attributes addAttributes()
- * @method Breakpoint addBreakpoint(BreakpointAttributes $attributes = [])
- * @method Font addFont(FontAttributes $attributes = [])
- * @method Preview addPreview(string $content)
- * @method Style addStyle(string $content, StyleAttributes $attributes = [])
- * @method Title addTitle(string $content)
  */
 final class Head extends ParentElement
 {
@@ -33,15 +26,15 @@ final class Head extends ParentElement
     public const TAG = 'mj-head';
 
     /**
-     * @var array<string, class-string<Element>>
+     * @var array<int, class-string<Element>>
      */
     protected array $allowedChildClasses = [
-        'addAttributes' => Attributes::class,
-        'addBreakpoint' => Breakpoint::class,
-        'addFont' => Font::class,
-        'addPreview' => Preview::class,
-        'addStyle' => Style::class,
-        'addTitle' => Title::class,
+        Attributes::class,
+        Breakpoint::class,
+        Font::class,
+        Preview::class,
+        Style::class,
+        Title::class,
     ];
 
     public static function new(): self

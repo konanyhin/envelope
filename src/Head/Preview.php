@@ -13,7 +13,7 @@ final class Preview extends Element
      */
     public const TAG = 'mj-preview';
 
-    public function __construct(private readonly string $content) {}
+    public function __construct(private readonly string $content = '') {}
 
     public function render(): string
     {

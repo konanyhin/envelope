@@ -31,7 +31,7 @@ final class Table extends Element
     /**
      * @param TableAttributes $attributes
      */
-    public function __construct(private string $content, array $attributes = [])
+    public function __construct(private string $content = '', array $attributes = [])
     {
         $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);

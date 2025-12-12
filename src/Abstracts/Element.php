@@ -18,6 +18,11 @@ abstract class Element implements \Stringable
 
     abstract public function render(): string;
 
+    public static function fake(): self
+    {
+        return new static(); // @phpstan-ignore new.static
+    }
+
     protected function renderAttributes(): string
     {
         return '';

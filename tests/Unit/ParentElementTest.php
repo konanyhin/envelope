@@ -9,8 +9,8 @@ use Konanyhin\Envelope\Body\Text;
 use Konanyhin\Envelope\Exceptions\ChildNotFoundException;
 use Konanyhin\Envelope\Exceptions\InvalidAttributeException;
 use Konanyhin\Envelope\Exceptions\InvalidChildElementException;
-use Konanyhin\Envelope\Exceptions\InvalidMethodException;
 use Konanyhin\Envelope\Exceptions\SlotNotFoundException;
+use Konanyhin\Envelope\Helpers\Body;
 
 function createParentClass(array $attributes = []): object
 {
@@ -18,12 +18,12 @@ function createParentClass(array $attributes = []): object
         public const string TAG = 'mj-tag';
 
         /**
-         * @var array<string, class-string<Group>|class-string<Slot>|class-string<Text>>
+         * @var array<int, class-string<Element>>
          */
         protected array $allowedChildClasses = [
-            'addSlot' => Slot::class,
-            'addText' => Text::class,
-            'addGroup' => Group::class,
+            Slot::class,
+            Text::class,
+            Group::class,
         ];
 
         /**
@@ -61,13 +61,12 @@ it('validates allowed attributes successfully', function (): void {
 
 it('throws exception for invalid child method', function (): void {
     $instance = createParentClass();
-
-    $instance->addColumn();
-})->throws(InvalidMethodException::class);
+    $instance->add(Body::column());
+})->throws(InvalidChildElementException::class);
 
 it('runs child method successfully', function (): void {
     $instance = createParentClass();
-    $instance->addSlot('test');
+    $instance->add(Body::slot('test'));
 
     $children = $this->getProperty('children', $instance);
 
@@ -77,7 +76,7 @@ it('runs child method successfully', function (): void {
 
 it('replaces slot successfully', function (): void {
     $instance = createParentClass();
-    $instance->addSlot('test');
+    $instance->add(Body::slot('test'));
 
     $element = $instance->replace('test', new Text('test'));
 
@@ -87,15 +86,19 @@ it('replaces slot successfully', function (): void {
 
 it('throws exception for wrong slot name', function (): void {
     $instance = createParentClass();
-    $instance->addSlot('test');
+    $instance->add(Body::slot('test'));
 
     $instance->replace('invalid', new Text('test'));
 })->throws(SlotNotFoundException::class);
 
 it('throws exception for wrong slot name with children search', function (): void {
     $instance = createParentClass();
-    $instance->addSlot('test_1');
-    $instance->addGroup()->addSlot('test_2');
+    $instance->add(Body::slot('test_1'));
+    $instance->add(
+        Body::group()->add(
+            Body::slot('test_2')
+        )
+    );
 
     $instance->replace('invalid', new Text('test'));
 })->throws(SlotNotFoundException::class);
@@ -108,7 +111,7 @@ it('throws exception for wrong child', function (): void {
 
 it('throws exception for wrong child element while replacing slot', function (): void {
     $instance = createParentClass();
-    $instance->addSlot('test');
+    $instance->add(Body::slot('test'));
 
     $instance->replace('test', new Button('test'));
 })->throws(InvalidChildElementException::class);
@@ -121,7 +124,7 @@ it('renders element with given attributes successfully', function (): void {
 
 it('renders element with given attributes and children successfully', function (): void {
     $instance = createParentClass(['background-color' => 'white']);
-    $instance->addText('test');
+    $instance->add(Body::text('test'));
 
     expect($instance->render())->toBe('<mj-tag background-color="white"><mj-text>test</mj-text></mj-tag>');
 });

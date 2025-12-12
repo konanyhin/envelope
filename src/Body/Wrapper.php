@@ -12,11 +12,6 @@ use Konanyhin\Envelope\Types;
  * @phpstan-import-type WrapperAttributes from Types
  * @phpstan-import-type SectionAttributes from Types
  * @phpstan-import-type HeroAttributes from Types
- *
- * @method Raw addRaw(string $content = '')
- * @method Section addSection(SectionAttributes $attributes = [])
- * @method Slot addSlot(string $name)
- * @method Hero addHero(HeroAttributes $attributes = [])
  */
 final class Wrapper extends ParentElement
 {
@@ -28,13 +23,13 @@ final class Wrapper extends ParentElement
     /**
      * List of allowed child element classes for Wrapper.
      *
-     * @var array<string, class-string<Element>>
+     * @var array<int, class-string<Element>>
      */
     protected array $allowedChildClasses = [
-        'addRaw' => Raw::class,
-        'addSection' => Section::class,
-        'addSlot' => Slot::class,
-        'addHero' => Hero::class,
+        Raw::class,
+        Section::class,
+        Slot::class,
+        Hero::class,
     ];
 
     /**

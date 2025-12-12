@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use Konanyhin\Envelope\Abstracts\Element;
-use Konanyhin\Envelope\Exceptions\InvalidMethodException;
+use Konanyhin\Envelope\Exceptions\InvalidChildElementException;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -14,15 +14,15 @@ abstract class TestCase extends BaseTestCase
 
     public function parentMethodExists(string $namespace): void
     {
-        expect(fn () => $this->element->{'add' . $this->getClassName($namespace)}())
+        expect(fn () => $this->element->add($namespace::fake()))
             ->not
-            ->toThrow(InvalidMethodException::class);
+            ->toThrow(InvalidChildElementException::class);
     }
 
     public function parentMethodNotExist(string $namespace): void
     {
-        expect(fn () => $this->element->{'add' . $this->getClassName($namespace)}())
-            ->toThrow(InvalidMethodException::class);
+        expect(fn () => $this->element->add($namespace::fake()))
+            ->toThrow(InvalidChildElementException::class);
     }
 
     public function rendersCorrectly(?string $content = ''): void
@@ -45,14 +45,8 @@ abstract class TestCase extends BaseTestCase
         return (new \ReflectionClass($instance))->getProperty($property)->getValue($instance);
     }
 
-    protected function getClassName(string $namespace): string
+    protected function getClassName(string $namespace): object
     {
-        $path = explode('\\', $namespace);
-
-        if (count($path) > 2 && in_array($path[count($path) - 2], ['Head', 'Body'])) {
-            return $path[count($path) - 1];
-        }
-
-        return sprintf('%s%s', $path[count($path) - 2], $path[count($path) - 1]);
+        return \Mockery::mock($namespace);
     }
 }

@@ -13,8 +13,6 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type CarouselAttributes from Types
  * @phpstan-import-type CarouselImageAttributes from Types
- *
- * @method Image addCarouselImage(CarouselImageAttributes $attributes = [])
  */
 final class Carousel extends ParentElement
 {
@@ -26,10 +24,10 @@ final class Carousel extends ParentElement
     public const TAG = 'mj-carousel';
 
     /**
-     * @var array<string, class-string<Element>>
+     * @var array<int, class-string<Element>>
      */
     protected array $allowedChildClasses = [
-        'addCarouselImage' => Image::class,
+        Image::class,
     ];
 
     /**

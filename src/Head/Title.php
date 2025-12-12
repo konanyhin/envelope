@@ -13,7 +13,7 @@ final class Title extends Element
      */
     public const TAG = 'mj-title';
 
-    public function __construct(private readonly string $content) {}
+    public function __construct(private readonly string $content = '') {}
 
     public function render(): string
     {

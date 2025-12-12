@@ -7,7 +7,6 @@ namespace Konanyhin\Envelope\Abstracts;
 use Konanyhin\Envelope\Body\Slot;
 use Konanyhin\Envelope\Exceptions\ChildNotFoundException;
 use Konanyhin\Envelope\Exceptions\InvalidChildElementException;
-use Konanyhin\Envelope\Exceptions\InvalidMethodException;
 use Konanyhin\Envelope\Exceptions\SlotNotFoundException;
 use Konanyhin\Envelope\Traits\Attributable;
 
@@ -19,7 +18,7 @@ abstract class ParentElement extends Element
      * List of allowed child element classes for this parent.
      * This should be overridden by concrete classes if they have specific restrictions.
      *
-     * @var array<string, class-string<Element>>
+     * @var array<int, class-string<Element>>
      */
     protected array $allowedChildClasses;
 
@@ -34,31 +33,6 @@ abstract class ParentElement extends Element
     public function __construct(array $attributes = [])
     {
         $this->setAttributes($attributes);
-    }
-
-    /**
-     * Dynamically handles calls to add{ChildClass} methods for children that take only attributes.
-     *
-     * @param string $name method name called
-     * @param array<int, mixed> $arguments arguments passed to the method
-     *
-     * @return Element the newly created child element
-     *
-     * @throws InvalidMethodException if the method does not exist or is not a recognized add method
-     * @throws \InvalidArgumentException if the child element is not allowed or attributes are invalid
-     */
-    public function __call(string $name, array $arguments): Element
-    {
-        if (str_starts_with($name, 'add') && strlen($name) > 3 && isset($this->allowedChildClasses[$name])) {
-            $childClass = $this->allowedChildClasses[$name];
-
-            $child = new $childClass(...$arguments);
-            $this->add($child);
-
-            return $child;
-        }
-
-        throw new InvalidMethodException(static::class, $name);
     }
 
     /**

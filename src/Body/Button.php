@@ -34,7 +34,7 @@ final class Button extends Element
     /**
      * @param ButtonAttributes $attributes
      */
-    public function __construct(private string $text, array $attributes = [])
+    public function __construct(private string $text = '', array $attributes = [])
     {
         $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);

@@ -32,7 +32,7 @@ final class Text extends Element
     /**
      * @param TextAttributes $attributes
      */
-    public function __construct(private string $text, array $attributes = [])
+    public function __construct(private string $text = '', array $attributes = [])
     {
         $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);

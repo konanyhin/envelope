@@ -13,8 +13,6 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type NavbarAttributes from Types
  * @phpstan-import-type NavbarLinkAttributes from Types
- *
- * @method Link addNavbarLink(string $content, NavbarLinkAttributes $attributes = [])
  */
 final class Navbar extends ParentElement
 {
@@ -26,10 +24,10 @@ final class Navbar extends ParentElement
     public const TAG = 'mj-navbar';
 
     /**
-     * @var array<string, class-string<Element>>
+     * @var array<int, class-string<Element>>
      */
     protected array $allowedChildClasses = [
-        'addNavbarLink' => Link::class,
+        Link::class,
     ];
 
     /**

@@ -19,4 +19,10 @@ final class Slot extends Element
     {
         return '';
     }
+
+    #[\Override]
+    public static function fake(): self
+    {
+        return new self('test');
+    }
 }

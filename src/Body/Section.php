@@ -12,10 +12,6 @@ use Konanyhin\Envelope\Types;
  * @phpstan-import-type SectionAttributes from Types
  * @phpstan-import-type ColumnAttributes from Types
  * @phpstan-import-type GroupAttributes from Types
- *
- * @method Column addColumn(ColumnAttributes $attributes = [])
- * @method Group addGroup(GroupAttributes $attributes = [])
- * @method Slot addSlot(string $name)
  */
 final class Section extends ParentElement
 {
@@ -27,12 +23,12 @@ final class Section extends ParentElement
     /**
      * List of allowed child element classes for Section.
      *
-     * @var array<string, class-string<Element>>
+     * @var array<int, class-string<Element>>
      */
     protected array $allowedChildClasses = [
-        'addColumn' => Column::class,
-        'addGroup' => Group::class,
-        'addSlot' => Slot::class,
+        Column::class,
+        Group::class,
+        Slot::class,
     ];
 
     /**

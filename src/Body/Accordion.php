@@ -13,8 +13,6 @@ use Konanyhin\Envelope\Types;
 /**
  * @phpstan-import-type AccordionMainAttributes from Types
  * @phpstan-import-type AccordionElementAttributes from Types
- *
- * @method AccordionElement addAccordionElement(AccordionElementAttributes $attributes = [])
  */
 final class Accordion extends ParentElement
 {
@@ -26,10 +24,10 @@ final class Accordion extends ParentElement
     public const TAG = 'mj-accordion';
 
     /**
-     * @var array<string, class-string<Element>>
+     * @var array<int, class-string<Element>>
      */
     protected array $allowedChildClasses = [
-        'addAccordionElement' => AccordionElement::class,
+        AccordionElement::class,
     ];
 
     /**

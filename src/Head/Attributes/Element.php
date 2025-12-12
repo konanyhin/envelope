@@ -75,4 +75,10 @@ final class Element extends AbstractElement
     {
         return sprintf("<%s%s />\n", $this->tagName, $this->renderAttributes());
     }
+
+    #[\Override]
+    public static function fake(): self
+    {
+        return new self('mj-all');
+    }
 }

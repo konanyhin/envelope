@@ -32,7 +32,7 @@ final class Link extends Element
     /**
      * @param NavbarLinkAttributes $attributes
      */
-    public function __construct(private string $content, array $attributes = [])
+    public function __construct(private string $content = '', array $attributes = [])
     {
         $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);

@@ -28,7 +28,7 @@ final class Style extends Element
     /**
      * @param StyleAttributes $attributes
      */
-    public function __construct(private string $content, array $attributes = [])
+    public function __construct(private string $content = '', array $attributes = [])
     {
         $this->setAttributes($attributes);
         $this->validateAttributes($this->allowedAttributes);
