@@ -8,10 +8,13 @@ use Konanyhin\Envelope\Abstracts\Element;
 use Konanyhin\Envelope\Exceptions\InvalidChildElementException;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
-abstract class TestCase extends BaseTestCase
+abstract class ElementTestCase extends BaseTestCase
 {
     public Element $element;
 
+    /**
+     * @param class-string<Element> $namespace
+     */
     public function parentMethodExists(string $namespace): void
     {
         expect(fn () => $this->element->add($namespace::fake()))
@@ -19,6 +22,9 @@ abstract class TestCase extends BaseTestCase
             ->toThrow(InvalidChildElementException::class);
     }
 
+    /**
+     * @param class-string<Element> $namespace
+     */
     public function parentMethodNotExist(string $namespace): void
     {
         expect(fn () => $this->element->add($namespace::fake()))
