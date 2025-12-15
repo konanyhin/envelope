@@ -81,6 +81,8 @@ final class Envelope extends Element
 
     /**
      * @param array<string, mixed> $options
+     *
+     * @see https://github.com/mjmlio/mjml?tab=readme-ov-file#inside-nodejs
      */
     public function setMjmlOptions(array $options): self
     {
@@ -106,8 +108,6 @@ final class Envelope extends Element
 
     /**
      * @throws CouldNotConvertMjml
-     *
-     * @see https://github.com/mjmlio/mjml?tab=readme-ov-file#inside-nodejs
      */
     public function toHtml(): string
     {
@@ -117,7 +117,7 @@ final class Envelope extends Element
     /**
      * @throws CouldNotConvertMjml
      *
-     * @see https://github.com/mjmlio/mjml?tab=readme-ov-file#inside-nodejs
+     * @see https://github.com/spatie/mjml-php?tab=readme-ov-file#using-convert
      */
     public function convert(): MjmlResult
     {
