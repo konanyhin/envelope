@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Konanyhin\Envelope;
 
 use Konanyhin\Envelope\Abstracts\Element;
-use Konanyhin\Envelope\Exceptions\InvalidMjmlOptionException;
 use Konanyhin\Envelope\Exceptions\SlotNotFoundException;
 use Konanyhin\Envelope\Traits\Attributable;
 use Spatie\Mjml\Exceptions\CouldNotConvertMjml;
@@ -85,26 +84,6 @@ final class Envelope extends Element
      */
     public function setMjmlOptions(array $options): self
     {
-        $allowedKeys = [
-            'fonts',
-            'keepComments',
-            'beautify',
-            'minify',
-            'validationLevel',
-            'filePath',
-            'preprocessors',
-            'juicePreserveTags',
-            'minifyOptions',
-            'mjmlConfigPath',
-            'useMjmlConfigOptions',
-        ];
-
-        foreach (array_keys($options) as $key) {
-            if (!in_array($key, $allowedKeys, true)) {
-                throw new InvalidMjmlOptionException($key);
-            }
-        }
-
         $this->mjmlOptions = $options;
 
         return $this;
