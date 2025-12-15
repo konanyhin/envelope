@@ -18,10 +18,7 @@ final class Carousel extends ParentElement
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-carousel';
+    public const string TAG = 'mj-carousel';
 
     /**
      * @var array<int, class-string<Element>>

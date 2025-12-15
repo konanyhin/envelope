@@ -15,10 +15,7 @@ final class Style extends Element
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-style';
+    public const string TAG = 'mj-style';
 
     /**
      * @var string[]

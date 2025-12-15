@@ -15,10 +15,7 @@ use Konanyhin\Envelope\Types;
  */
 final class Section extends ParentElement
 {
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-section';
+    public const string TAG = 'mj-section';
 
     /**
      * List of allowed child element classes for Section.

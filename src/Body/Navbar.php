@@ -18,10 +18,7 @@ final class Navbar extends ParentElement
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-navbar';
+    public const string TAG = 'mj-navbar';
 
     /**
      * @var array<int, class-string<Element>>

@@ -15,10 +15,7 @@ final class Breakpoint extends Element
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-breakpoint';
+    public const string TAG = 'mj-breakpoint';
 
     /**
      * @var string[]

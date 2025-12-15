@@ -18,10 +18,7 @@ final class Accordion extends ParentElement
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-accordion';
+    public const string TAG = 'mj-accordion';
 
     /**
      * @var array<int, class-string<Element>>

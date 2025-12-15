@@ -18,10 +18,7 @@ final class Element extends BaseElement
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-accordion-element';
+    public const string TAG = 'mj-accordion-element';
 
     private ?Title $title = null;
 

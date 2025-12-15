@@ -15,10 +15,7 @@ final class Image extends Element
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-image';
+    public const string TAG = 'mj-image';
 
     /**
      * @var string[]

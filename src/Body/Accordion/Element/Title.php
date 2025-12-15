@@ -15,10 +15,7 @@ final class Title extends Element
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-accordion-title';
+    public const string TAG = 'mj-accordion-title';
 
     /**
      * @var string[]

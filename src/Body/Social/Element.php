@@ -15,10 +15,7 @@ final class Element extends BaseElement
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-social-element';
+    public const string TAG = 'mj-social-element';
 
     /**
      * @var string[]

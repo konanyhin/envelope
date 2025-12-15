@@ -8,10 +8,7 @@ use Konanyhin\Envelope\Abstracts\Element;
 
 final class Title extends Element
 {
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-title';
+    public const string TAG = 'mj-title';
 
     public function __construct(private readonly string $content = '') {}
 

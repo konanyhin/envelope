@@ -15,10 +15,7 @@ final class Table extends Element
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-table';
+    public const string TAG = 'mj-table';
 
     /**
      * @var string[]

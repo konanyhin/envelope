@@ -18,10 +18,7 @@ final class Social extends ParentElement
 {
     use Attributable;
 
-    /**
-     * @var string
-     */
-    public const TAG = 'mj-social';
+    public const string TAG = 'mj-social';
 
     /**
      * @var array<int, class-string<Element>>
