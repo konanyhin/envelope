@@ -37,6 +37,11 @@ final class Envelope extends Element
     private Head $head;
 
     /**
+     * @var array<string, string>
+     */
+    private array $cssVariables = [];
+
+    /**
      * @param EnvelopeAttributes $attributes
      */
     public function __construct(array $attributes = [])
@@ -106,6 +111,25 @@ final class Envelope extends Element
         return $this->body->replace($slot, $element);
     }
 
+    public function addCssVariable(string $name, string $value): self
+    {
+        $this->cssVariables[$name] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param array<string, string> $variables
+     */
+    public function addCssVariables(array $variables): self
+    {
+        foreach ($variables as $name => $value) {
+            $this->addCssVariable($name, $value);
+        }
+
+        return $this;
+    }
+
     /**
      * @throws CouldNotConvertMjml
      */
@@ -126,11 +150,24 @@ final class Envelope extends Element
 
     public function render(): string
     {
-        return sprintf(
+        $rendered = sprintf(
             '<mjml%s>%s%s</mjml>',
             $this->renderAttributes(),
             $this->head->render(),
             $this->body->render()
+        );
+
+        if ([] === $this->cssVariables) {
+            return $rendered;
+        }
+
+        return str_replace(
+            array_map(
+                static fn (string $name): string => sprintf('{{--%s}}', $name),
+                array_keys($this->cssVariables)
+            ),
+            array_values($this->cssVariables),
+            $rendered
         );
     }
 }
